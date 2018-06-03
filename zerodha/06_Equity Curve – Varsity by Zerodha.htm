@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://zerodha.com/varsity/chapter/equity-curve/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="gr__zerodha_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	
+
+	<meta name="medium" content="blog">
+	<meta name="generator" content="WordPress 4.9.6">
+	<link href="./06_Equity Curve – Varsity by Zerodha_files/css" rel="stylesheet" type="text/css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="./06_Equity Curve – Varsity by Zerodha_files/skeleton.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./06_Equity Curve – Varsity by Zerodha_files/style.css" type="text/css" media="screen">
+	<link rel="icon" href="https://zerodha.com/varsity/wp-content/themes/varsity/images/favicon.png" type="images/x-icon">
+	<script async="" src="./06_Equity Curve – Varsity by Zerodha_files/analytics.js"></script><script src="./06_Equity Curve – Varsity by Zerodha_files/jquery.min.js"></script>
+	
+    
+<!-- This site is optimized with the Yoast SEO plugin v5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Equity Curve – Varsity by Zerodha</title>
+<link rel="canonical" href="https://zerodha.com/varsity/chapter/equity-curve/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Equity Curve – Varsity by Zerodha">
+<meta property="og:description" content="6.1 – Overview This is off topic – but a little digression hurts no one, I guess. Of all the chapters I have written in Varsity, I guess this one will be a very special one for me. Not because of the topic that I will be discussing. It is because of the place where …">
+<meta property="og:url" content="https://zerodha.com/varsity/chapter/equity-curve/">
+<meta property="og:site_name" content="Varsity by Zerodha">
+<meta property="article:publisher" content="https://www.facebook.com/zerodha.social">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/M9-C6-Cartoon.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-2_wt.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-3_daily-change.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-4_wt-daily-change.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-5_port-eq.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-6_port-all-values.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-7_Eq-curve.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-8_end-value.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-9_port-var.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-10_port-varisd.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/04/Image-11_sd.png">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/zerodha.com\/varsity\/","name":"Varsity by Zerodha","potentialAction":{"@type":"SearchAction","target":"https:\/\/zerodha.com\/varsity\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/zerodha.com\/varsity\/chapter\/equity-curve\/","sameAs":["https:\/\/www.facebook.com\/zerodha.social","https:\/\/www.instagram.com\/zerodhaonline","https:\/\/in.linkedin.com\/company\/zerodha","https:\/\/twitter.com\/ZerodhaVarsity"],"@id":"#organization","name":"Zerodha","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Feed" href="https://zerodha.com/varsity/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Comments Feed" href="https://zerodha.com/varsity/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Equity Curve Comments Feed" href="https://zerodha.com/varsity/chapter/equity-curve/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/zerodha.com\/varsity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./06_Equity Curve – Varsity by Zerodha_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="https://api.w.org/" href="https://zerodha.com/varsity/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zerodha.com/varsity/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://zerodha.com/varsity/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="shortlink" href="https://zerodha.com/varsity/?p=4172">
+<link rel="alternate" type="application/json+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fequity-curve%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fequity-curve%2F&amp;format=xml">
+</head>
+
+<body data-gr-c-s-loaded="true" data-feedly-extension-exttag="3.0.3">
+<div class="container">
+	<nav class="user-nav global">
+			</nav>
+
+	<div id="wrap">
+		<header id="header" class="row">
+			<div class="six columns">
+				<a class="logo-full" href="https://zerodha.com/varsity">
+					<img src="./06_Equity Curve – Varsity by Zerodha_files/logo.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+				<a class="logo-small" href="https://zerodha.com/varsity">
+					<img src="./06_Equity Curve – Varsity by Zerodha_files/logo-small.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+			</div><!-- logo //-->
+
+			<div class="five columns">
+				<form method="get" class="searchform" action="https://zerodha.com/varsity/index.php">
+					<div>
+						<input class="q" type="text" name="s">
+						<input type="submit" class="button button-primary submit" value="search">
+					</div>
+				</form>
+			</div>
+			<nav class="one column">
+				<div class="menu">
+					<a href="https://zerodha.com/varsity/chapter/equity-curve/#" class="burger" id="show-module-nav">≡</a>
+				</div>
+			</nav>	
+		</header><!-- header //-->
+
+		<div id="main">
+
+<section class="single-chapter">
+			<header>
+		<p class="text-center text-small">
+			<span class="module-tag" style="background-color: #4EDFEA">
+				Module 9			</span>
+			— <a href="https://zerodha.com/varsity/module/risk-management/">Risk Management &amp; Trading Psychology</a>
+		</p>
+
+		<p class="text-center text-small">Chapter 6</p>
+
+		<h1 class="title text-center"><a href="https://zerodha.com/varsity/chapter/equity-curve/">Equity Curve</a></h1>
+
+		<div class="text-center">
+			<span class="comment-count">
+				<span class="num"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comments">53</a></span>
+			</span>
+		</div>
+	</header>
+
+	<div class="bigpic"></div>
+
+	<div class="text">
+		<h2>6.1 – Overview</h2>
+<p>This is off topic – but a little digression hurts no one, I guess. Of all the chapters I have written in Varsity, I guess this one will be a very special one for me. Not because of the topic that I will be discussing. It is because of the place where I’m sitting right now and writing this for you all. Its 6:15 AM – surrounding me 360 degrees are misty mountains; the landscape I guess cannot get any better. There is only one shack here with a little music player, playing Bob Marley’s Redemption Song. &nbsp;Can it get any better? At least not for me I guess <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<p><img class="aligncenter size-full wp-image-4197" src="./06_Equity Curve – Varsity by Zerodha_files/M9-C6-Cartoon.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/M9-C6-Cartoon.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/04/M9-C6-Cartoon-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></p>
+<p>Anyway, back to school <img draggable="false" class="emoji" alt="☺" src="./06_Equity Curve – Varsity by Zerodha_files/263a.svg"></p>
+<p>We discussed Portfolio Variance in the previous chapter. It would be pointless to crunch all the numbers to extract the variance of the portfolio, unless we put that to good use. This is exactly what we will achieve over the next 2 chapters.</p>
+<p>Over the next 2 chapters, we will try and do the following –</p>
+<ul>
+<li>Discuss Equity curve and an alternate method to calculate portfolio variance</li>
+<li>Estimate the portfolio’s expected returns over 1 year</li>
+<li>Optimize the portfolio for maximum returns and minimum variance</li>
+</ul>
+<p>Note, this chapter is a continuation of the discussion panned out in the previous chapters. You need to know the context here. If you are reading this chapter without knowing what happened over the last few chapters, then I’d suggest you go back and read those chapters first.</p>
+<h2>6.2 – Equity Curve</h2>
+<p><strong>&nbsp;</strong>We will use this opportunity to develop an equity curve for the 5 stock portfolio that we have. In a very lose sense, a typical equity curve helps you visualize the performance of the portfolio on a normalized scale of 100. In other words, it will help you understand how Rs.100/- invested in this portfolio would have performed over the given period. You can further use this to benchmark the portfolio’s performance against its benchmark – say Nifty 50 or BSE Sensex.</p>
+<p>There are certain attributes which can be extracted out of the equity curve to develop deeper insights on the portfolio. More on that later.</p>
+<p>Let us proceed to build an equity curve for the 5 stock portfolio. Remember, we had the following stocks and we also assigned random weights to these stock to form our portfolio. Here are the stock names along with the weightages –</p>
+<table>
+<tbody>
+<tr>
+<th width="104"><strong>Stock Name</strong></th>
+<th width="117"><strong>Investment weight</strong></th>
+</tr>
+<tr>
+<td width="104">Cipla</td>
+<td width="117">7%</td>
+</tr>
+<tr>
+<td width="104">Idea Cellular Ltd</td>
+<td width="117">16%</td>
+</tr>
+<tr>
+<td width="104">Wonderla</td>
+<td width="117">25%</td>
+</tr>
+<tr>
+<td width="104">PVR</td>
+<td width="117">30%</td>
+</tr>
+<tr>
+<td width="104">Alkem</td>
+<td width="117">22%</td>
+</tr>
+</tbody>
+</table>
+<p>So what does ‘Investment weight’ means? – It represents the percentage of your corpus invested in the stock. For example, out of Rs.100,000/-, Rs.7,000/- has been invested in Cipla and Rs.22,000/- has been invested in Alkem Lab. So on and so forth.</p>
+<p>While developing an equity curve, the usual practice is to normalize the portfolio for Rs.100. This helps us understand how an investment of Rs.100/- in this portfolio behaved during the period of investment. I have incorporated this in the excel sheet (please note, the excel used here is a continuation of the excel used in the previous chapter)</p>
+<p>Have a look at the image below –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-2_wt.png"><img class="aligncenter wp-image-4187" src="./06_Equity Curve – Varsity by Zerodha_files/Image-2_wt.png" alt="" width="800" height="63" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-2_wt.png 1610w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-2_wt-300x24.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-2_wt-768x61.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-2_wt-1024x81.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>I have introduced a new column next to the daily return column and included the weight of the respective stock. At the end, you will find two new column being introduced – starting value pegged at 100 and total weight at 100%.</p>
+<p>Starting value – this is basically the amount of money we are starting with. I have set this to Rs.100/-. This means, out of the 100 Rupees in total corpus, Rupees 7 is being invested in Cipla, Rupees 16 in Idea, Rupee 25 in Wonderla so on and so forth.</p>
+<p>Now, if I add up the individual weights, then they should all add up to 100%, indicating that 100% of Rs.100 is being invested.</p>
+<p>We now have to see how the investment in each stock has performed. To help you understand this better, lets take up the case of Cipla for now. The weight assigned to Cipla is 7%, which means out of Rs.100, Rs.7 is invested in Cipla. Based on the daily price movement of Cipla, our money i.e Rs.7/- either increases or decreases. It is important to note that, if on day 1, if Rs.7 becomes, Rs.7.5/- then the following day, our starting price is Rs.7.5 and not Rs.7/-. I’ve done this on excel for Cipla, and this is how the calculation looks.</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-3_daily-change.png"><img class="aligncenter size-full wp-image-4188" src="./06_Equity Curve – Varsity by Zerodha_files/Image-3_daily-change.png" alt="" width="364" height="179" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-3_daily-change.png 364w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-3_daily-change-300x148.png 300w" sizes="(max-width: 364px) 100vw, 364px"></a></p>
+<p>On 1st Sept, Cipla was trading at 579.15, this is the day we decided to invest Rs.7 in the stock. I understand that this is technically not possible, but for the sake of this example, let us just assume this is possible and proceed. So on day one i.e 1st Sept, 7 is invested, on 2nd Sept Cipla closed at 577.95, down -0.21% from the previous day. This also means we lose -0.21% on our investment of Rs.7/- making it Rs.6.985. On 6th Sept Cipla shot up by 0.11% to 578.6, hence we gain 0.11% on 6.985 to make it 6.993. So on and so forth the rest of the data points.</p>
+<p>I’ve done this math for all the stocks in portfolio and here is how the table looks –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-4_wt-daily-change.png"><img class="aligncenter wp-image-4189" src="./06_Equity Curve – Varsity by Zerodha_files/Image-4_wt-daily-change.png" alt="" width="800" height="180" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-4_wt-daily-change.png 1321w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-4_wt-daily-change-300x68.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-4_wt-daily-change-768x173.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-4_wt-daily-change-1024x231.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>I’ve calculated the daily fluctuation in the invested price across all stocks and I;ve highlighted the same in blue.</p>
+<p>Now, think about what is happening here – I’ve basically split Rs.100/- across 5 stocks and invested in different proportions. If I sum up the daily variation in each stock, I should be able to get the overall daily fluctuation of Rs.100, right? Doing this gives me the overall perspective on how my portfolio is moving. Let me add these up and see how Rs.100 invested across 5 stocks moves on a daily basis –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-5_port-eq.png"><img class="aligncenter wp-image-4190" src="./06_Equity Curve – Varsity by Zerodha_files/Image-5_port-eq.png" alt="" width="800" height="137" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-5_port-eq.png 1472w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-5_port-eq-300x51.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-5_port-eq-768x131.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-5_port-eq-1024x175.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>Adding up the values on a daily basis gives me the time series of the daily fluctuation of the portfolio.</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-6_port-all-values.png"><img class="aligncenter wp-image-4191" src="./06_Equity Curve – Varsity by Zerodha_files/Image-6_port-all-values.png" alt="" width="800" height="126" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-6_port-all-values.png 1474w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-6_port-all-values-300x47.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-6_port-all-values-768x121.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-6_port-all-values-1024x161.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>An ‘Equity Curve’ (EQ curve) can be developed if you plot the chart of this – i.e the time series data of the daily normalized portfolio value. I say normalized because I’ve scaled down the investment to Rs.100/-.</p>
+<p>So, here is the EQ curve for the portfolio that we have –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-7_Eq-curve.png"><img class="aligncenter size-full wp-image-4192" src="./06_Equity Curve – Varsity by Zerodha_files/Image-7_Eq-curve.png" alt="" width="486" height="293" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-7_Eq-curve.png 486w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-7_Eq-curve-300x181.png 300w" sizes="(max-width: 486px) 100vw, 486px"></a></p>
+<p>As easy as that. Eq curve is a very popular way of visualizing the portfolio performance. It gives a quick estimate of the returns generated by the portfolio. In this case, we started with and investment of Rs.100/- and at the end of 6 months the portfolio was valued at 113.84. Have a look at the image below –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-8_end-value.png"><img class="aligncenter wp-image-4193" src="./06_Equity Curve – Varsity by Zerodha_files/Image-8_end-value.png" alt="" width="800" height="70" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-8_end-value.png 1459w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-8_end-value-300x26.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-8_end-value-768x67.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-8_end-value-1024x90.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>So without much thinking, I know the portfolio has done close to 13.8% during the given period.</p>
+<h2>6.3 – Portfolio as a whole</h2>
+<p>Now, here is something I’d like you to think about. In the previous chapter, we calculated the portfolio variance. While doing so, one of the key things we had to calculate was the standard deviation of each stock. Standard deviation as you may know, represents the volatility of the stock which is nothing but the risk associated with the stock.</p>
+<p>To calculate the standard deviation, we used the inbuilt excel function ‘=STDEV()’ applied on the daily return of the stock. Now, think about this – we anyway have the daily value of the portfolio (although normalized to Rs.100).</p>
+<p>Now imagine the portfolio itself in its entirety, as a whole, as a single stock, and calculate its daily returns. Just like how we calculated the daily returns of the stocks in the previous chapter. Further, what if I apply the ‘=STDEV()’ function on the portfolio’s daily return? The resulting value should be the standard deviation of the portfolio which in other words should represents risk also called as Variance of the portfolio.</p>
+<p>Are you able to sense where we are heading? Yes, we are talking about calculating portfolio variance using a different approach all together <img draggable="false" class="emoji" alt="☺" src="./06_Equity Curve – Varsity by Zerodha_files/263a.svg"></p>
+<p>To help you comprehend this better, let me paste the portfolio variance value we calculated in the previous chapter,–</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-9_port-var.png"><img class="aligncenter size-full wp-image-4194" src="./06_Equity Curve – Varsity by Zerodha_files/Image-9_port-var.png" alt="" width="244" height="77"></a></p>
+<p>We calculated the above value using the matrix multiplication and the correlation matrix technique.</p>
+<p>We will now look at the portfolio as a whole and calculate the daily returns of the normalized portfolio value. The standard deviation of the portfolio’s daily returns should yield us a value equal to or somewhere near the portfolio variance calculated previously.</p>
+<p>I’ve included a new column next to the daily normalized portfolio value and calculated the Portfolio’s daily returns –</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-10_port-varisd.png"><img class="aligncenter size-full wp-image-4195" src="./06_Equity Curve – Varsity by Zerodha_files/Image-10_port-varisd.png" alt="" width="485" height="175" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-10_port-varisd.png 485w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-10_port-varisd-300x108.png 300w" sizes="(max-width: 485px) 100vw, 485px"></a></p>
+<p>Once I have the returns in place, I will apply the standard deviation function on the time series data, this should yield a value close to the portfolio variance value we previously calculated.</p>
+<p><a href="./06_Equity Curve – Varsity by Zerodha_files/Image-11_sd.png"><img class="aligncenter wp-image-4196" src="./06_Equity Curve – Varsity by Zerodha_files/Image-11_sd.png" alt="" width="800" height="429" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-11_sd.png 1148w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-11_sd-300x161.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-11_sd-768x412.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/04/Image-11_sd-1024x549.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>So there you go, the STDEV function gives us the exact same value!</p>
+<p>You can <a href="http://zerodha.com/varsity/wp-content/uploads/2017/04/Chapter-6_EQ-Curve.xlsx"><strong>download</strong></a> the excel sheet used in this chapter. In the next chapter, we will use the portfolio variance to estimate the expected returns along with optimization.</p>
+<p>Quick Task – I’d like to leave you with a quick task here. We have assigned random weights to the stocks. Go ahead and change the weights of the stocks and see the impact on the overall returns. Do share your observation in the comment box below.</p>
+<hr>
+<h3>Key takeaways from this chapter</h3>
+<ol>
+<li>An equity curve is a standard way to visualize the performance of a portfolio</li>
+<li>A standard industry wide practice is to normalize the portfolio to a starting investment value of Rs.100/-</li>
+<li>We assign weights and the respective investment to each stock</li>
+<li>We need to calculate the daily change in investment value in each stock</li>
+<li>The sum total of all the variation in each stock adds up to the variation of the entire portfolio</li>
+<li>The graph of the change in daily prices of the portfolio yields the equity curve</li>
+<li>We can look at the portfolio as a whole, as a single stock and calculate its SD</li>
+<li>The SD of portfolio also yields the portfolio variance</li>
+</ol>
+		<div class="clear"> </div>
+	</div><!-- .text //-->
+
+	<footer>
+		<div class="row">
+			<div class="two columns">‌</div>
+			<div class="eight columns">
+									<span class="module-tag" style="background-color: #4EDFEA">
+						Module 9					</span>
+					<h4>Chapters</h4>
+
+					<ul class="noul chapter-list">
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/orientation-note/" class="text-small">
+								<span class="num">1.</span>
+								Orientation note							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-1/" class="text-small">
+								<span class="num">2.</span>
+								Risk (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/" class="text-small">
+								<span class="num">3.</span>
+								Risk (Part 2) – Variance &amp; Covariance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-3-_variance-covariance-matrix/" class="text-small">
+								<span class="num">4.</span>
+								Risk (Part 3) – Variance &amp; Covariance Matrix							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-4-correlation-matrix-portfolio-variance/" class="text-small">
+								<span class="num">5.</span>
+								Risk (Part 4) – Correlation Matrix &amp; Portfolio Variance							</a>
+						</li>
+											<li class="selected">
+							<a href="https://zerodha.com/varsity/chapter/equity-curve/" class="text-small">
+								<span class="num">6.</span>
+								Equity Curve							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/expected-returns/" class="text-small">
+								<span class="num">7.</span>
+								Expected Returns							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/port-opt/" class="text-small">
+								<span class="num">8.</span>
+								Portfolio Optimization (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/po2/" class="text-small">
+								<span class="num">9.</span>
+								Portfolio Optimization (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/var/" class="text-small">
+								<span class="num">10.</span>
+								Value at Risk							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing/" class="text-small">
+								<span class="num">11.</span>
+								Position Sizing for active trader							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-2/" class="text-small">
+								<span class="num">12.</span>
+								Position Sizing for active traders (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-3/" class="text-small">
+								<span class="num">13.</span>
+								Position Sizing for active traders (Part 3)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/kellys-criterion/" class="text-small">
+								<span class="num">14.</span>
+								Kelly’s Criterion							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/trading-biases/" class="text-small">
+								<span class="num">15.</span>
+								Trading Biases							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/tradingbiases-p2/" class="text-small">
+								<span class="num">16.</span>
+								Trading Biases (Part 2)							</a>
+						</li>
+										</ul>
+
+							</div>
+			<div class="two columns">‌</div>
+		</div>
+	</footer>
+
+	
+	<h3 id="comments">53 comments</h3>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1 parent" id="comment-39019">
+				<div id="div-comment-39019" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39019">
+			April 26, 2017 at 4:42 pm</a>		</div>
+
+		<p>Dear Karthik,</p>
+<p>What if Quantity of Shares (i.e. Weightage %) is not constant, due to additional buy/ reduction by sell in any scrip?<br>
+Also what if we add/remove any scrips from portfolio in between? </p>
+<p>How to take care of that while calculating the portfolio variance?</p>
+<p>Thanks <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39019" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39019#respond" onclick="return addComment.moveForm( &quot;div-comment-39019&quot;, &quot;39019&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-39041">
+				<div id="div-comment-39041" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39041">
+			April 27, 2017 at 11:36 am</a>		</div>
+
+		<p>Ah, good point. When you add remove shares, your weightages in each stock changes and you develop the EQ graph in the routine way. Anyway, will try and put out a supplementary note on this sometime soon.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39041" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39041#respond" onclick="return addComment.moveForm( &quot;div-comment-39041&quot;, &quot;39041&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-39111">
+				<div id="div-comment-39111" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39111">
+			April 28, 2017 at 6:28 pm</a>		</div>
+
+		<p>Thanks a lot Karthik.  Your webinars are also awesome. Zerodha Varsity is great source of knowledge for a novice like me. The subject is so vast and there is so much to learn, but the way you are feeding us spoon by spoon, it makes things simple and easy to grasp. I am really greatful to you. </p>
+<p>Thanks once again <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39111" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39111#respond" onclick="return addComment.moveForm( &quot;div-comment-39111&quot;, &quot;39111&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4 parent" id="comment-39124">
+				<div id="div-comment-39124" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39124">
+			April 29, 2017 at 7:41 am</a>		</div>
+
+		<p>Hey, thanks for the kind words, Santosh. Its still a long way to go for all of us at Zerodha <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<p>Happy learning.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39124" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39124#respond" onclick="return addComment.moveForm( &quot;div-comment-39124&quot;, &quot;39124&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-5 parent" id="comment-47812">
+				<div id="div-comment-47812" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/9bbd5cc14cda49b6db0140fa0b7bf231" srcset="https://secure.gravatar.com/avatar/9bbd5cc14cda49b6db0140fa0b7bf231?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">krishna</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47812">
+			November 7, 2017 at 3:44 pm</a>		</div>
+
+		<p>hiiii sir im krishna saud<br>
+palan</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47812" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-5" id="comment-47849">
+				<div id="div-comment-47849" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47849">
+			November 8, 2017 at 10:47 am</a>		</div>
+
+		<p>Great to meet you, Krishna!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47849" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-39026">
+				<div id="div-comment-39026" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/81b059c04ab970ef3456a50518c0fd1d" srcset="https://secure.gravatar.com/avatar/81b059c04ab970ef3456a50518c0fd1d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Amit Gupta</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39026">
+			April 26, 2017 at 8:33 pm</a>		</div>
+
+		<p>The first is question – Where is that blissful place ? <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39026" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39026#respond" onclick="return addComment.moveForm( &quot;div-comment-39026&quot;, &quot;39026&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Amit Gupta">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-39047">
+				<div id="div-comment-39047" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39047">
+			April 27, 2017 at 11:44 am</a>		</div>
+
+		<p>Somewhere in the North East of India <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39047" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39047#respond" onclick="return addComment.moveForm( &quot;div-comment-39047&quot;, &quot;39047&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-39117">
+				<div id="div-comment-39117" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/5c8efd614be3f8999a6cdaf97497e994" srcset="https://secure.gravatar.com/avatar/5c8efd614be3f8999a6cdaf97497e994?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Amar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39117">
+			April 28, 2017 at 10:33 pm</a>		</div>
+
+		<p>Hi, Nice chapter!! Well I would like to know how to manage risk while trading in Commodities Derivative and about commodity position sizing, hedging position!!<br>
+Will that be covered in coming chapters, Sir??</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39117" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39117#respond" onclick="return addComment.moveForm( &quot;div-comment-39117&quot;, &quot;39117&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Amar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-39128">
+				<div id="div-comment-39128" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39128">
+			April 29, 2017 at 7:46 am</a>		</div>
+
+		<p>Yes, we are currently discussing risk from a portfolio perspective, we will soon move to single and muti leg futures position.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39128" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39128#respond" onclick="return addComment.moveForm( &quot;div-comment-39128&quot;, &quot;39128&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-39420">
+				<div id="div-comment-39420" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/ab5554c4af6f5235484e03dee5ec2d3c.png" srcset="https://secure.gravatar.com/avatar/ab5554c4af6f5235484e03dee5ec2d3c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">SONJOE JOSEPH</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39420">
+			May 5, 2017 at 10:58 am</a>		</div>
+
+		<p>Dear Karthik,</p>
+<p>Well Karthik all your classes are just equivalent to gold like me. Wonderful Job Karthik, One doubt.. when i have done the Portfolio SD its coming 1.12% instend of 1.11%. You have mentioned the formula in ur excel file as “_xlfn.STDEV.P(R5:R130) didn’t understand this formula. What’s the problem if we give the formula stdev(R5:R130) which comes to 1.12. </p>
+<p>Awaiting the doubt to get cleared.</p>
+<p>Regards,</p>
+<p>Sonjoe Joseph</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39420" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39420#respond" onclick="return addComment.moveForm( &quot;div-comment-39420&quot;, &quot;39420&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to SONJOE JOSEPH">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-39446">
+				<div id="div-comment-39446" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39446">
+			May 6, 2017 at 3:30 am</a>		</div>
+
+		<p>‘=STDEV()’ is a excel function, behind which is the mathematical formula to calculate standard deviation. 1.12% is good, I guess minor decimal difference. Are you doing this on the same portfolio?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39446" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39446#respond" onclick="return addComment.moveForm( &quot;div-comment-39446&quot;, &quot;39446&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-39560">
+				<div id="div-comment-39560" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/ab5554c4af6f5235484e03dee5ec2d3c.png" srcset="https://secure.gravatar.com/avatar/ab5554c4af6f5235484e03dee5ec2d3c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">SONJOE JOSEPH</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39560">
+			May 8, 2017 at 11:30 am</a>		</div>
+
+		<p>Yes i’m doing on the same portfolio.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39560" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39560#respond" onclick="return addComment.moveForm( &quot;div-comment-39560&quot;, &quot;39560&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to SONJOE JOSEPH">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-39581">
+				<div id="div-comment-39581" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39581">
+			May 9, 2017 at 3:19 am</a>		</div>
+
+		<p>Good luck!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39581" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39581#respond" onclick="return addComment.moveForm( &quot;div-comment-39581&quot;, &quot;39581&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-39725">
+				<div id="div-comment-39725" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/9a2ce1fb42c41e2fd873f81fcc7a983f" srcset="https://secure.gravatar.com/avatar/9a2ce1fb42c41e2fd873f81fcc7a983f?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">James</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39725">
+			May 12, 2017 at 9:00 pm</a>		</div>
+
+		<p>Respected Sir,<br>
+Gratitude !!<br>
+This module seems like a boon for (neophyte) Investors. Unfortunately, I categorize myself as a Trader (my trades range mainly 0-6 days or so). I understand that it is valuable for both Investors &amp; Traders, depending upon one’s ability to retrieve useful info from data for one’s use. But, a novice like me would like to have some clarity of ‘Risk Management’ section from a Trader’s perspective as well. Also, I wonder if ‘Trading Psychology’ section of this Module will also throw some light on psychology of a trader.<br>
+My experience –<br>
+Few years ago, I was apprised by a broker to put orders at, say, 189.95 instead of 190, or at 150.05 instead of 150. Nothing technical, he told some pure psychological reason (do not remember now) leading to a special order picking behavior in market depth. Later I browsed a lot but couldn’t figure this out. I wonder if such psychological scenarios exist. If yes, will these be included in this module? Or please provide any reference/ books for such insights that one (otherwise) learns from one’s experience only.<br>
+By the way –<br>
+Graph of typos has been above its 20DMA for last 2-3 Modules. It has formed Bullish Marubozu in last two chapters consecutively. I guess it’s better to go Long on spell&amp;grammar check tool, like Ginger, to crash such trends in few seconds. Sorry for pointing it out.<br>
+–<br>
+Coming soon in the awesome world of Zerodha <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"> <img draggable="false" class="emoji" alt="🙂" src="./06_Equity Curve – Varsity by Zerodha_files/1f642.svg"><br>
+–<br>
+Regards<br>
+James</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39725" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39725#respond" onclick="return addComment.moveForm( &quot;div-comment-39725&quot;, &quot;39725&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to James">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-39733">
+				<div id="div-comment-39733" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39733">
+			May 13, 2017 at 5:48 am</a>		</div>
+
+		<p>Thanks pointing this out. I understand the grammar and typos – there are way too many. I’ll probably use one of thoes tools. </p>
+<p>Anyway, I too use figures like 189.95 instead of 190 – I’ve observed the fills are faster. As of now the module’s focus is risk management from portfolio perspective. Will soon shift to the traders perspective.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39733" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39733#respond" onclick="return addComment.moveForm( &quot;div-comment-39733&quot;, &quot;39733&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-39740">
+				<div id="div-comment-39740" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/9a2ce1fb42c41e2fd873f81fcc7a983f" srcset="https://secure.gravatar.com/avatar/9a2ce1fb42c41e2fd873f81fcc7a983f?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">James</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39740">
+			May 13, 2017 at 1:39 pm</a>		</div>
+
+		<p>Ohh !! Thanks a lot. I would be highly glad &amp; obliged  to see more such (traders’) psychological tricks in this module so as to understand their mechanism insight – how these works. By the way, is/are there any book(s) for same??<br>
+Question – You have described two methods of return calculation in excel —  ‘=ln(c3/c2)’ and ‘=c3/c2-1’. Which one is more practically preferable?<br>
+Thanks in advance<br>
+Best Regards</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39740" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39740#respond" onclick="return addComment.moveForm( &quot;div-comment-39740&quot;, &quot;39740&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to James">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4 parent" id="comment-39768">
+				<div id="div-comment-39768" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39768">
+			May 14, 2017 at 5:10 am</a>		</div>
+
+		<p>There are are quite a few books on this topic, unable to think of one though. Will keep you posted. </p>
+<p>For more than 2 year of data, I’d suggest you take the ln returns, otherwise regular rt should be alright.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39768" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39768#respond" onclick="return addComment.moveForm( &quot;div-comment-39768&quot;, &quot;39768&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-5 parent" id="comment-39783">
+				<div id="div-comment-39783" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/9a2ce1fb42c41e2fd873f81fcc7a983f" srcset="https://secure.gravatar.com/avatar/9a2ce1fb42c41e2fd873f81fcc7a983f?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">James</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39783">
+			May 14, 2017 at 11:42 am</a>		</div>
+
+		<p>Thanks a lot.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39783" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-5" id="comment-39805">
+				<div id="div-comment-39805" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39805">
+			May 15, 2017 at 1:31 am</a>		</div>
+
+		<p>Welcome!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39805" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-39786">
+				<div id="div-comment-39786" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39786">
+			May 14, 2017 at 3:04 pm</a>		</div>
+
+		<p>Hi Karthik,</p>
+<p>I am eagerly waiting for next chapter(s).</p>
+<p>I also request you put a module on financial modelling.</p>
+<p>Thanks <img draggable="false" class="emoji" alt="☺" src="./06_Equity Curve – Varsity by Zerodha_files/263a.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39786" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39786#respond" onclick="return addComment.moveForm( &quot;div-comment-39786&quot;, &quot;39786&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-39807">
+				<div id="div-comment-39807" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-39807">
+			May 15, 2017 at 1:32 am</a>		</div>
+
+		<p>Financial Modelling is next module, next chapter will be up this week.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/39807" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=39807#respond" onclick="return addComment.moveForm( &quot;div-comment-39807&quot;, &quot;39807&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-40046">
+				<div id="div-comment-40046" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/835aec562f2e6f91b12cda4c29f73e66" srcset="https://secure.gravatar.com/avatar/835aec562f2e6f91b12cda4c29f73e66?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://%7E/" rel="external nofollow" class="url">Arjun T</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-40046">
+			May 21, 2017 at 10:49 am</a>		</div>
+
+		<p>Hi! Any update on when the supplementary note regarding ‘how to consider portfolio variance and maintain equity curve when shares are reduced or new shares are bought’ will be updated? Eagerly looking forward to learn from it. Thank You!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40046" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=40046#respond" onclick="return addComment.moveForm( &quot;div-comment-40046&quot;, &quot;40046&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Arjun T">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40073">
+				<div id="div-comment-40073" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-40073">
+			May 21, 2017 at 6:15 pm</a>		</div>
+
+		<p>Check this – <a href="http://zerodha.com/varsity/module/trading-psychology-and-risk-management/" rel="nofollow">http://zerodha.com/varsity/module/trading-psychology-and-risk-management/</a></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40073" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=40073#respond" onclick="return addComment.moveForm( &quot;div-comment-40073&quot;, &quot;40073&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-43890">
+				<div id="div-comment-43890" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/146a996895287aaa4771f6c4408d13a2" srcset="https://secure.gravatar.com/avatar/146a996895287aaa4771f6c4408d13a2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Umer Azam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43890">
+			August 26, 2017 at 2:00 pm</a>		</div>
+
+		<p>Sir,  can you please tell me how to draw the equity curve in excel. I have completed rest of the work very similarly and perfectly but i am unable to chart the equity curve.  I guess there is some problem with axes. It would be great if u can help me out. Actually i am a newbie in excel<br>
+Thanks in advance sir.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43890" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=43890#respond" onclick="return addComment.moveForm( &quot;div-comment-43890&quot;, &quot;43890&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Umer Azam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-43917">
+				<div id="div-comment-43917" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43917">
+			August 26, 2017 at 4:55 pm</a>		</div>
+
+		<p>Can you tell me where exactly you are going wrong?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43917" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=43917#respond" onclick="return addComment.moveForm( &quot;div-comment-43917&quot;, &quot;43917&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-43922">
+				<div id="div-comment-43922" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/146a996895287aaa4771f6c4408d13a2" srcset="https://secure.gravatar.com/avatar/146a996895287aaa4771f6c4408d13a2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Umer Azam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43922">
+			August 26, 2017 at 5:52 pm</a>		</div>
+
+		<p>The axis which is supposed to hold the values from 120 to 80 is not there as i am charting. The values are coming from 0 to 100. The axis with time is fine. And because of this the eq. Curve that I am getting is a flat line at 100. What can I do to fix it?<br>
+And also sir,  my portfolio variance is coming at 1.40% how am i supposed to interpret it?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43922" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=43922#respond" onclick="return addComment.moveForm( &quot;div-comment-43922&quot;, &quot;43922&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Umer Azam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4 parent" id="comment-43937">
+				<div id="div-comment-43937" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43937">
+			August 27, 2017 at 11:08 am</a>		</div>
+
+		<p>Port variance of 1.4% is alright. However, I’m unable to figure out the exact problem. I have explained this step by step, can you please try doing this again?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43937" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=43937#respond" onclick="return addComment.moveForm( &quot;div-comment-43937&quot;, &quot;43937&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-5 parent" id="comment-43947">
+				<div id="div-comment-43947" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/146a996895287aaa4771f6c4408d13a2" srcset="https://secure.gravatar.com/avatar/146a996895287aaa4771f6c4408d13a2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Umer Azam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43947">
+			August 27, 2017 at 12:28 pm</a>		</div>
+
+		<p>Sir, in the charting of normalized equity curve X axis which contains the time is alright, but the Y axis which contains the values(in your chart it is 80-120) is not alright. It is coming from 0-100, and because of this the equity curve is like a straight line at 100. How can I fix it?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43947" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-5" id="comment-43975">
+				<div id="div-comment-43975" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-43975">
+			August 28, 2017 at 10:31 am</a>		</div>
+
+		<p>If you are getting the fixed value as hundred than I suspect you have not linked the portfolio values properly. You need to calculate the daily returns and then link it to the normalized values.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43975" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-45152">
+				<div id="div-comment-45152" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/a1467cfe81967d0a6836a40915388dfb" srcset="https://secure.gravatar.com/avatar/a1467cfe81967d0a6836a40915388dfb?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">suresh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-45152">
+			September 16, 2017 at 9:23 pm</a>		</div>
+
+		<p>sir, it’s my humble request to please tell how to select stocks for portfolio for a beginner? i am newbie here and read tech. and fund. analysis, but still can’t find.. please help? how should i select a company to invest?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45152" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=45152#respond" onclick="return addComment.moveForm( &quot;div-comment-45152&quot;, &quot;45152&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to suresh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-45190">
+				<div id="div-comment-45190" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-45190">
+			September 17, 2017 at 8:31 am</a>		</div>
+
+		<p>I;d suggest you take a look at the Fundamental Analysis module here – <a href="https://zerodha.com/varsity/module/fundamental-analysis/" rel="nofollow">https://zerodha.com/varsity/module/fundamental-analysis/</a></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45190" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=45190#respond" onclick="return addComment.moveForm( &quot;div-comment-45190&quot;, &quot;45190&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-45968">
+				<div id="div-comment-45968" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/23da87d3440b889352c7bf4f0af656e2" srcset="https://secure.gravatar.com/avatar/23da87d3440b889352c7bf4f0af656e2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">mahek</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-45968">
+			October 2, 2017 at 9:50 pm</a>		</div>
+
+		<p>Hii..you should compile a book of all these chapters..awesome teacher you are..could you please tell me  how to download these chapters ..so that i can read them at my ease..i am not able to find download option like it was there before.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45968" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=45968#respond" onclick="return addComment.moveForm( &quot;div-comment-45968&quot;, &quot;45968&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to mahek">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-45997">
+				<div id="div-comment-45997" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-45997">
+			October 3, 2017 at 11:27 am</a>		</div>
+
+		<p>Thanks for the kind words, Mahek. </p>
+<p>The download option is right below the module page where all the chapters are listed. However, the PDF for this one is not up yet. That will be available in over 15 days.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45997" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=45997#respond" onclick="return addComment.moveForm( &quot;div-comment-45997&quot;, &quot;45997&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-46235">
+				<div id="div-comment-46235" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/1760b0caa7950702ad3c4bb311d9f4c9" srcset="https://secure.gravatar.com/avatar/1760b0caa7950702ad3c4bb311d9f4c9?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">manish</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46235">
+			October 7, 2017 at 7:18 pm</a>		</div>
+
+		<p>I m new to stock market and learn everything on zerodha varsity. Thank you guys for making this very simple.<br>
+U guys are doing awesome work.<img draggable="false" class="emoji" alt="😊" src="./06_Equity Curve – Varsity by Zerodha_files/1f60a.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46235" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46235#respond" onclick="return addComment.moveForm( &quot;div-comment-46235&quot;, &quot;46235&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to manish">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-46299">
+				<div id="div-comment-46299" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46299">
+			October 9, 2017 at 10:53 am</a>		</div>
+
+		<p>Happy learning, Manish!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46299" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46299#respond" onclick="return addComment.moveForm( &quot;div-comment-46299&quot;, &quot;46299&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-46622">
+				<div id="div-comment-46622" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/d27ba47ba8009efd11c574138bf872ea" srcset="https://secure.gravatar.com/avatar/d27ba47ba8009efd11c574138bf872ea?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sanjay Dubey</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46622">
+			October 15, 2017 at 7:56 pm</a>		</div>
+
+		<p>Karthikji,<br>
+I have a doubt. We are calculating Variance of portfolio based on which we will can have an educated guess of expected returns.<br>
+I am not able to understand the timeframe for it. When do we realise the returns?<br>
+When do we do the trade?<br>
+Because the data goes on changing everyday thereby changing the returns.<br>
+A newbie here!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46622" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46622#respond" onclick="return addComment.moveForm( &quot;div-comment-46622&quot;, &quot;46622&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Sanjay Dubey">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-46635">
+				<div id="div-comment-46635" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46635">
+			October 16, 2017 at 11:11 am</a>		</div>
+
+		<p>I need a bit more clarity on your question, Sanjay.<br>
+1) What do you mean by realise the returns? Are you talking about the look-back period?<br>
+2) Depends on the trading strategy itself.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46635" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46635#respond" onclick="return addComment.moveForm( &quot;div-comment-46635&quot;, &quot;46635&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-46640">
+				<div id="div-comment-46640" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/d27ba47ba8009efd11c574138bf872ea" srcset="https://secure.gravatar.com/avatar/d27ba47ba8009efd11c574138bf872ea?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sanjay Dubey</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46640">
+			October 16, 2017 at 1:10 pm</a>		</div>
+
+		<p>What I mean is, we have calculated the variance, we also know the min. &amp; max. expected returns using Variance.<br>
+I want to understand at what point or what should be the trigger so that I’ll sell my shares and book profit which will be hopefully in the range as calculated above.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46640" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46640#respond" onclick="return addComment.moveForm( &quot;div-comment-46640&quot;, &quot;46640&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Sanjay Dubey">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-46662">
+				<div id="div-comment-46662" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46662">
+			October 17, 2017 at 10:52 am</a>		</div>
+
+		<p>The trigger could be any portfolio event – for example, a drawdown of 10% at a portfolio level.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46662" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46662#respond" onclick="return addComment.moveForm( &quot;div-comment-46662&quot;, &quot;46662&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-46964">
+				<div id="div-comment-46964" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/78aa2f4e4167885c755f0acfefaa43a8" srcset="https://secure.gravatar.com/avatar/78aa2f4e4167885c755f0acfefaa43a8?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Nakul</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46964">
+			October 24, 2017 at 2:20 pm</a>		</div>
+
+		<p>Can we check the equity curve and variance of our portfolio directly from Zerodha ?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46964" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46964#respond" onclick="return addComment.moveForm( &quot;div-comment-46964&quot;, &quot;46964&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Nakul">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-46990">
+				<div id="div-comment-46990" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-46990">
+			October 25, 2017 at 10:44 am</a>		</div>
+
+		<p>No, we do not have this feature yet on our Platform.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46990" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=46990#respond" onclick="return addComment.moveForm( &quot;div-comment-46990&quot;, &quot;46990&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-47338">
+				<div id="div-comment-47338" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/60232b1274e3735497de8f7bc39df711" srcset="https://secure.gravatar.com/avatar/60232b1274e3735497de8f7bc39df711?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Selvakumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47338">
+			October 31, 2017 at 10:22 pm</a>		</div>
+
+		<p>Is the portfolio variance value equal to the beta of the portfolio??</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47338" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=47338#respond" onclick="return addComment.moveForm( &quot;div-comment-47338&quot;, &quot;47338&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Selvakumar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-47379">
+				<div id="div-comment-47379" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47379">
+			November 1, 2017 at 11:28 am</a>		</div>
+
+		<p>Hmmm not really, although both are somewhat a measure of risk.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47379" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=47379#respond" onclick="return addComment.moveForm( &quot;div-comment-47379&quot;, &quot;47379&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-47432">
+				<div id="div-comment-47432" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/60232b1274e3735497de8f7bc39df711" srcset="https://secure.gravatar.com/avatar/60232b1274e3735497de8f7bc39df711?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Selvakumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47432">
+			November 1, 2017 at 11:22 pm</a>		</div>
+
+		<p>Im waiting for the part in risk management – Hedging with Options.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47432" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=47432#respond" onclick="return addComment.moveForm( &quot;div-comment-47432&quot;, &quot;47432&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Selvakumar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-47466">
+				<div id="div-comment-47466" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-47466">
+			November 2, 2017 at 11:06 am</a>		</div>
+
+		<p>Ah, I missed it again. Will add that as a separate note one of these days.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47466" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=47466#respond" onclick="return addComment.moveForm( &quot;div-comment-47466&quot;, &quot;47466&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-49848">
+				<div id="div-comment-49848" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/10eaf662da82ed7236d5b6f5db2c7807" srcset="https://secure.gravatar.com/avatar/10eaf662da82ed7236d5b6f5db2c7807?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sougata</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-49848">
+			December 15, 2017 at 2:03 am</a>		</div>
+
+		<p>Dear Sir<br>
+Portfolio Variance calculation by VC Matrix and Equity Curve standard deviation method comes slightly different values. In my case it 0.10% Why so? Please explain.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/49848" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=49848#respond" onclick="return addComment.moveForm( &quot;div-comment-49848&quot;, &quot;49848&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Sougata">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-49867">
+				<div id="div-comment-49867" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-49867">
+			December 15, 2017 at 1:45 pm</a>		</div>
+
+		<p>Not sure, Sougata. Maybe a rounding off error? Can you check and reconfirm?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/49867" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=49867#respond" onclick="return addComment.moveForm( &quot;div-comment-49867&quot;, &quot;49867&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-52262">
+				<div id="div-comment-52262" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/717f7d0747d22a1c0a8fe96b713b8406" srcset="https://secure.gravatar.com/avatar/717f7d0747d22a1c0a8fe96b713b8406?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Chhiranjiv</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-52262">
+			January 25, 2018 at 7:58 pm</a>		</div>
+
+		<p>Greetings!!! Karthik,</p>
+<p>First of all Thanks for sharing the In dept details on how to Manage our Portfolio. Coming to the point, there is a difference in my Portfolio Standard Deviation (3.71%) and Portfolio Variance (2.46%) though i am carrying 3 Stocks in my Portfolio. Let me know how to adjust the same.</p>
+<p>Thanks</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/52262" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=52262#respond" onclick="return addComment.moveForm( &quot;div-comment-52262&quot;, &quot;52262&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Chhiranjiv">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-52345">
+				<div id="div-comment-52345" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-52345">
+			January 27, 2018 at 2:28 pm</a>		</div>
+
+		<p>Ah, I need to see the excel for this.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/52345" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=52345#respond" onclick="return addComment.moveForm( &quot;div-comment-52345&quot;, &quot;52345&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="comment-52717">
+				<div id="div-comment-52717" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/717f7d0747d22a1c0a8fe96b713b8406" srcset="https://secure.gravatar.com/avatar/717f7d0747d22a1c0a8fe96b713b8406?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Chhiranjiv Pucha</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-52717">
+			February 2, 2018 at 12:02 am</a>		</div>
+
+		<p>Hi Karthik,</p>
+<p>Let me know where to sent, i hope you have my mail id.</p>
+<p>Thanks!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/52717" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=52717#respond" onclick="return addComment.moveForm( &quot;div-comment-52717&quot;, &quot;52717&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Chhiranjiv Pucha">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-57127">
+				<div id="div-comment-57127" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/098eea1181b574ae9dd14a817ee390b2" srcset="https://secure.gravatar.com/avatar/098eea1181b574ae9dd14a817ee390b2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">santosh patidar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-57127">
+			April 11, 2018 at 4:37 pm</a>		</div>
+
+		<p>Beta of a stock we know, Beta of a portfolio can be calculated by weight of stocks and average ? This is right approach ? Instead of calculating so many value as discussed in chapter, will it help?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/57127" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=57127#respond" onclick="return addComment.moveForm( &quot;div-comment-57127&quot;, &quot;57127&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to santosh patidar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-57170">
+				<div id="div-comment-57170" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./06_Equity Curve – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/equity-curve/#comment-57170">
+			April 12, 2018 at 11:54 am</a>		</div>
+
+		<p>Beta of the portfolio is the beta of individual stocks times the weight of the stock in the portfolio, all summed up. Or you can quickly calculate the equity curve of the portfolio and check the beta of the equity curve. </p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/57170" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/?replytocom=57170#respond" onclick="return addComment.moveForm( &quot;div-comment-57170&quot;, &quot;57170&quot;, &quot;respond&quot;, &quot;4172&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h5>Post a comment</h5>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://zerodha.com/varsity/chapter/equity-curve/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="https://zerodha.com/varsity/wp-comments-post.php" method="post" id="commentform">
+			<div class="row">
+			<label for="author">Name (required)</label>
+			<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+		</div>
+		<div class="row">
+			<label for="email">Mail (will not be published) (required)</label>
+			<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+		</div>
+
+			<div class="row">
+			<label for="comment">Comment</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</div>
+		<div class="row">
+			<input name="submit" type="submit" class="button button-primary" tabindex="5" value="Post comment">
+			<input type="hidden" name="comment_post_ID" value="4172" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="72ffe5504e"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1528046803214"></form>
+
+</div>
+
+
+</section>
+
+
+			<div class="clear"> </div>
+			
+		</div><!-- main //-->
+	</div><!-- wrap //-->
+
+	<footer id="footer">
+		<div class="content">
+			<ul id="footerbar" class="noul">
+											</ul><!-- footerbar //-->
+			<div class="clear"> </div>
+		</div><!-- content //-->
+		
+		<script type="text/javascript" src="./06_Equity Curve – Varsity by Zerodha_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./06_Equity Curve – Varsity by Zerodha_files/form.js"></script>
+
+		<div class="copyright">
+			<div class="content">
+				<p class="text-small">
+					Varsity by Zerodha © 2015 – 2018.
+					All rights reserved.
+					<br>Reproduction of the Varsity materials, text and images,
+					is not permitted. For media queries, contact <a href="mailto:press@zerodha.com">press@zerodha.com</a>  
+				</p>
+								<div class="clear"> </div>
+			</div>
+		</div><!-- copyright //-->
+	</footer><!-- footer //-->
+</div><!-- container //-->
+
+<div id="module-nav">
+	<div class="module-nav-content">
+	<nav class="user-nav">
+		<a href="https://twitter.com/ZerodhaVarsity">@ZerodhaVarsity</a>
+					<a href="https://zerodha.com/varsity/wp-login.php?action=register">Signup</a>
+			<a href="https://zerodha.com/varsity/wp-login.php">Login</a>
+			</nav>
+		
+		<div class="modules-list">
+			<a href="https://zerodha.com/varsity/chapter/equity-curve/#" class="button button-primary close">Close</a>
+			<h2>Modules</h2>
+			<ul class="noul row">
+								<li class="module" style="border-color: #69c969">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/introduction-to-stock-markets/">1. Introduction to Stock Markets</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #64B2FF">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/technical-analysis/">2. Technical Analysis</a></h4>
+					<span class="chapters text-tiny">20 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #EACF32">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/fundamental-analysis/">3. Fundamental Analysis</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFA9BA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/futures-trading/">4. Futures Trading</a></h4>
+					<span class="chapters text-tiny">12 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFB05A">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-theory/">5. Options Theory for Professional Trading</a></h4>
+					<span class="chapters text-tiny">23 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #B5B2EA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-strategies/">6. Option Strategies</a></h4>
+					<span class="chapters text-tiny">13 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #78DDB9">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/markets-and-taxation/">7. Markets and Taxation</a></h4>
+					<span class="chapters text-tiny">7 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #D1C36F">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/commodities-currency-and-interest-rate-futures/">8. Currency &amp; Commodity Futures</a></h4>
+					<span class="chapters text-tiny">19 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #4EDFEA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/risk-management/">9. Risk Management &amp; Trading Psychology</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FF8773">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/trading-systems/">10. Trading Systems</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+							</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+	$("#show-module-nav").click(function() {
+		$("#module-nav").fadeIn(200);
+		return false;
+	});
+
+	$("#module-nav .close").click(function() {
+		$("#module-nav").fadeOut(200);
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$("#module-nav").fadeOut(200);
+		}
+	});
+
+	$("#module-nav").click(function(e) {
+		if(e.target != this) return;
+		$("#module-nav").fadeOut(200);
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56398608-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://zerodha.com/varsity/chapter/port-opt/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="gr__zerodha_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	
+
+	<meta name="medium" content="blog">
+	<meta name="generator" content="WordPress 4.9.6">
+	<link href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/css" rel="stylesheet" type="text/css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/skeleton.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/style.css" type="text/css" media="screen">
+	<link rel="icon" href="https://zerodha.com/varsity/wp-content/themes/varsity/images/favicon.png" type="images/x-icon">
+	<script async="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/analytics.js"></script><script src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/jquery.min.js"></script>
+	
+    
+<!-- This site is optimized with the Yoast SEO plugin v5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Portfolio Optimization (Part 1) – Varsity by Zerodha</title>
+<link rel="canonical" href="https://zerodha.com/varsity/chapter/port-opt/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Portfolio Optimization (Part 1) – Varsity by Zerodha">
+<meta property="og:description" content="8.1 – A tale of 2 stocks We have spent a great deal of time and efforts towards understanding risk associated with a portfolio. Our discussion has brought us to a very important stage – it’s time we discuss portfolio optimization. Perhaps, a good start to this discussion would be to understand what portfolio optimization …">
+<meta property="og:url" content="https://zerodha.com/varsity/chapter/port-opt/">
+<meta property="og:site_name" content="Varsity by Zerodha">
+<meta property="article:publisher" content="https://www.facebook.com/zerodha.social">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/M9-C8-Cartoon.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/M9-C8-Cartoon.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-1_wt.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-1_wt.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Risk-Return-diagram.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Risk-Return-diagram.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-2_port.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-2_port.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-4_organize.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-4_organize.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-8_constraint.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-8_constraint.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-11_solved.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-11_solved.png">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/zerodha.com\/varsity\/","name":"Varsity by Zerodha","potentialAction":{"@type":"SearchAction","target":"https:\/\/zerodha.com\/varsity\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/zerodha.com\/varsity\/chapter\/port-opt\/","sameAs":["https:\/\/www.facebook.com\/zerodha.social","https:\/\/www.instagram.com\/zerodhaonline","https:\/\/in.linkedin.com\/company\/zerodha","https:\/\/twitter.com\/ZerodhaVarsity"],"@id":"#organization","name":"Zerodha","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Feed" href="https://zerodha.com/varsity/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Comments Feed" href="https://zerodha.com/varsity/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Portfolio Optimization (Part 1) Comments Feed" href="https://zerodha.com/varsity/chapter/port-opt/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/zerodha.com\/varsity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="https://api.w.org/" href="https://zerodha.com/varsity/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zerodha.com/varsity/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://zerodha.com/varsity/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="shortlink" href="https://zerodha.com/varsity/?p=4237">
+<link rel="alternate" type="application/json+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fport-opt%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fport-opt%2F&amp;format=xml">
+</head>
+
+<body data-gr-c-s-loaded="true" data-feedly-extension-exttag="3.0.3">
+<div class="container">
+	<nav class="user-nav global">
+			</nav>
+
+	<div id="wrap">
+		<header id="header" class="row">
+			<div class="six columns">
+				<a class="logo-full" href="https://zerodha.com/varsity">
+					<img src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/logo.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+				<a class="logo-small" href="https://zerodha.com/varsity">
+					<img src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/logo-small.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+			</div><!-- logo //-->
+
+			<div class="five columns">
+				<form method="get" class="searchform" action="https://zerodha.com/varsity/index.php">
+					<div>
+						<input class="q" type="text" name="s">
+						<input type="submit" class="button button-primary submit" value="search">
+					</div>
+				</form>
+			</div>
+			<nav class="one column">
+				<div class="menu">
+					<a href="https://zerodha.com/varsity/chapter/port-opt/#" class="burger" id="show-module-nav">≡</a>
+				</div>
+			</nav>	
+		</header><!-- header //-->
+
+		<div id="main">
+
+<section class="single-chapter">
+			<header>
+		<p class="text-center text-small">
+			<span class="module-tag" style="background-color: #4EDFEA">
+				Module 9			</span>
+			— <a href="https://zerodha.com/varsity/module/risk-management/">Risk Management &amp; Trading Psychology</a>
+		</p>
+
+		<p class="text-center text-small">Chapter 8</p>
+
+		<h1 class="title text-center"><a href="https://zerodha.com/varsity/chapter/port-opt/">Portfolio Optimization (Part 1)</a></h1>
+
+		<div class="text-center">
+			<span class="comment-count">
+				<span class="num"><a href="https://zerodha.com/varsity/chapter/port-opt/#comments">28</a></span>
+			</span>
+		</div>
+	</header>
+
+	<div class="bigpic"></div>
+
+	<div class="text">
+		<h2><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/M9-C8-Cartoon.png"><img class="aligncenter size-full wp-image-4254" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/M9-C8-Cartoon.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/M9-C8-Cartoon.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/06/M9-C8-Cartoon-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></a></h2>
+<h2>8.1 – A tale of 2 stocks</h2>
+<p>We have spent a great deal of time and efforts towards understanding risk associated with a portfolio. Our discussion has brought us to a very important stage – it’s time we discuss portfolio optimization. Perhaps, a good start to this discussion would be to understand what portfolio optimization is all about and why it makes sense to optimize a given portfolio.</p>
+<p>Before we proceed, let me ask you a question – what do you think is the overall portfolio return, considering a portfolio consists investment in Infosys and Biocon (equally weighted). Assume the expected return of Infosys is 22% and Biocon is 15%.</p>
+<p>I know it sounds like a typical MBA class question, but this is an important question and you should know how to answer this question at this stage J</p>
+<p>Since the portfolio is equally weighted across two stocks, it implies we invest 50% in Infosys and 50% in Biocon. Given this, the expected portfolio return would be –</p>
+<p>= Weight of investment in Infosys <strong>*</strong> Expected return of Infosys <strong>+</strong> Weight of investment in Biocon <strong>*</strong> Expected return of Biocon</p>
+<p>Do recall, in the previous chapter we did discuss “Expected Return of a stock” in detail. Anyway, let us work out the answer –</p>
+<p>50% * 22% + 50% * 15%</p>
+<p>=11% + 7.5%</p>
+<p>= <strong>18.5%</strong></p>
+<p>So, the portfolio is expected to yield a return of 18.5% annually.</p>
+<p>Great, now what if we change the weights? What if invest 30% in Infosys and 70% in Biocon? Or let us say 70% in Infosys and 30% in Biocon?</p>
+<p>Let’s figure this out, Case 1 –</p>
+<p>30% * 22% + 70% * 15%</p>
+<p>= 6.6% + 10.5%</p>
+<p><strong>17.1%</strong></p>
+<p>Case 2 –</p>
+<p>70% * 22% + 30% * 15%</p>
+<p>=15.4% + 4.5%</p>
+<p>=<strong>19.9%</strong></p>
+<p>Needless to say, we can do this for multiple combinations of weights. In fact, here is the table with few of the other combinations possible –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-1_wt.png"><img class="aligncenter size-full wp-image-4243" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-1_wt.png" alt="" width="324" height="200" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-1_wt.png 324w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-1_wt-300x185.png 300w" sizes="(max-width: 324px) 100vw, 324px"></a></p>
+<p>As you can notice, as the investment weight varies, the returns also varies. For example if I had decided to invest just 40% in Infy and 60% in Biocon, I’d have enjoyed a return of 17.8%. However, if I had reversed it by investing 60% in Infy and 40% in Biocon, I’d have enjoyed a return of 19.2%, which is an additional 2% return.</p>
+<p>This leads us to a super important conclusion – <strong>as the investment weights vary, the returns vary</strong>. In fact, each return has an associated risk profile, so it is prudent to state – as the weights vary, both the risk and return characteristics vary.</p>
+<p>Now imagine this – for a given portfolio with ‘n’ number of stocks, wouldn’t it be awesome if you were to look at the past data and intelligently identify how much to invest in each stock, so that the portfolio yields the best possible returns?</p>
+<p>This is exactly what happens when you optimize your portfolio. Generally speaking, you can adjust the weights (or optimize your portfolio) such that, for the given set of stocks –</p>
+<ul>
+<li>You identify the investment weights to achieve the best possible return or</li>
+<li>You identify the investment weights to achieve the least possible risk</li>
+</ul>
+<p>Sounds confusing? Fear not, just read ahead!</p>
+<h2>8.2 – Caution! Jargons ahead</h2>
+<p>Hopefully by now, you fully appreciate the reason why one should optimize the portfolio. So, I won’t spend more time convincing you <img draggable="false" class="emoji" alt="☺" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/263a.svg"></p>
+<p>Let us go ahead and optimize the portfolio we have been working with. However, there are few important terms I want you to be familiar with at this stage –</p>
+<p><strong>Minimum variance portfolio</strong> – Assume you have a portfolio of 10 stocks. It must be quite obvious by now that you can play around with the weights of each stock to achieve different results. When I say results, I’m talking about the risk and return characteristics.&nbsp; Each unique set of weights represents a unique portfolio. For example an equally weighted portfolio (10 stocks, 10% weight in each) is a unique portfolio. A portfolio where you invest 30% in stock 1 and 7.8% each across the remaining 9 stocks is another unique portfolio. The number of combination possible are many and each combination of weights results in a unique risk and return characteristics.</p>
+<p>Given this, there should be that one set of combination of stock weights possible, such that the risk for the portfolio is the least possible. More technically, there should be combination of weights possible such that the variance of the portfolio is minimum. This particular portfolio is also referred to as the “Minimum Variance Portfolio”. The minimum variance portfolio represents the least amount of risk you can take. So if you are a highly risk averse investor, you should aim to create a minimum variance portfolio.</p>
+<p><strong>Maximum Return portfolio</strong> – This is somewhat the opposite of a minimum variance portfolio. Just like a minimum variance portfolio, there should be a combination of weights such that we can achieve a portfolio with maximum return possible. This also means that for a maximum return portfolio, the risk too will be on the higher side.</p>
+<p><strong>Fixed variance, multiple portfolios – </strong>This is not really a jargon, but a concept that you need to be aware of at this stage. It may come across as a little confusing at this point, but I’m certain, later on in this chapter (or maybe next) you will understand this much better, especially when we perform portfolio optimization.</p>
+<p>For a given level of risk or variance of a portfolio, you can create <strong>at least two</strong> unique portfolios. One of such portfolio will yield the highest possible return and the other portfolio will yield the lowest return for the same given level of risk.</p>
+<p>Here is an example on a completely arbitrary basis – let us say the risk or variance of a portfolio is 15%, given this, there will be a portfolio which can yield 30% return (highest possible return) and another portfolio which can yield 12% return (lowest possible return). &nbsp;Do note, for both these portfolios, the risk is fixed to 15% but the returns vary.</p>
+<p>Between these two portfolios there could be multiple other (unique) portfolios with varying return profile.&nbsp; &nbsp;In super simple terms – for a fixed amount of risk, there could be multiple portfolio combinations, and within these possible combinations, there will be a portfolio with maximum return and another with minimum return.</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Risk-Return-diagram.png"><img class="aligncenter size-full wp-image-4255" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Risk-Return-diagram.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Risk-Return-diagram.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Risk-Return-diagram-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></a></p>
+<p>We will revisit this concept a little later in the chapter, but for now, just keep this thought at the back of your mind.</p>
+<h2>8.3 – Portfolio optimization (steps)</h2>
+<p>Let us recall the portfolio that we have – the stock names and the associated weights are as follows. Do note, this is a continuation of the portfolio we have been working with over the previous few chapters.</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-2_port.png"><img class="aligncenter size-full wp-image-4244" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-2_port.png" alt="" width="278" height="181"></a></p>
+<p>Do remember, the weights assigned are all random, there was no thought process to it. For this portfolio with these combination of weights, the annual portfolio variance was estimated at <strong>17.64% </strong>and expected return as <strong>55.14%. </strong></p>
+<p>Our objective now is to optimize this portfolio to achieve a desired outcome. To optimize a portfolio in excel, we need the ‘Solver Tool’ in excel. You will find the solver tool under the ‘Data ribbon’.<a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-3_sol.png"><img class="aligncenter wp-image-4245" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-3_sol.png" alt="" width="800" height="223" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol.png 1464w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol-300x84.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol-768x214.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-3_sol-1024x285.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>Many of you may not find the ‘solver’ tool under the data ribbon. This is because you’ve not added it from the excel add ins. To add solver, follow these simple steps –</p>
+<ol>
+<li>Click on Files on the opened excel sheet</li>
+<li>Select Options</li>
+<li>Select Add-ins (last but one option)</li>
+<li>Click on ‘Solver Add Ins’</li>
+<li>Click on “Go”</li>
+<li>Check on “Solved Add ins” once again</li>
+<li>Click Ok and close</li>
+<li>Close the excel sheet, if required restart your system</li>
+<li>Check under data ribbon – you should be able to find the solver tool</li>
+</ol>
+<p>To begin with, let us optimize the portfolio to get the “Minimum Variance portfolio”. Here are few simple steps that you can follow to achieve this.</p>
+<p><strong>Step 1</strong> – Organize your data. This is the key to using solver. Your cells should be linked, data should be neatly organized. No hard coding of data. Here is how the data on excel sheet looks at this stage.</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-4_organize.png"><img class="aligncenter size-full wp-image-4246" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-4_organize.png" alt="" width="617" height="629" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-4_organize.png 617w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-4_organize-294x300.png 294w" sizes="(max-width: 617px) 100vw, 617px"></a></p>
+<p>I’ve highlight two important parts, which we will use for optimizing. The top most part has the weights assigned to each stock. Needless to say, this will change once the portfolio is optimized. The 2<sup>nd</sup> part has the expected return and annual portfolio variance calculation, which will also change when we optimize the portfolio.</p>
+<p><strong>Step 2</strong> – Use the solver tool in excel to optimize the weights. I’m assuming you may be new to solver, hence will give you a quick overview of this tool. You can use solver to work with something called as an ‘objective’. An objective, according to solver is essentially a data point, derived by set of formulas. You can minimize the objective’s value or maximize the objective’s value or set the value of an objective to a certain desired value. You can do this while changing certain variables. The variables, according to solver are the elements of the formulas used in deriving the objective.&nbsp; For example, I can choose to minimize the variance of the portfolio by changing the weights of each stock. Here, the variance is the objective and the weights are the variable.</p>
+<p>When we command the solver to minimize the objective (variance in this case), then in the background, excel’s solver will quickly check the formulas used and works around it in such a way that the objective’s value is least minimum.</p>
+<p>Look at the image below, I’m invoking the solver tool and will soon ask it to minimize the variance.</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-5_invok-solver.png"><img class="aligncenter wp-image-4247" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-5_invok-solver.png" alt="" width="800" height="394" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver.png 1375w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver-300x148.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver-768x379.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-5_invok-solver-1024x505.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>When you click on the data ribbon and click on solver, you will see the solver tool open up, as seen above. We need to set the objective here. Objective as I mentioned earlier, is the annual portfolio variance. Remember, we are working towards finding the minimum variance portfolio here.</p>
+<p>Check the image below –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-6_port-var.png"><img class="aligncenter wp-image-4248" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-6_port-var.png" alt="" width="800" height="399" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var.png 1370w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var-300x150.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var-768x383.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-6_port-var-1024x511.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>Objective is set to ‘Annual portfolio variance’ – you can notice the cell address is highlighted in the ‘set objective’ field. The cell containing the annual portfolio variance itself is highlighted below, you will find another red arrow here. We are minimizing the objective here, the same is highlighted by the green arrow.</p>
+<p>Once this is set, the next step is to inform the solver tool that we need minimize the objective by changing the variables. In this case, the variable happens to be the weights assigned to each stock.</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-7_change-var.png"><img class="aligncenter wp-image-4249" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-7_change-var.png" alt="" width="800" height="351" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var.png 1504w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var-300x131.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var-768x337.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-7_change-var-1024x449.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>As you can see, in the “By changing variable cells” field, I’ve highlighted the weights assigned to each stocks.</p>
+<p>You can also find “subject to constraints”, field. This essentially means, that solver will minimize the variance, by change the weights of each stock, and at this stage, it is also asking us if there are any constraints it needs to keep in mind while solving to minimize the variance.</p>
+<p>One constraint that I can think of at this stage is that the total weight of all stocks put together should be 100%. This essentially means that my capital is 100% deployed across all the 5 stocks. If I do not specific this, then there is a chance that solver may suggest to skip investments across few stock altogether. Remember, solver is an excel tool, and it does not appreciate stock picking</p>
+<p>To add a constraint, click on ‘add’. When you do so the following window opens up –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-8_constraint.png"><img class="aligncenter size-full wp-image-4250" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-8_constraint.png" alt="" width="588" height="246" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-8_constraint.png 588w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-8_constraint-300x126.png 300w" sizes="(max-width: 588px) 100vw, 588px"></a></p>
+<p>Under Cell reference, I will give the sum of weights of stocks – which needs to be equal to 100%. Next to this, you can see a drop down menu with multiple options, I’d pick ‘=’ here. Finally, the constraint itself will be 100%. Note, I’ve typed out 100% here.</p>
+<p>In simple words, I’m asking solver to optimize for minimum variance, keeping the weight of all stock to 100%. The window now looks like this –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-9_add-constr.png"><img class="aligncenter wp-image-4251" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-9_add-constr.png" alt="" width="800" height="168" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr.png 1057w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr-300x63.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr-768x161.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-9_add-constr-1024x215.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>The solver is completely set up now. The final screen before pressing “Solve” looks like this –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-10_solver.png"><img class="aligncenter wp-image-4252" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-10_solver.png" alt="" width="800" height="474" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver.png 1220w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver-300x178.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver-768x455.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-10_solver-1024x607.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>I’ve highlighted the weights of each stock for reference. Remember, these are pre optimized weights that we randomly assigned at the beginning of this discussion. Post optimizing, the weights will be changed such that the variance is least possible for these set of stocks. Let us go ahead and press ‘solve’ and check what solver has for us.</p>
+<p>And here you go –</p>
+<p><a href="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-11_solved.png"><img class="aligncenter size-full wp-image-4253" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/Image-11_solved.png" alt="" width="546" height="291" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-11_solved.png 546w, https://zerodha.com/varsity/wp-content/uploads/2017/06/Image-11_solved-300x160.png 300w" sizes="(max-width: 546px) 100vw, 546px"></a></p>
+<p>Solver has solved for the ‘minimum variance’ portfolio and accordingly it has worked out the weights for each stock.</p>
+<p>For example, it wants us to increase the weight in Cipla from current 7% to 29.58%, while it wants us to reduce the weight in Idea to 5.22% from 16%. So on and so forth. Further, it is also telling us that the least possible variance with this portfolio is <strong>15.57%</strong> (remember, the variance was earlier at 17.64%). &nbsp;Along with this, the portfolio’s expected return too seem to have dropped to <strong>36.25%</strong> from the earlier 55.14%.</p>
+<p>So, no matter what you do, the variance cannot be lowered below 15.57%. In other words, if these are the 5 stocks that you want to invest in, then the least amount of risk you will be exposed to is 15.57% and absolutely nothing below that!</p>
+<p>I’ll leave you at this. In the next chapter, we will optimize the same portfolio for few more scenarios and work towards building something called as an ‘Efficient Frontier’.</p>
+<p>You can <a href="https://zerodha.com/varsity/wp-content/uploads/2017/06/Chapter-8_Min-var-port.xlsx"><strong>download</strong></a> the excel sheet used in this chapter.&nbsp;Do note, the excel contains the optimized weights for the minimum variance portfolio.</p>
+<hr>
+<h3>Key takeaways from this chapter</h3>
+<ol>
+<li>The returns of the portfolio is dependent on the weights assigned to each stock</li>
+<li>Minimum variance portfolio is that portfolio where the variance or risk is least possible for the given set of stocks</li>
+<li>Maximum return portfolio is that portfolio where the expected portfolio returns are maximized for the given set of stocks</li>
+<li>When we fix the variance of a portfolio we can achieve at least two portfolios where the expected portfolio returns can be maximum or least</li>
+<li>One can optimize a given portfolio with ‘n’ number of stocks on excel, by using the solver tool</li>
+<li>One of the most important points to remember while using solver is to ensure the data is well organized. One can do this by linking all the relevant cells and avoiding hard coding of values</li>
+<li>You can optimize the portfolio by subjecting the variable to constrains</li>
+</ol>
+		<div class="clear"> </div>
+	</div><!-- .text //-->
+
+	<footer>
+		<div class="row">
+			<div class="two columns">‌</div>
+			<div class="eight columns">
+									<span class="module-tag" style="background-color: #4EDFEA">
+						Module 9					</span>
+					<h4>Chapters</h4>
+
+					<ul class="noul chapter-list">
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/orientation-note/" class="text-small">
+								<span class="num">1.</span>
+								Orientation note							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-1/" class="text-small">
+								<span class="num">2.</span>
+								Risk (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/" class="text-small">
+								<span class="num">3.</span>
+								Risk (Part 2) – Variance &amp; Covariance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-3-_variance-covariance-matrix/" class="text-small">
+								<span class="num">4.</span>
+								Risk (Part 3) – Variance &amp; Covariance Matrix							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-4-correlation-matrix-portfolio-variance/" class="text-small">
+								<span class="num">5.</span>
+								Risk (Part 4) – Correlation Matrix &amp; Portfolio Variance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/equity-curve/" class="text-small">
+								<span class="num">6.</span>
+								Equity Curve							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/expected-returns/" class="text-small">
+								<span class="num">7.</span>
+								Expected Returns							</a>
+						</li>
+											<li class="selected">
+							<a href="https://zerodha.com/varsity/chapter/port-opt/" class="text-small">
+								<span class="num">8.</span>
+								Portfolio Optimization (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/po2/" class="text-small">
+								<span class="num">9.</span>
+								Portfolio Optimization (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/var/" class="text-small">
+								<span class="num">10.</span>
+								Value at Risk							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing/" class="text-small">
+								<span class="num">11.</span>
+								Position Sizing for active trader							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-2/" class="text-small">
+								<span class="num">12.</span>
+								Position Sizing for active traders (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-3/" class="text-small">
+								<span class="num">13.</span>
+								Position Sizing for active traders (Part 3)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/kellys-criterion/" class="text-small">
+								<span class="num">14.</span>
+								Kelly’s Criterion							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/trading-biases/" class="text-small">
+								<span class="num">15.</span>
+								Trading Biases							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/tradingbiases-p2/" class="text-small">
+								<span class="num">16.</span>
+								Trading Biases (Part 2)							</a>
+						</li>
+										</ul>
+
+							</div>
+			<div class="two columns">‌</div>
+		</div>
+	</footer>
+
+	
+	<h3 id="comments">28 comments</h3>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1 parent" id="comment-40583">
+				<div id="div-comment-40583" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40583">
+			June 6, 2017 at 4:01 pm</a>		</div>
+
+		<p>Dear Karthik,<br>
+Wow, that’s Awesome! Simply Awesome!</p>
+<p>Have a question, In our example, we used solver for Minimum Variance and the result was approx 2% reduction in exposure to risk, but at the same time Expected return has also reduced drastically from 55.14% to 36.25%.<br>
+So on excel sheet provided by you, I tried something i.e. I added one more constraint where I restricted Expected Returns equal to our original 55.14% and as a result annual Portfolio variance came to 16.9% which is greater than 15.57% but still lower than original 17.64%.</p>
+<p>Is this approach, in a right direction? Waiting for your valuable feedback.</p>
+<p>Thanks &amp; Regards<br>
+Santosh Shetti <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40583" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40583#respond" onclick="return addComment.moveForm( &quot;div-comment-40583&quot;, &quot;40583&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-40595">
+				<div id="div-comment-40595" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40595">
+			June 6, 2017 at 10:52 pm</a>		</div>
+
+		<p>Of course! Optimization is all about this. Remember, you can either work with the variance or returns, given this your approach is perfectly valid.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40595" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40595#respond" onclick="return addComment.moveForm( &quot;div-comment-40595&quot;, &quot;40595&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-40603">
+				<div id="div-comment-40603" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40603">
+			June 7, 2017 at 12:03 am</a>		</div>
+
+		<p>Thanks a lot.</p>
+<p>I have one more question, which pertains to historical data. Like if I decided to take past one year closing price into consideration while calculating port portfolio variance, but what if couple of stocks in portfolio doesn’t have adequate historical data (as those stocks have been recently listed), can we go with whatever little data is available or we do need to make some adjustments?</p>
+<p>Thanks &amp; regards <img draggable="false" class="emoji" alt="☺" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/263a.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40603" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40603#respond" onclick="return addComment.moveForm( &quot;div-comment-40603&quot;, &quot;40603&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4 parent" id="comment-40609">
+				<div id="div-comment-40609" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40609">
+			June 7, 2017 at 8:31 am</a>		</div>
+
+		<p>That would be a problem :). </p>
+<p>For example, if I have a recently listed stock in my portfolio, say 6 months, then I’d take the historical data for 6 month for all the other stocks as well. Alternatively, I wont hesitate to keep this one stock aside and optimize the rest of the portfolio.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40609" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40609#respond" onclick="return addComment.moveForm( &quot;div-comment-40609&quot;, &quot;40609&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-5 parent" id="comment-40612">
+				<div id="div-comment-40612" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40612">
+			June 7, 2017 at 10:59 am</a>		</div>
+
+		<p>Ok got it. Thanks a lot Karthik. <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40612" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-5" id="comment-40625">
+				<div id="div-comment-40625" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40625">
+			June 7, 2017 at 11:26 pm</a>		</div>
+
+		<p>Cheers!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40625" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-40600">
+				<div id="div-comment-40600" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/c5cdf54309f05345e3069dc352ea2a55" srcset="https://secure.gravatar.com/avatar/c5cdf54309f05345e3069dc352ea2a55?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Varun</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40600">
+			June 6, 2017 at 11:19 pm</a>		</div>
+
+		<p>Thanks for all the tutorials Karthik Sir.</p>
+<p>I wanted a overview on what topics/content are you going to cover in Trading strategies and systems.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40600" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40600#respond" onclick="return addComment.moveForm( &quot;div-comment-40600&quot;, &quot;40600&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Varun">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40607">
+				<div id="div-comment-40607" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40607">
+			June 7, 2017 at 8:24 am</a>		</div>
+
+		<p>We are yet to finalize them, Varun. We are currently focused on delivering a good module on Risk Management and trading psychology.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40607" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40607#respond" onclick="return addComment.moveForm( &quot;div-comment-40607&quot;, &quot;40607&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-40655">
+				<div id="div-comment-40655" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/cd66003d230091adc1143eb8a912ae83" srcset="https://secure.gravatar.com/avatar/cd66003d230091adc1143eb8a912ae83?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://www.vivsoftech.com/" rel="external nofollow" class="url">VIVEK KUMAR SINGH</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40655">
+			June 9, 2017 at 2:38 am</a>		</div>
+
+		<p>thanks for this great tutorials</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40655" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40655#respond" onclick="return addComment.moveForm( &quot;div-comment-40655&quot;, &quot;40655&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to VIVEK KUMAR SINGH">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40666">
+				<div id="div-comment-40666" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40666">
+			June 9, 2017 at 11:27 am</a>		</div>
+
+		<p>Cheers!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40666" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40666#respond" onclick="return addComment.moveForm( &quot;div-comment-40666&quot;, &quot;40666&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-zb2134 even thread-odd thread-alt depth-1 parent" id="comment-40864">
+				<div id="div-comment-40864" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/ed34e0976f454adea3cfcf0fe3ce9e2e" srcset="https://secure.gravatar.com/avatar/ed34e0976f454adea3cfcf0fe3ce9e2e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">zb2134</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40864">
+			June 15, 2017 at 10:08 am</a>		</div>
+
+		<p>Hi karthik,<br>
+ from where should I collect the data of stocks closing price for last 6  months to find out variance of my portfolio. Is it available on zerodha platform? Really you people are doing great job by educating people and responding promptly keep it up.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40864" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40864#respond" onclick="return addComment.moveForm( &quot;div-comment-40864&quot;, &quot;40864&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to zb2134">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-40867">
+				<div id="div-comment-40867" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40867">
+			June 15, 2017 at 10:25 am</a>		</div>
+
+		<p>You can download it from NSE directly. Check this – <a href="https://www.nseindia.com/products/content/equities/equities/eq_security.htm" rel="nofollow">https://www.nseindia.com/products/content/equities/equities/eq_security.htm</a></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40867" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40867#respond" onclick="return addComment.moveForm( &quot;div-comment-40867&quot;, &quot;40867&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zb2134 even depth-3 parent" id="comment-41516">
+				<div id="div-comment-41516" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/ed34e0976f454adea3cfcf0fe3ce9e2e" srcset="https://secure.gravatar.com/avatar/ed34e0976f454adea3cfcf0fe3ce9e2e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">zb2134</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-41516">
+			July 5, 2017 at 11:05 am</a>		</div>
+
+		<p>Hi Karthik,<br>
+         I am finding it quiet cumbersome to calculate my portfolio variance and risk profile using your sample excel sheet and downloading data from NSE website. Does zerodha provides the facility for the same to its customer for the portfolio holding?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41516" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=41516#respond" onclick="return addComment.moveForm( &quot;div-comment-41516&quot;, &quot;41516&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to zb2134">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-41522">
+				<div id="div-comment-41522" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-41522">
+			July 5, 2017 at 11:34 am</a>		</div>
+
+		<p>Not as of now. The trick is to make sure that the data is neatly organized on excel.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41522" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=41522#respond" onclick="return addComment.moveForm( &quot;div-comment-41522&quot;, &quot;41522&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-zv9780 even thread-even depth-1 parent" id="comment-40942">
+				<div id="div-comment-40942" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/d12eea66690dee0ef1c7e0844b3d5ef2" srcset="https://secure.gravatar.com/avatar/d12eea66690dee0ef1c7e0844b3d5ef2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">ZV9780</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40942">
+			June 18, 2017 at 5:26 pm</a>		</div>
+
+		<p>hi Karthik,<br>
+we are not able to see module 7 and 8 in the dropdown.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40942" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40942#respond" onclick="return addComment.moveForm( &quot;div-comment-40942&quot;, &quot;40942&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to ZV9780">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40958">
+				<div id="div-comment-40958" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-40958">
+			June 19, 2017 at 8:08 am</a>		</div>
+
+		<p>I’m able to see, can you please do a hard refresh and check again? Thanks.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40958" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=40958#respond" onclick="return addComment.moveForm( &quot;div-comment-40958&quot;, &quot;40958&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-41999">
+				<div id="div-comment-41999" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/a554575ba1673b39ac79635737441698" srcset="https://secure.gravatar.com/avatar/a554575ba1673b39ac79635737441698?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">RT</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-41999">
+			July 18, 2017 at 3:51 am</a>		</div>
+
+		<p>Hi Kartik, Thanks for the world of wisdom n knowledge provided by Varsity. It’s really awesome. Can you please help me to get the correct value of weights through solver as i’m facing some errors.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41999" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=41999#respond" onclick="return addComment.moveForm( &quot;div-comment-41999&quot;, &quot;41999&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to RT">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-42018">
+				<div id="div-comment-42018" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-42018">
+			July 18, 2017 at 11:14 am</a>		</div>
+
+		<p>Where are you facing a problem, can you kindly elaborate? Thanks.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42018" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=42018#respond" onclick="return addComment.moveForm( &quot;div-comment-42018&quot;, &quot;42018&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-42022">
+				<div id="div-comment-42022" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/a554575ba1673b39ac79635737441698" srcset="https://secure.gravatar.com/avatar/a554575ba1673b39ac79635737441698?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">RT</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-42022">
+			July 18, 2017 at 11:32 am</a>		</div>
+
+		<p>After running the query, it says that Solver encountered an error value in the objective cell or a constraint cell. I tried to resolve many times but it always gives the same result. In objective cell, i have mentioned to min the annual portfolio variance as calculated and in the constraint, i mentioned the total weight = 100%. I have done the same thing as guided by your example but still facing the problem. Kindly help</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42022" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=42022#respond" onclick="return addComment.moveForm( &quot;div-comment-42022&quot;, &quot;42022&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to RT">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-42047">
+				<div id="div-comment-42047" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-42047">
+			July 19, 2017 at 10:32 am</a>		</div>
+
+		<p>I know Excel can act funny at times. I usually try restarting Excel and sometimes even my system. I know this is a not the direct solution, but it works. Additionally, just make sure your excel cells are all properly linked.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42047" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=42047#respond" onclick="return addComment.moveForm( &quot;div-comment-42047&quot;, &quot;42047&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-43587">
+				<div id="div-comment-43587" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/c8a36d06c6c9f9f0fa658d8f6f9d151e" srcset="https://secure.gravatar.com/avatar/c8a36d06c6c9f9f0fa658d8f6f9d151e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Prashant</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-43587">
+			August 19, 2017 at 3:30 pm</a>		</div>
+
+		<p>Lucid and engaging modules. Well written and immensely useful. You might want to drop the ‘s’ that appears after ‘jargon’.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43587" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=43587#respond" onclick="return addComment.moveForm( &quot;div-comment-43587&quot;, &quot;43587&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Prashant">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-43615">
+				<div id="div-comment-43615" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-43615">
+			August 20, 2017 at 12:13 pm</a>		</div>
+
+		<p>Thanks for pointing that, Prashant <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43615" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=43615#respond" onclick="return addComment.moveForm( &quot;div-comment-43615&quot;, &quot;43615&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-43595">
+				<div id="div-comment-43595" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/c17c05c465bab30b56c84aa68922711b" srcset="https://secure.gravatar.com/avatar/c17c05c465bab30b56c84aa68922711b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Arun Mahalingam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-43595">
+			August 19, 2017 at 10:20 pm</a>		</div>
+
+		<p>Hi Karthik, </p>
+<p>I just want to know one thing. <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"> </p>
+<p>After I read your modules and internalize them a little, I feel as though I am deriving perspectives and strategies that can definitely help make profitable portfolios. </p>
+<p>What I want to know is if this is available for all the world why would people make losses still? Even after internalizing the concepts you have given (that seem to be very comprehensive) what other hidden aspects would an average person like me miss out?</p>
+<p>Can you advise please? <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"></p>
+<p>Rgdz,<br>
+Arun</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43595" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=43595#respond" onclick="return addComment.moveForm( &quot;div-comment-43595&quot;, &quot;43595&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Arun Mahalingam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-43622">
+				<div id="div-comment-43622" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-43622">
+			August 20, 2017 at 12:25 pm</a>		</div>
+
+		<p>The difference in practising what you learn <img draggable="false" class="emoji" alt="🙂" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/1f642.svg"></p>
+<p>Not many people do that!.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43622" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=43622#respond" onclick="return addComment.moveForm( &quot;div-comment-43622&quot;, &quot;43622&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-45082">
+				<div id="div-comment-45082" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/8a147aba6dd4708a0d55825d2760439e" srcset="https://secure.gravatar.com/avatar/8a147aba6dd4708a0d55825d2760439e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Kushal Sarawgi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-45082">
+			September 16, 2017 at 1:20 am</a>		</div>
+
+		<p>I aspire to be an independent financial adviser. Hence, I’d like to know of various other streams of study available besides CFP; few recommendations on the side courses and few on options avaiable for post graduation study.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45082" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=45082#respond" onclick="return addComment.moveForm( &quot;div-comment-45082&quot;, &quot;45082&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Kushal Sarawgi">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-45113">
+				<div id="div-comment-45113" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-45113">
+			September 16, 2017 at 10:59 am</a>		</div>
+
+		<p>CFP is by far the best-structured course for financial planning, Kushal.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45113" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=45113#respond" onclick="return addComment.moveForm( &quot;div-comment-45113&quot;, &quot;45113&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-47829">
+				<div id="div-comment-47829" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/19b18ac4eab7079e65423fb42d87adb3" srcset="https://secure.gravatar.com/avatar/19b18ac4eab7079e65423fb42d87adb3?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Harsh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-47829">
+			November 7, 2017 at 11:41 pm</a>		</div>
+
+		<p>This is using historical data to calculate the volatility and returns. But there might be changes in volatility or risk or correlations in future. So how can we improve our accuracy? Also the numbers maybe change (expected returns and volatility) if we consider the 2007-08 data which is high volatility and if we don’t consider it may give a lower annualized volatility so what should we do in such cases?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47829" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=47829#respond" onclick="return addComment.moveForm( &quot;div-comment-47829&quot;, &quot;47829&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Harsh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-47864">
+				<div id="div-comment-47864" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/port-opt/#comment-47864">
+			November 8, 2017 at 11:30 am</a>		</div>
+
+		<p>The only way is to run the calculation on a daily basis, Harsh!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47864" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/?replytocom=47864#respond" onclick="return addComment.moveForm( &quot;div-comment-47864&quot;, &quot;47864&quot;, &quot;respond&quot;, &quot;4237&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h5>Post a comment</h5>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://zerodha.com/varsity/chapter/port-opt/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="https://zerodha.com/varsity/wp-comments-post.php" method="post" id="commentform">
+			<div class="row">
+			<label for="author">Name (required)</label>
+			<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+		</div>
+		<div class="row">
+			<label for="email">Mail (will not be published) (required)</label>
+			<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+		</div>
+
+			<div class="row">
+			<label for="comment">Comment</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</div>
+		<div class="row">
+			<input name="submit" type="submit" class="button button-primary" tabindex="5" value="Post comment">
+			<input type="hidden" name="comment_post_ID" value="4237" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="62a0a1998b"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1528046806134"></form>
+
+</div>
+
+
+</section>
+
+
+			<div class="clear"> </div>
+			
+		</div><!-- main //-->
+	</div><!-- wrap //-->
+
+	<footer id="footer">
+		<div class="content">
+			<ul id="footerbar" class="noul">
+											</ul><!-- footerbar //-->
+			<div class="clear"> </div>
+		</div><!-- content //-->
+		
+		<script type="text/javascript" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./08_Portfolio Optimization (Part 1) – Varsity by Zerodha_files/form.js"></script>
+
+		<div class="copyright">
+			<div class="content">
+				<p class="text-small">
+					Varsity by Zerodha © 2015 – 2018.
+					All rights reserved.
+					<br>Reproduction of the Varsity materials, text and images,
+					is not permitted. For media queries, contact <a href="mailto:press@zerodha.com">press@zerodha.com</a>  
+				</p>
+								<div class="clear"> </div>
+			</div>
+		</div><!-- copyright //-->
+	</footer><!-- footer //-->
+</div><!-- container //-->
+
+<div id="module-nav">
+	<div class="module-nav-content">
+	<nav class="user-nav">
+		<a href="https://twitter.com/ZerodhaVarsity">@ZerodhaVarsity</a>
+					<a href="https://zerodha.com/varsity/wp-login.php?action=register">Signup</a>
+			<a href="https://zerodha.com/varsity/wp-login.php">Login</a>
+			</nav>
+		
+		<div class="modules-list">
+			<a href="https://zerodha.com/varsity/chapter/port-opt/#" class="button button-primary close">Close</a>
+			<h2>Modules</h2>
+			<ul class="noul row">
+								<li class="module" style="border-color: #69c969">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/introduction-to-stock-markets/">1. Introduction to Stock Markets</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #64B2FF">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/technical-analysis/">2. Technical Analysis</a></h4>
+					<span class="chapters text-tiny">20 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #EACF32">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/fundamental-analysis/">3. Fundamental Analysis</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFA9BA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/futures-trading/">4. Futures Trading</a></h4>
+					<span class="chapters text-tiny">12 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFB05A">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-theory/">5. Options Theory for Professional Trading</a></h4>
+					<span class="chapters text-tiny">23 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #B5B2EA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-strategies/">6. Option Strategies</a></h4>
+					<span class="chapters text-tiny">13 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #78DDB9">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/markets-and-taxation/">7. Markets and Taxation</a></h4>
+					<span class="chapters text-tiny">7 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #D1C36F">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/commodities-currency-and-interest-rate-futures/">8. Currency &amp; Commodity Futures</a></h4>
+					<span class="chapters text-tiny">19 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #4EDFEA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/risk-management/">9. Risk Management &amp; Trading Psychology</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FF8773">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/trading-systems/">10. Trading Systems</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+							</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+	$("#show-module-nav").click(function() {
+		$("#module-nav").fadeIn(200);
+		return false;
+	});
+
+	$("#module-nav .close").click(function() {
+		$("#module-nav").fadeOut(200);
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$("#module-nav").fadeOut(200);
+		}
+	});
+
+	$("#module-nav").click(function(e) {
+		if(e.target != this) return;
+		$("#module-nav").fadeOut(200);
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56398608-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>

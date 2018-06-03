@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://zerodha.com/varsity/chapter/var/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="gr__zerodha_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	
+
+	<meta name="medium" content="blog">
+	<meta name="generator" content="WordPress 4.9.6">
+	<link href="./10_Value at Risk – Varsity by Zerodha_files/css" rel="stylesheet" type="text/css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="./10_Value at Risk – Varsity by Zerodha_files/skeleton.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./10_Value at Risk – Varsity by Zerodha_files/style.css" type="text/css" media="screen">
+	<link rel="icon" href="https://zerodha.com/varsity/wp-content/themes/varsity/images/favicon.png" type="images/x-icon">
+	<script async="" src="./10_Value at Risk – Varsity by Zerodha_files/analytics.js"></script><script src="./10_Value at Risk – Varsity by Zerodha_files/jquery.min.js"></script>
+	
+    
+<!-- This site is optimized with the Yoast SEO plugin v5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Value at Risk – Varsity by Zerodha</title>
+<link rel="canonical" href="https://zerodha.com/varsity/chapter/var/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Value at Risk – Varsity by Zerodha">
+<meta property="og:description" content="10.1 – Black Monday Let’s start this chapter with a flashback. For many of us, when we think of the 70’s, we can mostly relate to all the great rock and roll music being produced from across the globe. However, the economists and bankers saw the 70’s very differently. The global energy crisis of 70’s …">
+<meta property="og:url" content="https://zerodha.com/varsity/chapter/var/">
+<meta property="og:site_name" content="Varsity by Zerodha">
+<meta property="article:publisher" content="https://www.facebook.com/zerodha.social">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/M9-C10-cartoon.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/M9-C10-cartoon.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-1_daily-rts.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-1_daily-rts.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-2_raw-data.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-2_raw-data.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-3_maxmin.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-3_maxmin.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-4_count.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-4_count.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-5_Bin-array.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-5_Bin-array.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-6_Bin-array-list.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-6_Bin-array-list.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-7_freq.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-7_freq.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-8_freq-data.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-8_freq-data.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-9_bell.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-9_bell.png">
+<meta property="og:image" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-10_reordered.png">
+<meta property="og:image:secure_url" content="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-10_reordered.png">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/zerodha.com\/varsity\/","name":"Varsity by Zerodha","potentialAction":{"@type":"SearchAction","target":"https:\/\/zerodha.com\/varsity\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/zerodha.com\/varsity\/chapter\/var\/","sameAs":["https:\/\/www.facebook.com\/zerodha.social","https:\/\/www.instagram.com\/zerodhaonline","https:\/\/in.linkedin.com\/company\/zerodha","https:\/\/twitter.com\/ZerodhaVarsity"],"@id":"#organization","name":"Zerodha","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Feed" href="https://zerodha.com/varsity/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Comments Feed" href="https://zerodha.com/varsity/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Value at Risk Comments Feed" href="https://zerodha.com/varsity/chapter/var/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/zerodha.com\/varsity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./10_Value at Risk – Varsity by Zerodha_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="https://api.w.org/" href="https://zerodha.com/varsity/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zerodha.com/varsity/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://zerodha.com/varsity/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="shortlink" href="https://zerodha.com/varsity/?p=4301">
+<link rel="alternate" type="application/json+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fvar%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fvar%2F&amp;format=xml">
+</head>
+
+<body data-gr-c-s-loaded="true" data-feedly-extension-exttag="3.0.3">
+<div class="container">
+	<nav class="user-nav global">
+			</nav>
+
+	<div id="wrap">
+		<header id="header" class="row">
+			<div class="six columns">
+				<a class="logo-full" href="https://zerodha.com/varsity">
+					<img src="./10_Value at Risk – Varsity by Zerodha_files/logo.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+				<a class="logo-small" href="https://zerodha.com/varsity">
+					<img src="./10_Value at Risk – Varsity by Zerodha_files/logo-small.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+			</div><!-- logo //-->
+
+			<div class="five columns">
+				<form method="get" class="searchform" action="https://zerodha.com/varsity/index.php">
+					<div>
+						<input class="q" type="text" name="s">
+						<input type="submit" class="button button-primary submit" value="search">
+					</div>
+				</form>
+			</div>
+			<nav class="one column">
+				<div class="menu">
+					<a href="https://zerodha.com/varsity/chapter/var/#" class="burger" id="show-module-nav">≡</a>
+				</div>
+			</nav>	
+		</header><!-- header //-->
+
+		<div id="main">
+
+<section class="single-chapter">
+			<header>
+		<p class="text-center text-small">
+			<span class="module-tag" style="background-color: #4EDFEA">
+				Module 9			</span>
+			— <a href="https://zerodha.com/varsity/module/risk-management/">Risk Management &amp; Trading Psychology</a>
+		</p>
+
+		<p class="text-center text-small">Chapter 10</p>
+
+		<h1 class="title text-center"><a href="https://zerodha.com/varsity/chapter/var/">Value at Risk</a></h1>
+
+		<div class="text-center">
+			<span class="comment-count">
+				<span class="num"><a href="https://zerodha.com/varsity/chapter/var/#comments">41</a></span>
+			</span>
+		</div>
+	</header>
+
+	<div class="bigpic"></div>
+
+	<div class="text">
+		<h2>10.1 – Black Monday</h2>
+<p>Let’s start this chapter with a flashback. For many of us, when we think of the 70’s, we can mostly relate to all the great rock and roll music being produced from across the globe. However, the economists and bankers saw the 70’s very differently.</p>
+<p>The global energy crisis of 70’s had drawn the United States of America into an economic depression of sorts. This lead to a high inflationary environment in the United States followed by elevated levels of unemployment (perhaps why many took to music and produced great music <img draggable="false" class="emoji" alt="🙂" src="./10_Value at Risk – Varsity by Zerodha_files/1f642.svg"> &nbsp;). It was only towards the late 70’s that things started to improve again and the economy started to look up. The Unites States did the right things and took the right steps to ease the economy, and as a result starting late seventies / early eighties the economy of United States was back on track. Naturally, as the economy flourished, so did the stock markets.</p>
+<p>Markets rallied continuously starting from the early 1980s all the way to mid-1987. Traders describe this as one of the dream bull runs in the United Sates. Dow made an all-time high of 2,722 during August 1987. This was roughly a 44% return over 1986.&nbsp; &nbsp;However, around the same time, there were again signs of a stagnating economy. In economic parlance, this is referred to as ‘soft landing’ of the economy, where the economy kind of takes a breather. Post-August 1987’s peak, the market started to take a breather. The months of Aug, Sept, Oct 1987, saw an unprecedented amount of mixed emotions. At every small correction, new leveraged long positions were taken. At the same time, there was a great deal of unwinding of positions as well. Naturally, the markets neither rallied nor corrected.</p>
+<p>While this was panning on the domestic front, trouble was brewing offshore with Iran bombing American super tankers stationed near Kuwait’s oil port. The month of October 1987, was one of its kind in the history of financial markets. I find the sequence of events which occurred during the 2<sup>nd</sup> week of October 1987 extremely intriguing, there were way too much drama and horror panning out across the globe –</p>
+<ul>
+<li>14<sup>th</sup> Oct 1987 (Wednesday) – Dow dropped nearly 4%, this was a record drop during that period</li>
+<li>15<sup>th</sup> Oct 1987 (Thursday) – Dow dropped another 2.5%. Dow was nearly 12% down from the August 1987’s high. On the other side of the globe, Iran attacked an American super tanker stationed outside Kuwait’s oil port, with a Silkworm missile</li>
+<li>With these two events, there were enough fear and panic spread across the global financial markets</li>
+<li>16<sup>th</sup> Oct 1987 (Friday) – London was engulfed by an unexpected giant storm, winds blowing at 175 KMPH caused blackouts in London (especially the southern part, which is the financial hub). London markets were officially closed. Dow opened weak, and crashed nearly 5%, creating a global concern. Treasury Secretary was recorded stating economic concerns. Naturally, this would add more panic</li>
+<li>19<sup>th</sup> Oct 1987 (<strong>Black Monday</strong>) – Starting from the Hong Kong, markets shaved off points like melting cheese. Panic spread to London, and then finally to the US. Dow recorded the highest ever fall with close 508 or 22.61% getting knocked off on a single day, quite naturally attracting the Black Monday tile.</li>
+</ul>
+<p>The financial world had not witnessed such dramatic turn of events. This was perhaps the very first few ‘Black Swan’ events to hit word hard. When the dust settled, a new breed of traders occupied Wall Street, they called themselves, “The Quants”.</p>
+<p><img class="aligncenter size-full wp-image-4306" src="./10_Value at Risk – Varsity by Zerodha_files/M9-C10-cartoon.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/M9-C10-cartoon.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/07/M9-C10-cartoon-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></p>
+<h2>10.2 – The rise of quants</h2>
+<p>The dramatic chain of events of October 1987 had multiple repercussion across the financial markets. Financial regulators were even more concerned about system wide shocks and firm’s capability to assess risk. &nbsp;Financial firms were evaluating the probability of a ‘firm-wide survival’ if things of such catastrophic magnitude were to shake up the financial system once again. After all, the theory suggested that ‘October 1987’ had a very slim chance to occur, but it did.</p>
+<p>It is very typical for financial firms to take up speculative trading positions across geographies, across varied counterparties, across varied assets and structured assets. Naturally, assessing risk at such level gets nothing short of a nightmarish task. However, this was exactly what the business required. They needed to know how much they would stand to lose, if October 1987 were to repeat. The new breed of traders and risk mangers calling themselves ‘Quants’, developed highly sophisticated mathematical models to monitor positions and evaluate risk level on a real-time basis. These folks came in with doctorates from different backgrounds – statisticians, physicist, mathematicians, and of course traditional finance. Firms officially recognized ‘Risk management’ as an important layer in the system, and risk management teams were inducted in the ‘middle office’ segment, across the banks and trading firms on Wall Street. They were all working towards the common cause of assessing risk.</p>
+<p>Then CEO of JP Morgan Mr.Dennis Weatherstone, commissioned the famous ‘4:15 PM’ report. A one-page report which gave him a good sense of the combined risk at the firm-wide level. This report was expected at his desk every day 4:15 PM, just 15 minutes past market close. The report became so popular (and essential) that JP Morgan published the methodology and started providing the necessary underlying parameters to other banks. Eventually, JP Morgan, spun off this team and created an independent company, which goes by the name ‘The Risk Metrics Group’, which was later acquired by the MSCI group.</p>
+<p>The report essentially contained what is called as the ‘Value at Risk’ (VaR), a metric which gives you a sense of the worst case loss, if the most unimaginable were to occur tomorrow morning.</p>
+<p>The focus of this chapter is just that. We will discuss Value at Risk, for your portfolio.</p>
+<h2>10.3 – Normal Distribution</h2>
+<p>At the core of Value at Risk (VaR) approach, lies the concept of normal distribution. We have touched upon this topic several times across multiple modules in Varsity. For this reason, I will not get into explaining normal distribution at this stage. I’ll just assume you know what we are talking about. The Value at Risk concept that we are about to discuss is a ‘quick and dirty’ approach to estimating the portfolio VaR. I’ve been using this for a few years now, and trust me it just works fine for a simple ”buy and hold’ equity portfolio.</p>
+<p>In simple words, Portfolio VaR helps us answer the following questions –</p>
+<ol>
+<li>If a black swan event were to occur tomorrow morning, then what is the worst case portfolio loss?</li>
+<li>What is the probability associated with the worst case loss?</li>
+</ol>
+<p>Portfolio VaR helps us identify this. The steps involved in calculating portfolio VaR are very simple, and is as stated below –</p>
+<ol>
+<li>Identify the distribution of the portfolio returns</li>
+<li>Map the distribution – idea here to check if the portfolio returns are ‘Normally distributed’</li>
+<li>Arrange portfolio returns from ascending to descending order</li>
+<li>Observe out the last 95% observation</li>
+<li>The least value within the last 95% is the portfolio VaR</li>
+<li>Average of the last 5% is the cumulative VaR or CVar</li>
+</ol>
+<p>Of course, for better understanding, let us apply this to the portfolio we have been dealing with so far and calculate its Value at Risk.</p>
+<h2>10.4 – Distribution of portfolio returns</h2>
+<p>In this section, we will concentrate on the first two steps (as listed above) involved in calculating the portfolio VaR. The first two steps involve us to identify the distribution of the portfolio returns. For this, we need to deal with either the normalized returns or the direct portfolio returns. Do recall, we have already calculated the normalized returns when we discussed the ‘equity curve’. I’m just using the same here –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-1_daily-rts.png"><img class="aligncenter wp-image-4308 " src="./10_Value at Risk – Varsity by Zerodha_files/Image-1_daily-rts.png" alt="" width="241" height="307" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-1_daily-rts.png 311w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-1_daily-rts-236x300.png 236w" sizes="(max-width: 241px) 100vw, 241px"></a></p>
+<p class="Normal1" style="text-align: justify; text-justify: inter-ideograph; line-height: normal;"><span lang="EN-US" style="font-size: 12.0pt;">You can find these returns in the sheet titled ‘EQ Curve’. I’ve copied these portfolio returns onto a separate sheet to calculate the Value at Risk for the portfolio. At this stage, the new sheet looks like this –</span></p>
+<p class="Normal1" style="text-align: justify; text-justify: inter-ideograph; line-height: normal;"><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-2_raw-data.png"><img class="aligncenter wp-image-4309 " src="./10_Value at Risk – Varsity by Zerodha_files/Image-2_raw-data.png" alt="" width="328" height="482" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-2_raw-data.png 424w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-2_raw-data-204x300.png 204w" sizes="(max-width: 328px) 100vw, 328px"></a></p>
+<p>Remember, our agenda at this stage is to find out what kind of distribution the portfolio returns fall under. To do this, we do the following –</p>
+<p><strong>Step 1</strong> – From the given time series (of portfolio returns) calculate the maximum and minimum return. To do this, we can use the ‘=Max()’ and ‘=Min()’ function on excel.</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-3_maxmin.png"><img class="aligncenter wp-image-4310 " src="./10_Value at Risk – Varsity by Zerodha_files/Image-3_maxmin.png" alt="" width="424" height="236" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-3_maxmin.png 524w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-3_maxmin-300x167.png 300w" sizes="(max-width: 424px) 100vw, 424px"></a></p>
+<p><strong>Step 2</strong> – Estimate the number of data points. The number of data points is quite straight forward. We can use the ‘=count ()’ function for this.</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-4_count.png"><img class="aligncenter wp-image-4311 " src="./10_Value at Risk – Varsity by Zerodha_files/Image-4_count.png" alt="" width="473" height="189" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-4_count.png 567w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-4_count-300x120.png 300w" sizes="(max-width: 473px) 100vw, 473px"></a></p>
+<p>There are 126 data points, please do remember we are dealing with just last six months data for now. Ideally speaking, you should be running this exercise on at least 1 year of data. But as of now, the idea is just to push the concept across.</p>
+<p><strong>Step 3</strong> – <strong>Bin width</strong></p>
+<p>We now have to create ‘bin array’ under which we can place the frequency of returns. The frequency of returns helps up understand the number of occurrence of a particular return. In simple terms, it helps us answer ‘how many times a return of say 0.5% has occurred over the last 126 day?’. To do this, we first calculate the bin width as follows –</p>
+<p>Bin width = (Difference between max and min return) / 25</p>
+<p>I’ve selected 25 based on the number of observations we have.</p>
+<p>= (3.26% – (-2.82%))/25</p>
+<p>=0.002431</p>
+<p><strong>Step 4</strong> – <strong>Build the bin array</strong></p>
+<p>This is quite simple – we start form the lowest return and increment this with the bin width. For example, lowest return is -2.82, so the next cell would contain</p>
+<p>= -2.82 + 0.002431</p>
+<p>= – 2.58</p>
+<p>We keep incrementing this until we hit the maximum return of 3.26%. Here is how the table looks at this stage –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-5_Bin-array.png"><img class="aligncenter wp-image-4312" src="./10_Value at Risk – Varsity by Zerodha_files/Image-5_Bin-array.png" alt="" width="540" height="437" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-5_Bin-array.png 724w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-5_Bin-array-300x243.png 300w" sizes="(max-width: 540px) 100vw, 540px"></a></p>
+<p>And here is the full list –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-6_Bin-array-list.png"><img class="aligncenter wp-image-4313" src="./10_Value at Risk – Varsity by Zerodha_files/Image-6_Bin-array-list.png" alt="" width="166" height="514"></a></p>
+<p>We now have to calculate the frequency of these return occurring within the bin array. Let me just present the data first and then explain what is going on –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-7_freq.png"><img class="aligncenter wp-image-4314" src="./10_Value at Risk – Varsity by Zerodha_files/Image-7_freq.png" alt="" width="153" height="505" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-7_freq.png 200w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-7_freq-91x300.png 91w" sizes="(max-width: 153px) 100vw, 153px"></a></p>
+<p>I’ve used the ‘=frequency ()’, function on excel to calculate the frequency. The first row, suggests that out of the 126 return observation, there was only 1 observation where the return was -2.82%. There were 0 observations between -2.82% and 2.58%. Similarly, there were 13 observations 0.34% and 0.58%. So on and so forth.</p>
+<p>To calculate the frequency, we simply have to select all the cells next to Bin array, without deselecting, type =frequency in the formula bar and give the necessary inputs. Here is the image of how this part appears –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-8_freq-data.png"><img class="aligncenter wp-image-4315" src="./10_Value at Risk – Varsity by Zerodha_files/Image-8_freq-data.png" alt="" width="454" height="467" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-8_freq-data.png 732w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-8_freq-data-292x300.png 292w" sizes="(max-width: 454px) 100vw, 454px"></a></p>
+<p>Do remember to hit ‘Ctrl + shift + enter’ simultaneously and not just enter. Upon doing this, you will generate the frequency of the returns.</p>
+<p><strong>Step 5</strong> – <strong>Plot the distribution </strong></p>
+<p>This is fairly simple. We have the bin array which is where all our returns lie and next to that we have the frequency, which is the number of times a certain return has occurred. We just need to plot the graph of the frequency, and we get the frequency distribution. Our job now is to visually estimate if the distribution looks like a bell curve (normal distribution) or not.</p>
+<p>To plot the distribution, I simply have to select the all the frequency data and opt for a bar chart. Here is how it looks –</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-9_bell.png"><img class="aligncenter wp-image-4316" src="./10_Value at Risk – Varsity by Zerodha_files/Image-9_bell.png" alt="" width="413" height="247" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-9_bell.png 479w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-9_bell-300x179.png 300w" sizes="(max-width: 413px) 100vw, 413px"></a></p>
+<p>Clearly what we see above is a bell-shaped curve, hence it is quite reasonable to assume that the portfolio returns are normally distributed.</p>
+<h2>10.5 – Value at Risk</h2>
+<p>Now that we have established that the returns are normally distributed, we proceed to calculate the Value at Risk. From here on, the process is quite straightforward. To do this, we have to reorganize the portfolio returns from the ascending to descending order.</p>
+<p><a href="./10_Value at Risk – Varsity by Zerodha_files/Image-10_reordered.png"><img class="aligncenter wp-image-4317" src="./10_Value at Risk – Varsity by Zerodha_files/Image-10_reordered.png" alt="" width="309" height="444" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-10_reordered.png 477w, https://zerodha.com/varsity/wp-content/uploads/2017/07/Image-10_reordered-209x300.png 209w" sizes="(max-width: 309px) 100vw, 309px"></a></p>
+<p>I’ve used excels sort function to do this. At this stage, I will go ahead and calculate Portfolio VaR and Portfolio CVaR. I will shortly explain, the logic behind this calculation.</p>
+<p>Portfolio VaR – is defined as the least value within 95% of the observation. We have 126 observation, so 95% of this is 120 observations. Portfolio VaR is essential, the least most value within the 120 observations. This works out to be <strong>-1.48%. </strong></p>
+<p>I take the average of the remaining 5% of the observation, i.e the average of the last 6 observation, and that is the Cumulative VaR of CVaR.</p>
+<p>The CVaR works out to <strong>-2.39%. </strong></p>
+<p>You may have many questions at this stage, let me list them down here along with the answers –</p>
+<ol>
+<li>Why did we plot the frequency distribution of the portfolio?
+<ol type="a">
+<li>To establish the fact that the portfolio returns are normally distributed</li>
+</ol>
+</li>
+<li>Why should we check for normal distribution?
+<ol type="a">
+<li>If the data we are studying is normally distributed, then we can characteristics of normal distribution is applicable to the data set</li>
+</ol>
+</li>
+<li>What are the characteristics of normally distributed data?
+<ol type="a">
+<li>There are quite a few, but you should specifically know that 68% of the data lies within 1 SD, 95% of the data within 2<sup>nd</sup>, and 99.7% of the data lies within the 3<sup>rd</sup> I’d suggest you read <strong><a href="https://zerodha.com/varsity/chapter/volatility-normal-distribution/" target="_blank" rel="noopener noreferrer">this chapter</a></strong> to know more about the normal distribution.</li>
+</ol>
+</li>
+<li>Why did we sort the data?
+<ol type="a">
+<li>We have established that the data set is normally distributed. Do remember, we are only interested in the worst case scenario. Given this, when we sort it from highest to lowest, we are essentially in a position to look at the returns in a more systematic way.</li>
+</ol>
+</li>
+<li>Why did bother to take only 95% observation?
+<ol type="a">
+<li>Remember, according to the normal distribution theory, 95% of the data lies within the 2<sup>nd</sup> standard deviation. This means on any random day, the return on the portfolio is likely to be any value within the 95% of the observations. Therefore, quite naturally the least most value within the 95% observation should represent the worst case loss or the Value at Risk.</li>
+</ol>
+</li>
+<li>What does the VaR of -1.48% indicate?
+<ol type="a">
+<li>It tells that the worst case loss for the given portfolio is -1.49% and we can conclude this with a confidence of 95%</li>
+</ol>
+</li>
+<li>Can’t the loss not exceed -1.48%?
+<ol type="a">
+<li>Yes, it certainly can and this is where CVaR comes into play. In the case of an extreme event, there is a 5% chance that the portfolio could experience a loss of -2.39%.</li>
+</ol>
+</li>
+<li>Can’t the loss exceed beyond -2.89%?
+<ol type="a">
+<li>Yes, it can but the probability of this occurring is quite very low.</li>
+</ol>
+</li>
+</ol>
+<p>I hope the above discussion makes sense, do apply this on your equity portfolio and I’m sure you will gain a greater insight into how your portfolio is positioned.</p>
+<p>We have discussed quite a few things with respect to the portfolio and the risk associated with it. We will now proceed to understand risk with respect to trading positions.</p>
+<p><a href="https://zerodha.com/varsity/wp-content/uploads/2017/07/Chapter-10_VaR_final.xlsx"><strong>Download</strong></a> the Excel workbook used in this chapter.</p>
+<hr>
+<h3>Key takeaways from this chapter</h3>
+<ol>
+<li>Events which have a very low probability of occurrence is called ‘Black Swan ’events</li>
+<li>When a black swan event occurs, a portfolio can experience higher levels of losses</li>
+<li>Value at Risk is one approach to estimate the worst case loss if a black swan event were to occur</li>
+<li>We can estimate the portfolio VaR by studying the distribution of the portfolio returns</li>
+<li>The average of the last 5% of the observation gives us the Value at Risk of the portfolio.</li>
+</ol>
+		<div class="clear"> </div>
+	</div><!-- .text //-->
+
+	<footer>
+		<div class="row">
+			<div class="two columns">‌</div>
+			<div class="eight columns">
+									<span class="module-tag" style="background-color: #4EDFEA">
+						Module 9					</span>
+					<h4>Chapters</h4>
+
+					<ul class="noul chapter-list">
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/orientation-note/" class="text-small">
+								<span class="num">1.</span>
+								Orientation note							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-1/" class="text-small">
+								<span class="num">2.</span>
+								Risk (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/" class="text-small">
+								<span class="num">3.</span>
+								Risk (Part 2) – Variance &amp; Covariance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-3-_variance-covariance-matrix/" class="text-small">
+								<span class="num">4.</span>
+								Risk (Part 3) – Variance &amp; Covariance Matrix							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-4-correlation-matrix-portfolio-variance/" class="text-small">
+								<span class="num">5.</span>
+								Risk (Part 4) – Correlation Matrix &amp; Portfolio Variance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/equity-curve/" class="text-small">
+								<span class="num">6.</span>
+								Equity Curve							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/expected-returns/" class="text-small">
+								<span class="num">7.</span>
+								Expected Returns							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/port-opt/" class="text-small">
+								<span class="num">8.</span>
+								Portfolio Optimization (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/po2/" class="text-small">
+								<span class="num">9.</span>
+								Portfolio Optimization (Part 2)							</a>
+						</li>
+											<li class="selected">
+							<a href="https://zerodha.com/varsity/chapter/var/" class="text-small">
+								<span class="num">10.</span>
+								Value at Risk							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing/" class="text-small">
+								<span class="num">11.</span>
+								Position Sizing for active trader							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-2/" class="text-small">
+								<span class="num">12.</span>
+								Position Sizing for active traders (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-3/" class="text-small">
+								<span class="num">13.</span>
+								Position Sizing for active traders (Part 3)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/kellys-criterion/" class="text-small">
+								<span class="num">14.</span>
+								Kelly’s Criterion							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/trading-biases/" class="text-small">
+								<span class="num">15.</span>
+								Trading Biases							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/tradingbiases-p2/" class="text-small">
+								<span class="num">16.</span>
+								Trading Biases (Part 2)							</a>
+						</li>
+										</ul>
+
+							</div>
+			<div class="two columns">‌</div>
+		</div>
+	</footer>
+
+	
+	<h3 id="comments">41 comments</h3>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1 parent" id="comment-41800">
+				<div id="div-comment-41800" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/ba81e981cd8fcf4fc5806aafece705c2" srcset="https://secure.gravatar.com/avatar/ba81e981cd8fcf4fc5806aafece705c2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">sameer kulkarni</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41800">
+			July 13, 2017 at 12:05 pm</a>		</div>
+
+		<p>This VaR is not so bad because last 6 months data is from bull market, right?<br>
+if we take data points from bear market then this value would be large.<br>
+so my question is still it does not reflect how my portfolio will behave in event of black Monday. (suppose Nifty drops suddenly by 10%)</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41800" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41800#respond" onclick="return addComment.moveForm( &quot;div-comment-41800&quot;, &quot;41800&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to sameer kulkarni">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-41837">
+				<div id="div-comment-41837" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41837">
+			July 14, 2017 at 10:23 am</a>		</div>
+
+		<p>True, last 6 months have been great for markets. Ideally, you should take at least last 1-year data point.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41837" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41837#respond" onclick="return addComment.moveForm( &quot;div-comment-41837&quot;, &quot;41837&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-41807">
+				<div id="div-comment-41807" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41807">
+			July 13, 2017 at 5:25 pm</a>		</div>
+
+		<p>Hi Karthik,</p>
+<p>Thanks for the yet another great insightful chapter on topic of VaR, CVaR.</p>
+<p>Just few clarification needed: for calculating bin width you took 25 saying that it is based on observation which is 126. How did u arrive at 25, not quite clear to me. Is there any ratio/proportion for number of given data points. What if data points are more let’s say 300, then what should be our number? 25, greater than 25 or less than 25? Kindly elobrate the same. </p>
+<p>what I understood is that it is just assumed number only to check for NormalDistribution pattern. But it shud not be too big or too small. Am i correct?</p>
+<p>Thanks &amp; Regards <img draggable="false" class="emoji" alt="😊" src="./10_Value at Risk – Varsity by Zerodha_files/1f60a.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41807" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41807#respond" onclick="return addComment.moveForm( &quot;div-comment-41807&quot;, &quot;41807&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-41840">
+				<div id="div-comment-41840" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41840">
+			July 14, 2017 at 10:29 am</a>		</div>
+
+		<p>Hmm, there is no benchmark as such, or at least I’m not aware of this. If you have something like 300 data points, then I’d still take 25 bins….500 and above maybe 50. 2000+ maybe 75….but not really more than 75 I guess.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41840" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41840#respond" onclick="return addComment.moveForm( &quot;div-comment-41840&quot;, &quot;41840&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-50913">
+				<div id="div-comment-50913" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/2ae6c2646f33ad3f626df4b70c2ce4f9" srcset="https://secure.gravatar.com/avatar/2ae6c2646f33ad3f626df4b70c2ce4f9?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Madhukar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-50913">
+			January 6, 2018 at 1:42 am</a>		</div>
+
+		<p>I learned something similar in statistics! That for a distribution to give valid probabilities or confidence limit , it should be based on at least a sample size of 30 ….why this 30..and even my teacher didn’t know really ! But what I guess is that this number is actually established by real experiments of testing of various distributions in real life!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50913" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=50913#respond" onclick="return addComment.moveForm( &quot;div-comment-50913&quot;, &quot;50913&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Madhukar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-50929">
+				<div id="div-comment-50929" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-50929">
+			January 6, 2018 at 10:13 am</a>		</div>
+
+		<p>This must be based on some empirical observation. I’m not sure about this, Madhhukar <img draggable="false" class="emoji" alt="🙂" src="./10_Value at Risk – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50929" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=50929#respond" onclick="return addComment.moveForm( &quot;div-comment-50929&quot;, &quot;50929&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-41809">
+				<div id="div-comment-41809" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/9a2ce1fb42c41e2fd873f81fcc7a983f" srcset="https://secure.gravatar.com/avatar/9a2ce1fb42c41e2fd873f81fcc7a983f?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">James</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41809">
+			July 13, 2017 at 6:59 pm</a>		</div>
+
+		<p>Respected Sir,<br>
+Nice chapter to understand VaR concept along with its importance. In addition to the queries posted above, I want to know why you have considered 3.26% (highest return) as the starting point for 95% confidence span. As per the Normal Distribution pattern, the 95% confidence span is around the central (average) point, i.e. Avg-2SD and Avg+2SD. This means that about 2.5% (3-4 observations) from highest &amp; 2.5% (3-4 observations) from lowest should not be considered.<br>
+In short, the 95% confidence span must start somewhere from 2.83% (not 3.26%), &amp; hence, VaR must be -2.33% (not-1.48%). Please clarify.<br>
+Thanks &amp; Regards<br>
+James</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41809" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41809#respond" onclick="return addComment.moveForm( &quot;div-comment-41809&quot;, &quot;41809&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to James">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-41844">
+				<div id="div-comment-41844" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-41844">
+			July 14, 2017 at 10:44 am</a>		</div>
+
+		<p>Good observation, James. When dealing with VaR, we are not considering the symmetry of the data, we are interested in covering 95% of the data.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/41844" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=41844#respond" onclick="return addComment.moveForm( &quot;div-comment-41844&quot;, &quot;41844&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-42005">
+				<div id="div-comment-42005" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/6995304cb37a9c612aa636b1fff47db4" srcset="https://secure.gravatar.com/avatar/6995304cb37a9c612aa636b1fff47db4?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Jacky</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42005">
+			July 18, 2017 at 8:51 am</a>		</div>
+
+		<p>when u gonna start nodule 10 of trading strategies ??? cant wait &gt;.&lt;</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42005" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42005#respond" onclick="return addComment.moveForm( &quot;div-comment-42005&quot;, &quot;42005&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Jacky">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42020">
+				<div id="div-comment-42020" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42020">
+			July 18, 2017 at 11:14 am</a>		</div>
+
+		<p>Waiting for this module to get over!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42020" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42020#respond" onclick="return addComment.moveForm( &quot;div-comment-42020&quot;, &quot;42020&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-42025">
+				<div id="div-comment-42025" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/12a996430f09175cff871699cf751ec3" srcset="https://secure.gravatar.com/avatar/12a996430f09175cff871699cf751ec3?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42025">
+			July 18, 2017 at 3:39 pm</a>		</div>
+
+		<p>Desperately waiting for the trading strategies module . I will start trading only after that. By delaying it you are costing Zerodha millions of rupees of brokerage Karthik haha.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42025" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42025#respond" onclick="return addComment.moveForm( &quot;div-comment-42025&quot;, &quot;42025&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karan">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42049">
+				<div id="div-comment-42049" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42049">
+			July 19, 2017 at 10:34 am</a>		</div>
+
+		<p>Karan, sure, I’ll try my best to finish this module and get started on Trading Strategies.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42049" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42049#respond" onclick="return addComment.moveForm( &quot;div-comment-42049&quot;, &quot;42049&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-42124">
+				<div id="div-comment-42124" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42124">
+			July 20, 2017 at 11:33 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+Can you please kindly explain how this frequency() function works.<br>
+In excel sheet, the frequency for 3.26% shows as “zero”.  It isn’t clear to me.</p>
+<p>Thanks &amp; Regards <img draggable="false" class="emoji" alt="😊" src="./10_Value at Risk – Varsity by Zerodha_files/1f60a.svg"><br>
+Santosh</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42124" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42124#respond" onclick="return addComment.moveForm( &quot;div-comment-42124&quot;, &quot;42124&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42147">
+				<div id="div-comment-42147" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42147">
+			July 21, 2017 at 6:25 am</a>		</div>
+
+		<p>You need to ensure that all the cells are selected. Once done, goto the formula editor, open the frequency function and feed in the data. Close the brackets and press control shift enter. All this without deselecting the cells.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42147" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42147#respond" onclick="return addComment.moveForm( &quot;div-comment-42147&quot;, &quot;42147&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-42309">
+				<div id="div-comment-42309" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/16bddbef4454391a5f45c6b4ceece55b" srcset="https://secure.gravatar.com/avatar/16bddbef4454391a5f45c6b4ceece55b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Santosh Shetti</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42309">
+			July 25, 2017 at 8:06 am</a>		</div>
+
+		<p>Hi Karthik,</p>
+<p>Thanks. Will you be covering Sharpe ratio, risk aversion coefficient, utility score etc in this module?</p>
+<p>Waiting for next chapter.</p>
+<p>Thanks &amp; regards <img draggable="false" class="emoji" alt="😊" src="./10_Value at Risk – Varsity by Zerodha_files/1f60a.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42309" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42309#respond" onclick="return addComment.moveForm( &quot;div-comment-42309&quot;, &quot;42309&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Santosh Shetti">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42325">
+				<div id="div-comment-42325" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42325">
+			July 25, 2017 at 3:23 pm</a>		</div>
+
+		<p>Will be talking about position sizing next. Maybe cover the topics you mentioned as a supplementary note.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42325" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42325#respond" onclick="return addComment.moveForm( &quot;div-comment-42325&quot;, &quot;42325&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-42328">
+				<div id="div-comment-42328" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/52c257acbb254e1dcfe8918155fd1be5" srcset="https://secure.gravatar.com/avatar/52c257acbb254e1dcfe8918155fd1be5?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">sat</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42328">
+			July 25, 2017 at 4:01 pm</a>		</div>
+
+		<p>hi<br>
+i am looking for more clarity on this….suppose set of  companies are consistently making profit from operating activities and  at the same time global-domestic markets are  bearish/bleeding…in this situation do the profit making companies share prices react to the market direction or it will go on its own….what extent  profit making companies/institutions will hit  by 2008 like crisis happened again…if i am right soon or later it will happen…thank you</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42328" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42328#respond" onclick="return addComment.moveForm( &quot;div-comment-42328&quot;, &quot;42328&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to sat">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-42356">
+				<div id="div-comment-42356" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42356">
+			July 26, 2017 at 7:40 am</a>		</div>
+
+		<p>From my experience, I’ve noticed that macro economic conditions affect all companies across industries. Eventually, companies with great moats and corporate governance will eventually triumph. Their stock price, along with other companies also fall, but the difference is that they are the ones which will bounce back first after such a slump.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42356" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42356#respond" onclick="return addComment.moveForm( &quot;div-comment-42356&quot;, &quot;42356&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-42490">
+				<div id="div-comment-42490" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/52c257acbb254e1dcfe8918155fd1be5" srcset="https://secure.gravatar.com/avatar/52c257acbb254e1dcfe8918155fd1be5?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">sat</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42490">
+			July 28, 2017 at 5:43 pm</a>		</div>
+
+		<p>thank you…</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42490" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42490#respond" onclick="return addComment.moveForm( &quot;div-comment-42490&quot;, &quot;42490&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to sat">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-42517">
+				<div id="div-comment-42517" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42517">
+			July 29, 2017 at 12:24 pm</a>		</div>
+
+		<p>Welcome!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42517" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42517#respond" onclick="return addComment.moveForm( &quot;div-comment-42517&quot;, &quot;42517&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-42536">
+				<div id="div-comment-42536" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f5852cda95a49579bba917017eec34e6" srcset="https://secure.gravatar.com/avatar/f5852cda95a49579bba917017eec34e6?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Narender reddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42536">
+			July 29, 2017 at 1:21 pm</a>		</div>
+
+		<p>I’m little confused right now</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42536" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42536#respond" onclick="return addComment.moveForm( &quot;div-comment-42536&quot;, &quot;42536&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Narender reddy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42563">
+				<div id="div-comment-42563" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42563">
+			July 30, 2017 at 9:07 am</a>		</div>
+
+		<p>Confused about? I’ll be glad to help. </p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42563" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42563#respond" onclick="return addComment.moveForm( &quot;div-comment-42563&quot;, &quot;42563&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-42728">
+				<div id="div-comment-42728" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/19c2cf16b3502aa19d29ad0944a6fcb7" srcset="https://secure.gravatar.com/avatar/19c2cf16b3502aa19d29ad0944a6fcb7?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Naman</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42728">
+			August 2, 2017 at 12:00 pm</a>		</div>
+
+		<p>There is tension rising between India and China over Doklam issue. China is constantly threatening us for the war. There is also tension rising up between the US and North Korea and the former is losing up its patience. Can this be the next Black Swan moment?<br>
+Should I consider selling all of my investment before it’s too late?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42728" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42728#respond" onclick="return addComment.moveForm( &quot;div-comment-42728&quot;, &quot;42728&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Naman">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-42825">
+				<div id="div-comment-42825" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-42825">
+			August 3, 2017 at 1:44 pm</a>		</div>
+
+		<p>I cannot advise you on what you need to do with your investments. But yeah, it’s always a good thing to prepare for the worst and have a plan b.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/42825" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=42825#respond" onclick="return addComment.moveForm( &quot;div-comment-42825&quot;, &quot;42825&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-43948">
+				<div id="div-comment-43948" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/c6a36f08f1e70b17caf12b7f6695d156" srcset="https://secure.gravatar.com/avatar/c6a36f08f1e70b17caf12b7f6695d156?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sai Sreedhar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-43948">
+			August 27, 2017 at 3:16 pm</a>		</div>
+
+		<p>Hi Karthik</p>
+<p>NSE website has the data of VaR for each stock listed and also we get the VaR report at the end of the day (<a href="https://www.nseindia.com/products/content/equities/equities/homepage_eq.htm" rel="nofollow">https://www.nseindia.com/products/content/equities/equities/homepage_eq.htm</a> ). So can the VaR of each stock multiplied by its weightage in our portfolio, summing up would give the similar result of the worst-case scenario?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43948" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=43948#respond" onclick="return addComment.moveForm( &quot;div-comment-43948&quot;, &quot;43948&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Sai Sreedhar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-43976">
+				<div id="div-comment-43976" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-43976">
+			August 28, 2017 at 10:33 am</a>		</div>
+
+		<p>Hmmm, this can be a quick and dirty method. Works alright if you ask me.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43976" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=43976#respond" onclick="return addComment.moveForm( &quot;div-comment-43976&quot;, &quot;43976&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-45644">
+				<div id="div-comment-45644" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/6bb4daa66e54ab609cd31f2cbe965202" srcset="https://secure.gravatar.com/avatar/6bb4daa66e54ab609cd31f2cbe965202?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Brahma Reddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-45644">
+			September 24, 2017 at 2:46 pm</a>		</div>
+
+		<p>“I’ve selected 25 based on the number of observations we have.”….I didn’t get you here sir.Why 25 became the” number of observations”???</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45644" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=45644#respond" onclick="return addComment.moveForm( &quot;div-comment-45644&quot;, &quot;45644&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Brahma Reddy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-45663">
+				<div id="div-comment-45663" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-45663">
+			September 25, 2017 at 10:34 am</a>		</div>
+
+		<p>The number of observation is the number of data points. So based on that, I’ve opted for 25 as the number of bins.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45663" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=45663#respond" onclick="return addComment.moveForm( &quot;div-comment-45663&quot;, &quot;45663&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-52101">
+				<div id="div-comment-52101" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/e242cb26d7486633517488a5b3077d08" srcset="https://secure.gravatar.com/avatar/e242cb26d7486633517488a5b3077d08?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Dhanu</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-52101">
+			January 23, 2018 at 2:12 pm</a>		</div>
+
+		<p>I am new to stock market. So, should the VAR be maximum or minimum….?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/52101" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=52101#respond" onclick="return addComment.moveForm( &quot;div-comment-52101&quot;, &quot;52101&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Dhanu">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-52144">
+				<div id="div-comment-52144" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-52144">
+			January 24, 2018 at 11:31 am</a>		</div>
+
+		<p>Does not matter if you are new or old, VaR should be manageable (max or min does not matter as long you can manage the risk).</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/52144" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=52144#respond" onclick="return addComment.moveForm( &quot;div-comment-52144&quot;, &quot;52144&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-54775">
+				<div id="div-comment-54775" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/74fdef88f9cb49842842e4b521ff90dc" srcset="https://secure.gravatar.com/avatar/74fdef88f9cb49842842e4b521ff90dc?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sjd</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-54775">
+			March 3, 2018 at 7:49 pm</a>		</div>
+
+		<p>Hi Karthik,</p>
+<p>Can VaR be used for day trading taking NSE equity VaR reports that are published daily, if possible can you elaborate.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/54775" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=54775#respond" onclick="return addComment.moveForm( &quot;div-comment-54775&quot;, &quot;54775&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Sjd">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-54814">
+				<div id="div-comment-54814" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-54814">
+			March 4, 2018 at 9:10 am</a>		</div>
+
+		<p>Hmm, I’m not sure if it’s of any help for active trading. You can get a sense of how risky your portfolio is.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/54814" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=54814#respond" onclick="return addComment.moveForm( &quot;div-comment-54814&quot;, &quot;54814&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3" id="comment-54839">
+				<div id="div-comment-54839" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/74fdef88f9cb49842842e4b521ff90dc" srcset="https://secure.gravatar.com/avatar/74fdef88f9cb49842842e4b521ff90dc?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sjd</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-54839">
+			March 4, 2018 at 3:55 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+Thanks for your response, can you point to links to study this further.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/54839" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=54839#respond" onclick="return addComment.moveForm( &quot;div-comment-54839&quot;, &quot;54839&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Sjd">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-56911">
+				<div id="div-comment-56911" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/52459c105ccb614e939bd3e38cd4f00b" srcset="https://secure.gravatar.com/avatar/52459c105ccb614e939bd3e38cd4f00b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Chetan Sharma</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-56911">
+			April 7, 2018 at 1:25 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+At the outset I would like to mention that you are just Awesome!.I am doing FRM and reading your articles help me a lot You nailed it when comes to explaining the most complicated things into most lucid manner. I am a big fan of you sir!<br>
+Well my question is bit off track but I’m not getting any clue or answers which can help me out. Can you please help me to understand how we can compute RNIVs (Risks not captured in VaR) May be an excel sheet or some examples with number crunching will be of help. Thnx Chetan</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/56911" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=56911#respond" onclick="return addComment.moveForm( &quot;div-comment-56911&quot;, &quot;56911&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Chetan Sharma">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-56929">
+				<div id="div-comment-56929" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-56929">
+			April 7, 2018 at 2:14 pm</a>		</div>
+
+		<p>Chetan, thanks so much for the kind words <img draggable="false" class="emoji" alt="🙂" src="./10_Value at Risk – Varsity by Zerodha_files/1f642.svg"> </p>
+<p>Frankly, RNIV is new to me, I need to figure this out myself. Hopefully soon <img draggable="false" class="emoji" alt="🙂" src="./10_Value at Risk – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/56929" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=56929#respond" onclick="return addComment.moveForm( &quot;div-comment-56929&quot;, &quot;56929&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-56965">
+				<div id="div-comment-56965" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/52459c105ccb614e939bd3e38cd4f00b" srcset="https://secure.gravatar.com/avatar/52459c105ccb614e939bd3e38cd4f00b?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Chetan Sharma</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-56965">
+			April 8, 2018 at 12:23 pm</a>		</div>
+
+		<p>Sure karthik. Will wait for your response Thnx</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/56965" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=56965#respond" onclick="return addComment.moveForm( &quot;div-comment-56965&quot;, &quot;56965&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Chetan Sharma">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-56996">
+				<div id="div-comment-56996" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-56996">
+			April 9, 2018 at 10:48 am</a>		</div>
+
+		<p>Sure, thanks so much.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/56996" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=56996#respond" onclick="return addComment.moveForm( &quot;div-comment-56996&quot;, &quot;56996&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-57405">
+				<div id="div-comment-57405" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/098eea1181b574ae9dd14a817ee390b2" srcset="https://secure.gravatar.com/avatar/098eea1181b574ae9dd14a817ee390b2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">santosh patidar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-57405">
+			April 16, 2018 at 6:13 pm</a>		</div>
+
+		<p>Now big fund houses manage there black swan day by hedging strategies. At 1987 these kind of strategies were there to handle crash ? What are the hedging strategies we should know ?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/57405" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=57405#respond" onclick="return addComment.moveForm( &quot;div-comment-57405&quot;, &quot;57405&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to santosh patidar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-57443">
+				<div id="div-comment-57443" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-57443">
+			April 17, 2018 at 11:50 am</a>		</div>
+
+		<p>Whatever I’ve known, I’ve put it up here <img draggable="false" class="emoji" alt="🙂" src="./10_Value at Risk – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/57443" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=57443#respond" onclick="return addComment.moveForm( &quot;div-comment-57443&quot;, &quot;57443&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-59660">
+				<div id="div-comment-59660" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/fe24d80ad313d182c7107bc8feadb756" srcset="https://secure.gravatar.com/avatar/fe24d80ad313d182c7107bc8feadb756?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Akshay</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-59660">
+			May 23, 2018 at 7:44 pm</a>		</div>
+
+		<p>Hi Karthik</p>
+<p>The above calculations are valid only if the distribution is normal. What if the returns are not normally distributed ? Apologies If I am missing something here.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/59660" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=59660#respond" onclick="return addComment.moveForm( &quot;div-comment-59660&quot;, &quot;59660&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Akshay">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-59697">
+				<div id="div-comment-59697" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./10_Value at Risk – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/var/#comment-59697">
+			May 24, 2018 at 11:21 am</a>		</div>
+
+		<p>The stock price returns are assumed to be normal. Anyway, if the return distribution are not normal, then I guess you notch up your SD values.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/59697" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/var/?replytocom=59697#respond" onclick="return addComment.moveForm( &quot;div-comment-59697&quot;, &quot;59697&quot;, &quot;respond&quot;, &quot;4301&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h5>Post a comment</h5>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://zerodha.com/varsity/chapter/var/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="https://zerodha.com/varsity/wp-comments-post.php" method="post" id="commentform">
+			<div class="row">
+			<label for="author">Name (required)</label>
+			<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+		</div>
+		<div class="row">
+			<label for="email">Mail (will not be published) (required)</label>
+			<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+		</div>
+
+			<div class="row">
+			<label for="comment">Comment</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</div>
+		<div class="row">
+			<input name="submit" type="submit" class="button button-primary" tabindex="5" value="Post comment">
+			<input type="hidden" name="comment_post_ID" value="4301" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="281d804a3a"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1528046807376"></form>
+
+</div>
+
+
+</section>
+
+
+			<div class="clear"> </div>
+			
+		</div><!-- main //-->
+	</div><!-- wrap //-->
+
+	<footer id="footer">
+		<div class="content">
+			<ul id="footerbar" class="noul">
+											</ul><!-- footerbar //-->
+			<div class="clear"> </div>
+		</div><!-- content //-->
+		
+		<script type="text/javascript" src="./10_Value at Risk – Varsity by Zerodha_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./10_Value at Risk – Varsity by Zerodha_files/form.js"></script>
+
+		<div class="copyright">
+			<div class="content">
+				<p class="text-small">
+					Varsity by Zerodha © 2015 – 2018.
+					All rights reserved.
+					<br>Reproduction of the Varsity materials, text and images,
+					is not permitted. For media queries, contact <a href="mailto:press@zerodha.com">press@zerodha.com</a>  
+				</p>
+								<div class="clear"> </div>
+			</div>
+		</div><!-- copyright //-->
+	</footer><!-- footer //-->
+</div><!-- container //-->
+
+<div id="module-nav">
+	<div class="module-nav-content">
+	<nav class="user-nav">
+		<a href="https://twitter.com/ZerodhaVarsity">@ZerodhaVarsity</a>
+					<a href="https://zerodha.com/varsity/wp-login.php?action=register">Signup</a>
+			<a href="https://zerodha.com/varsity/wp-login.php">Login</a>
+			</nav>
+		
+		<div class="modules-list">
+			<a href="https://zerodha.com/varsity/chapter/var/#" class="button button-primary close">Close</a>
+			<h2>Modules</h2>
+			<ul class="noul row">
+								<li class="module" style="border-color: #69c969">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/introduction-to-stock-markets/">1. Introduction to Stock Markets</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #64B2FF">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/technical-analysis/">2. Technical Analysis</a></h4>
+					<span class="chapters text-tiny">20 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #EACF32">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/fundamental-analysis/">3. Fundamental Analysis</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFA9BA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/futures-trading/">4. Futures Trading</a></h4>
+					<span class="chapters text-tiny">12 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFB05A">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-theory/">5. Options Theory for Professional Trading</a></h4>
+					<span class="chapters text-tiny">23 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #B5B2EA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-strategies/">6. Option Strategies</a></h4>
+					<span class="chapters text-tiny">13 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #78DDB9">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/markets-and-taxation/">7. Markets and Taxation</a></h4>
+					<span class="chapters text-tiny">7 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #D1C36F">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/commodities-currency-and-interest-rate-futures/">8. Currency &amp; Commodity Futures</a></h4>
+					<span class="chapters text-tiny">19 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #4EDFEA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/risk-management/">9. Risk Management &amp; Trading Psychology</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FF8773">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/trading-systems/">10. Trading Systems</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+							</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+	$("#show-module-nav").click(function() {
+		$("#module-nav").fadeIn(200);
+		return false;
+	});
+
+	$("#module-nav .close").click(function() {
+		$("#module-nav").fadeOut(200);
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$("#module-nav").fadeOut(200);
+		}
+	});
+
+	$("#module-nav").click(function(e) {
+		if(e.target != this) return;
+		$("#module-nav").fadeOut(200);
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56398608-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>

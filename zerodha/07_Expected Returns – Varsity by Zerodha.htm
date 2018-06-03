@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://zerodha.com/varsity/chapter/expected-returns/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="gr__zerodha_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	
+
+	<meta name="medium" content="blog">
+	<meta name="generator" content="WordPress 4.9.6">
+	<link href="./07_Expected Returns – Varsity by Zerodha_files/css" rel="stylesheet" type="text/css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="./07_Expected Returns – Varsity by Zerodha_files/skeleton.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./07_Expected Returns – Varsity by Zerodha_files/style.css" type="text/css" media="screen">
+	<link rel="icon" href="https://zerodha.com/varsity/wp-content/themes/varsity/images/favicon.png" type="images/x-icon">
+	<script async="" src="./07_Expected Returns – Varsity by Zerodha_files/analytics.js"></script><script src="./07_Expected Returns – Varsity by Zerodha_files/jquery.min.js"></script>
+	
+    
+<!-- This site is optimized with the Yoast SEO plugin v5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Expected Returns – Varsity by Zerodha</title>
+<link rel="canonical" href="https://zerodha.com/varsity/chapter/expected-returns/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Expected Returns – Varsity by Zerodha">
+<meta property="og:description" content="7.1 – Expected returns The next two chapter will be very insightful, especially for people who have never been familiar with portfolio techniques. We will venture into the realms of expected return framework and portfolio optimization. Portfolio optimization in particular (which we will discuss in the next chapter) is like a magic wand, it helps …">
+<meta property="og:url" content="https://zerodha.com/varsity/chapter/expected-returns/">
+<meta property="og:site_name" content="Varsity by Zerodha">
+<meta property="article:publisher" content="https://www.facebook.com/zerodha.social">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/05/M9-C7-cartoon.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/05/Image-1_port-var.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/05/Image-2_exp-return.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/05/Image-3_port-ret.png">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/zerodha.com\/varsity\/","name":"Varsity by Zerodha","potentialAction":{"@type":"SearchAction","target":"https:\/\/zerodha.com\/varsity\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/zerodha.com\/varsity\/chapter\/expected-returns\/","sameAs":["https:\/\/www.facebook.com\/zerodha.social","https:\/\/www.instagram.com\/zerodhaonline","https:\/\/in.linkedin.com\/company\/zerodha","https:\/\/twitter.com\/ZerodhaVarsity"],"@id":"#organization","name":"Zerodha","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Feed" href="https://zerodha.com/varsity/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Comments Feed" href="https://zerodha.com/varsity/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Expected Returns Comments Feed" href="https://zerodha.com/varsity/chapter/expected-returns/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/zerodha.com\/varsity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./07_Expected Returns – Varsity by Zerodha_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="https://api.w.org/" href="https://zerodha.com/varsity/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zerodha.com/varsity/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://zerodha.com/varsity/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="shortlink" href="https://zerodha.com/varsity/?p=4219">
+<link rel="alternate" type="application/json+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fexpected-returns%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Fexpected-returns%2F&amp;format=xml">
+</head>
+
+<body data-gr-c-s-loaded="true" data-feedly-extension-exttag="3.0.3">
+<div class="container">
+	<nav class="user-nav global">
+			</nav>
+
+	<div id="wrap">
+		<header id="header" class="row">
+			<div class="six columns">
+				<a class="logo-full" href="https://zerodha.com/varsity">
+					<img src="./07_Expected Returns – Varsity by Zerodha_files/logo.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+				<a class="logo-small" href="https://zerodha.com/varsity">
+					<img src="./07_Expected Returns – Varsity by Zerodha_files/logo-small.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+			</div><!-- logo //-->
+
+			<div class="five columns">
+				<form method="get" class="searchform" action="https://zerodha.com/varsity/index.php">
+					<div>
+						<input class="q" type="text" name="s">
+						<input type="submit" class="button button-primary submit" value="search">
+					</div>
+				</form>
+			</div>
+			<nav class="one column">
+				<div class="menu">
+					<a href="https://zerodha.com/varsity/chapter/expected-returns/#" class="burger" id="show-module-nav">≡</a>
+				</div>
+			</nav>	
+		</header><!-- header //-->
+
+		<div id="main">
+
+<section class="single-chapter">
+			<header>
+		<p class="text-center text-small">
+			<span class="module-tag" style="background-color: #4EDFEA">
+				Module 9			</span>
+			— <a href="https://zerodha.com/varsity/module/risk-management/">Risk Management &amp; Trading Psychology</a>
+		</p>
+
+		<p class="text-center text-small">Chapter 7</p>
+
+		<h1 class="title text-center"><a href="https://zerodha.com/varsity/chapter/expected-returns/">Expected Returns</a></h1>
+
+		<div class="text-center">
+			<span class="comment-count">
+				<span class="num"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comments">31</a></span>
+			</span>
+		</div>
+	</header>
+
+	<div class="bigpic"></div>
+
+	<div class="text">
+		<h2>7.1 – Expected returns</h2>
+<p><a href="./07_Expected Returns – Varsity by Zerodha_files/M9-C7-cartoon.png"><img class="aligncenter size-full wp-image-4227" src="./07_Expected Returns – Varsity by Zerodha_files/M9-C7-cartoon.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/05/M9-C7-cartoon.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/05/M9-C7-cartoon-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></a></p>
+<p>The next two chapter will be very insightful, especially for people who have never been familiar with portfolio techniques. We will venture into the realms of expected return framework and portfolio optimization. Portfolio optimization in particular (which we will discuss in the next chapter) is like a magic wand, it helps you decide how much to invest in a particular stock (within a portfolio) so that you achieve the best possible results in terms of risk and return. These are topics which the high priests of finance prefer to keep for themselves, but today we will discuss them here and truly work towards democratizing quality financial knowledge.</p>
+<p>But please note, to best understand the discussion here, you need to have a sense of all the things we have discussed over the previous couple of chapters. If you have not read them yet, please, I’d urge you to read them first. This is good quality information and you would be a better market participant if you simply spent few hours reading them. The excel sheet used here is a continuation of the one used in the previous chapters.</p>
+<p>So assuming you are all set, let us get started.</p>
+<p>It is time we put the portfolio variance to good use. To begin with let us take a good look at the portfolio variance number calculated in the previous chapters –</p>
+<p><a href="./07_Expected Returns – Varsity by Zerodha_files/Image-1_port-var.png"><img class="aligncenter size-full wp-image-4224" src="./07_Expected Returns – Varsity by Zerodha_files/Image-1_port-var.png" alt="" width="244" height="77"></a></p>
+<p>What does this number tell you?</p>
+<p>The number gives you a sense of the degree of the risk associated with the portfolio. Remember, we worked on the daily data, hence the Portfolio Variance of 1.11% represents risk on a daily basis.</p>
+<p><strong>Risk or variance or volatility</strong> is like a coin with two faces. Any price movement below our entry price is called risk while at the same time, the same price movement above our entry price is called return. We will soon use the variance data to establish the expected range within which the portfolio is likely to move over the year. If you’ve read the Options module you will probably know where we are headed.</p>
+<p>However, before doing that, we need to figure out the expected return of the portfolio. The expected return of the portfolio is simply, the grand sum of the average return of each stock, multiplied by its weight and further multiplied by 252 (number of trading days). In simple terms, we are scaling the daily returns to its annual return, and then scaling it according to the investment we have made.</p>
+<p>Let us calculate the expected return for the portfolio that we have, I’m sure you will understand this better. To begin with, I’ve lined up the data as follows –</p>
+<p><a href="./07_Expected Returns – Varsity by Zerodha_files/Image-2_exp-return.png"><img class="aligncenter size-full wp-image-4225" src="./07_Expected Returns – Varsity by Zerodha_files/Image-2_exp-return.png" alt="" width="431" height="183" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-2_exp-return.png 431w, https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-2_exp-return-300x127.png 300w" sizes="(max-width: 431px) 100vw, 431px"></a></p>
+<p>The first 3 columns are fairly easy to understand I suppose. The last column is simply the multiplication of the daily average return by 252 – this is a step to annualize the return of the stock.</p>
+<p>For example (Cipla) – 0.06% * 252 = 15.49%.</p>
+<p>What does this mean? For a moment assume, I have invested all the money in just Cipla and not other stocks, then the weight of Cipla would be 100% and I can expect a return fo 15.49%. However, since I’ve invested only 7% of my capital in Cipla, the expected return from Cipla would be –</p>
+<p>Weight * Expected Return</p>
+<p>= 7% * 15.49%</p>
+<p>=1.08%</p>
+<p>We can generalize this at the portfolio level to get the expected return of the portfolio –</p>
+<p><a href="./07_Expected Returns – Varsity by Zerodha_files/Image-2_exp-return.png"><img class="aligncenter size-full wp-image-4225" src="./07_Expected Returns – Varsity by Zerodha_files/Image-2_exp-return.png" alt="" width="431" height="183" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-2_exp-return.png 431w, https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-2_exp-return-300x127.png 300w" sizes="(max-width: 431px) 100vw, 431px"></a></p>
+<p>Where,</p>
+<p>Wt = Weight of each stock</p>
+<p>Rt = Expected annual return of the stock</p>
+<p>I’ve applied the same formula for the 5 stock portfolio that we’ve got, and here is what we have –</p>
+<p><a href="./07_Expected Returns – Varsity by Zerodha_files/Image-3_port-ret.png"><img class="aligncenter wp-image-4226" src="./07_Expected Returns – Varsity by Zerodha_files/Image-3_port-ret.png" alt="" width="800" height="395" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-3_port-ret.png 1208w, https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-3_port-ret-300x148.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-3_port-ret-768x380.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/05/Image-3_port-ret-1024x506.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>At this stage, we have arrived at two extremely important portfolio parameters. They are the expected portfolio return which is <strong>55.14% </strong>and the portfolio variance which is 1.11%.</p>
+<p>In fact, we can scale the portfolio variance to represent the annual variance, to do this we simply have to multiply the daily variance by Square root of 252.</p>
+<p>Annual variance =</p>
+<p>= 1.11% * Sqrt (252)</p>
+<p>= <strong>17.64%.</strong></p>
+<p>We will keep both these important numbers aside.</p>
+<p>It is now time to recall our discussion on normal distribution from the <a href="http://zerodha.com/varsity/chapter/volatility-normal-distribution/" target="_blank" rel="noopener noreferrer"><strong>options module.</strong></a></p>
+<p>I’d suggest you quickly read through the ‘Dalton board experiment’ and understand normal distribution and how one can use this to develop an opinion on future outcome. Understanding normal distribution and its characteristics is quite crucial at this point. I’d encourage you to read through it before proceeding.</p>
+<p>Portfolio returns are normally distributed, I’ll skip plotting the distribution here, but maybe you can do this as an exercise. Anyway, if you do plot the distribution of a portfolio, you are likely to get a normally distributed portfolio. If the portfolio is normally distributed, then <strong>we can estimate the likely return of this portfolio over the next 1 year with certain degree of confidence. </strong></p>
+<p>To estimate the return with certain degree of confidence we simply have to add and subtract the portfolio variance from the expected annualized return. By doing so we will know how much the portfolio will generate or lose for the given year.</p>
+<p>In other words, based on normal distribution, we can predict (although I hate using the word predict in markets) the range within which the portfolio is likely to fluctuate. The accuracy of this predication varies across three levels.</p>
+<ul>
+<li>Level 1 – one standard deviation away, 68% confidence</li>
+<li>Level 2 – Two standard deviation away, 95% confidence</li>
+<li>Level 3 – Three standard deviation away,99% confidence</li>
+</ul>
+<p>Remember, variance is measured in terms of standard deviation. So it is important to note that the annualized portfolio variance of 17.64% is also the 1 standard deviation.</p>
+<p>So, 17.64% represents 1 standard deviation. Therefore, two standard deviation is 17.64% * 2 = 35.28% and 3 standard deviation would be 17.64% * 3 = 52.92%.</p>
+<p>If you are reading this for the first time, then yes, I’d agree it would not be making any sense. Hence it is important to understand normal distribution and its characteristics. I’ve explained the same in the options chapter (link provided earlier).</p>
+<h2>7.2 – Estimating the portfolio range</h2>
+<p>Given the annualized variance (17.64%) and expected annual return (55.14%), we can now go ahead and estimate the likely range within which the portfolio returns are likely to vary over the next year. Remember when we are talking about a range, we are taking about a lower and upper bound number.</p>
+<p>To calculate the upper bound number, we simply had to add the annualized portfolio variance to the expected annual return i.e 17.64% + 55.15% = 72.79%. To calculate the lower bound range we simply have to deduct the annualized portfolio variance from the expected annual return i.e 55.15% – 17.64% = 37.51%.</p>
+<p>So, if you were to ask me – how are the returns likely to be if I decide to hold the 5 stock portfolio over the next year, then my answer would be that the returns are likely to fluctuate between <strong>+37.51% and +72.79%</strong>.</p>
+<p>Three quick question may crop up at this stage –</p>
+<ol>
+<li>The range suggests that the portfolio does not lose money at all, how is this even possible? In fact, the worst case scenario is still a whopping +37.51%, which in reality is fantastic.
+<ol type="a">
+<li>True, I agree it sounds weird. But the fact is, the range calculation is statistics based. Remember we are in a bull market (April – May 2017, as I write this), and the stocks that we have selected have trended well. So quite obviously, the numbers we have got here is positively biased. To get a true sense of the range, we should have taken at least last 1 year or more data points. However, this is beside the point here – remember our end objective is to learn the craft and not debate over stock selection.</li>
+</ol>
+</li>
+<li>Alright, I may have convinced you on the range calculation, but what is the guarantee that the portfolio returns would vary between 37.15% and 72.79%?
+<ol type="a">
+<li>As I mentioned earlier, since we are dealing with level 1 (1 standard deviation), the confidence is just about 68%.</li>
+</ol>
+</li>
+<li>What if I want a higher degree of confidence?
+<ol type="a">
+<li>Well, in this case you will have to shift gears to higher standard deviations.</li>
+</ol>
+</li>
+</ol>
+<p>Let us do that now.</p>
+<p>To calculate the range with 95% confidence, we have to shift gears and move to the 2<sup>nd</sup> standard deviation. Which means we have to multiply the 1 standard deviation number by 2. We have done this math before, so we know the 2<sup>nd</sup> SD is 35.28%.</p>
+<p>Given this, the range of the portfolio’s return over the next 1 year, with 95% confidence would be –</p>
+<p>Lower bound = 55.15% – 35.28% = <strong>19.87%</strong></p>
+<p>Upper bound = 55.15% + 35.28% = <strong>90.43%</strong></p>
+<p>We can further increase the confidence level to 99% and check the return’s range for 3 standard deviation, recall at 3 SD, the variance is 52.92% –</p>
+<p>Lower bound = 55.15% – 52.92%% = <strong>2.23%</strong></p>
+<p>Upper bound = 55.15% + 52.92% = <strong>108.07%</strong></p>
+<p>As you may notice, the higher the confidence level, the larger the range. I’ll end this chapter here with a set of tasks for you –</p>
+<ol type="a">
+<li>Plot the frequency distribution for this 5 stock portfolio – observe the distribution, check if you see a bell curve</li>
+<li>We are dealing with the range for a year, what if you were to estimate the range for 3 months, or maybe 3 weeks? How would you do it?</li>
+</ol>
+<p>It will be great if you can attempt these tasks, please do leave your thoughts in the comment box below.</p>
+<p>You can <a href="http://zerodha.com/varsity/wp-content/uploads/2017/05/Module9-Chapter7_Port-Opt.xlsx"><strong>download</strong></a> the excel sheet used in this chapter.</p>
+<hr>
+<h3>Key takeaways from this chapter</h3>
+<ol>
+<li>The returns of the portfolio is dependent on the weights of the individual stocks in the portfolio</li>
+<li>The calculate the effect of an individual stock on the overall portfolio’s return, one has to multiply the average return of the stock by its weight</li>
+<li>The overall expected return of the portfolio is grand sum of the individual stock’s returns (which is scaled by its weight)</li>
+<li>The daily variance can be converted to annualized variance by multiplying it by square root of 252</li>
+<li>The variance of the portfolio which we calculate is by default the 1<sup>st</sup> standard deviation value</li>
+<li>To get the 2<sup>nd</sup> and 3<sup>rd</sup> SD, we simply have to multiply it by 2 and 3</li>
+<li>The expected return of the portfolio can be calculated as a range</li>
+<li>To get the range, we simply have to add and subtract the variance from the portfolio’s expected return</li>
+<li>Each standard deviation comes with a certain confidence level. For higher confidence level, one has to look at moving higher standard deviation</li>
+</ol>
+		<div class="clear"> </div>
+	</div><!-- .text //-->
+
+	<footer>
+		<div class="row">
+			<div class="two columns">‌</div>
+			<div class="eight columns">
+									<span class="module-tag" style="background-color: #4EDFEA">
+						Module 9					</span>
+					<h4>Chapters</h4>
+
+					<ul class="noul chapter-list">
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/orientation-note/" class="text-small">
+								<span class="num">1.</span>
+								Orientation note							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-1/" class="text-small">
+								<span class="num">2.</span>
+								Risk (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/" class="text-small">
+								<span class="num">3.</span>
+								Risk (Part 2) – Variance &amp; Covariance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-3-_variance-covariance-matrix/" class="text-small">
+								<span class="num">4.</span>
+								Risk (Part 3) – Variance &amp; Covariance Matrix							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-4-correlation-matrix-portfolio-variance/" class="text-small">
+								<span class="num">5.</span>
+								Risk (Part 4) – Correlation Matrix &amp; Portfolio Variance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/equity-curve/" class="text-small">
+								<span class="num">6.</span>
+								Equity Curve							</a>
+						</li>
+											<li class="selected">
+							<a href="https://zerodha.com/varsity/chapter/expected-returns/" class="text-small">
+								<span class="num">7.</span>
+								Expected Returns							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/port-opt/" class="text-small">
+								<span class="num">8.</span>
+								Portfolio Optimization (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/po2/" class="text-small">
+								<span class="num">9.</span>
+								Portfolio Optimization (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/var/" class="text-small">
+								<span class="num">10.</span>
+								Value at Risk							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing/" class="text-small">
+								<span class="num">11.</span>
+								Position Sizing for active trader							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-2/" class="text-small">
+								<span class="num">12.</span>
+								Position Sizing for active traders (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-3/" class="text-small">
+								<span class="num">13.</span>
+								Position Sizing for active traders (Part 3)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/kellys-criterion/" class="text-small">
+								<span class="num">14.</span>
+								Kelly’s Criterion							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/trading-biases/" class="text-small">
+								<span class="num">15.</span>
+								Trading Biases							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/tradingbiases-p2/" class="text-small">
+								<span class="num">16.</span>
+								Trading Biases (Part 2)							</a>
+						</li>
+										</ul>
+
+							</div>
+			<div class="two columns">‌</div>
+		</div>
+	</footer>
+
+	
+	<h3 id="comments">31 comments</h3>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1 parent" id="comment-40025">
+				<div id="div-comment-40025" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/1ded886e80121d7f2e944b98b658c0ca" srcset="https://secure.gravatar.com/avatar/1ded886e80121d7f2e944b98b658c0ca?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Ar Arbit</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40025">
+			May 20, 2017 at 7:56 am</a>		</div>
+
+		<p>Thanks a lot for initiating such a nice Varsity. I would like to know, do you have any plan to launch a mobile app for Varsity? That would be a great interface  to learn on the go.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40025" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40025#respond" onclick="return addComment.moveForm( &quot;div-comment-40025&quot;, &quot;40025&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Ar Arbit">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40061">
+				<div id="div-comment-40061" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40061">
+			May 21, 2017 at 5:50 pm</a>		</div>
+
+		<p>Varsity is already mobile friendly, the site itself adjusts to the mobile device.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40061" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40061#respond" onclick="return addComment.moveForm( &quot;div-comment-40061&quot;, &quot;40061&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-40146">
+				<div id="div-comment-40146" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/6cc02912f567da2ef337d5e8e40590fd" srcset="https://secure.gravatar.com/avatar/6cc02912f567da2ef337d5e8e40590fd?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Yogendra</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40146">
+			May 23, 2017 at 4:30 pm</a>		</div>
+
+		<p>Great</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40146" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40146#respond" onclick="return addComment.moveForm( &quot;div-comment-40146&quot;, &quot;40146&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Yogendra">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40160">
+				<div id="div-comment-40160" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40160">
+			May 24, 2017 at 10:58 am</a>		</div>
+
+		<p>Cheers!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40160" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40160#respond" onclick="return addComment.moveForm( &quot;div-comment-40160&quot;, &quot;40160&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-40489">
+				<div id="div-comment-40489" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/e892a938e5a8a1b515a291a513bec526" srcset="https://secure.gravatar.com/avatar/e892a938e5a8a1b515a291a513bec526?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sumil</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40489">
+			June 2, 2017 at 12:47 pm</a>		</div>
+
+		<p>Thanks a lot for such a great initiative. I’ve never seen so much information about finance in such easy to unterstand language at one place.<br>
+This might be a slightly uncorrelated quoestion but I want to start learning algo trading and quant finance.</p>
+<p>I’ve engineering background and have 6-7 years experience in investing in stock markets. Is it feasible to someone like me to get started in these fields, or is it a domain of those have advanced degrees in math, comp sc. etc(as many would have you believe).<br>
+What is the best place to get started. Want to set up my own algo trading desk someday.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40489" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40489#respond" onclick="return addComment.moveForm( &quot;div-comment-40489&quot;, &quot;40489&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Sumil">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-40527">
+				<div id="div-comment-40527" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40527">
+			June 4, 2017 at 7:02 pm</a>		</div>
+
+		<p>Quants is a highly specialized field and is heavily dependent on maths. I’d suggest you check out CQF certification to get an idea of how intense this can get.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40527" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40527#respond" onclick="return addComment.moveForm( &quot;div-comment-40527&quot;, &quot;40527&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-40826">
+				<div id="div-comment-40826" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/e892a938e5a8a1b515a291a513bec526" srcset="https://secure.gravatar.com/avatar/e892a938e5a8a1b515a291a513bec526?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">SUMIL</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40826">
+			June 13, 2017 at 4:10 pm</a>		</div>
+
+		<p>Went to CQF course. The course is quite on expensive side.<br>
+Is there any other cheaper course that teaches this from Indian markets perspective.<br>
+Do we need to know advanced math if we just want to do algo trading from home?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40826" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40826#respond" onclick="return addComment.moveForm( &quot;div-comment-40826&quot;, &quot;40826&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to SUMIL">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-40840">
+				<div id="div-comment-40840" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40840">
+			June 14, 2017 at 2:08 pm</a>		</div>
+
+		<p>Math is good to know…and if Qants is the direction you want to head, then there are no other good options.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40840" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40840#respond" onclick="return addComment.moveForm( &quot;div-comment-40840&quot;, &quot;40840&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-40541">
+				<div id="div-comment-40541" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/3a4b5d5b851e1b0c7cea9a4345fc02dd" srcset="https://secure.gravatar.com/avatar/3a4b5d5b851e1b0c7cea9a4345fc02dd?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">pranay dhande</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40541">
+			June 5, 2017 at 10:33 am</a>		</div>
+
+		<p>Sir I’m reading all your modules thoroughly please make sure you post the trading strategies module as soon as possible I’m very eager to start trading with your platform….</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40541" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40541#respond" onclick="return addComment.moveForm( &quot;div-comment-40541&quot;, &quot;40541&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to pranay dhande">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40559">
+				<div id="div-comment-40559" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40559">
+			June 6, 2017 at 10:02 am</a>		</div>
+
+		<p>Sure, will do as soon as the current module is through.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40559" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40559#respond" onclick="return addComment.moveForm( &quot;div-comment-40559&quot;, &quot;40559&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-40716">
+				<div id="div-comment-40716" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f589b6e180e1138097f7dec20442f03c" srcset="https://secure.gravatar.com/avatar/f589b6e180e1138097f7dec20442f03c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">S KUMAR</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40716">
+			June 10, 2017 at 5:30 pm</a>		</div>
+
+		<p>why not you provide ADX indicator in ZERODHA  Pi.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40716" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40716#respond" onclick="return addComment.moveForm( &quot;div-comment-40716&quot;, &quot;40716&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to S KUMAR">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-40732">
+				<div id="div-comment-40732" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40732">
+			June 11, 2017 at 10:01 am</a>		</div>
+
+		<p>Its there.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40732" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40732#respond" onclick="return addComment.moveForm( &quot;div-comment-40732&quot;, &quot;40732&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-40803">
+				<div id="div-comment-40803" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/28a53bd807abf8f9d2b302dd76bd41c9" srcset="https://secure.gravatar.com/avatar/28a53bd807abf8f9d2b302dd76bd41c9?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Hari prabhu</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-40803">
+			June 12, 2017 at 10:32 pm</a>		</div>
+
+		<p>First of all would like to appreciate you for your kind replys to all comments..<br>
+Then thank you for making such a clear theory on all the topics..<br>
+Now I feel I have wasted my 5 years of trading session with other brokerages..<br>
+Really appreciate your team for all your work.. User friendly system !!! Simply great..<br>
+I have one question, after knowing all chard reading method I am confused applying all of them on intraday trading.. Could you please suggest few charts which I can follow up for intraday ?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/40803" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=40803#respond" onclick="return addComment.moveForm( &quot;div-comment-40803&quot;, &quot;40803&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Hari prabhu">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-45035">
+				<div id="div-comment-45035" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/06abd93497e13d3e8527cb6732983a03.jpeg" srcset="https://secure.gravatar.com/avatar/06abd93497e13d3e8527cb6732983a03?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Gautam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-45035">
+			September 15, 2017 at 9:32 am</a>		</div>
+
+		<p>Hi,Kartik I am learning a lot from you.Every thing you provide here in an unique and easy way..i would like to ask you a question here..you have used portfolio variance instead standard deviation  because standard deviation would give us a wide range,am I right?<br>
+Can I know,where should I exactly use standard deviation instead variance and variance instead std..?because in option the same approach was done with standard deviation to use confidence level.Do you mean for single stock std used and for over all portfolio variance used to interpret confidence level.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45035" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=45035#respond" onclick="return addComment.moveForm( &quot;div-comment-45035&quot;, &quot;45035&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Gautam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-45053">
+				<div id="div-comment-45053" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-45053">
+			September 15, 2017 at 10:46 am</a>		</div>
+
+		<p>For a single stock, its best to use the standard deviation…but like you mentioned, for portfolios use the port variance.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45053" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=45053#respond" onclick="return addComment.moveForm( &quot;div-comment-45053&quot;, &quot;45053&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-45209">
+				<div id="div-comment-45209" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/4af0554c420aac6d211d9dee4b553d09.jpeg" srcset="https://secure.gravatar.com/avatar/4af0554c420aac6d211d9dee4b553d09?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Himanshu Singhal</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-45209">
+			September 17, 2017 at 3:45 pm</a>		</div>
+
+		<p>I think the values calculated are wrong here.<br>
+I have a screenshot of the error but I will try to explain it here.<br>
+The very first thing is that the average taken of each individual stocks is wrong.</p>
+<p>Example: if we look at the excel as shared in this varsity (downloadable attachment) shows average of stocks as thus<br>
+Cipla in Cell C 131 = 0.06%, Idea in cell E131 = 0.57%, Wonderla in cell G131 = 0.06%, PVR in cell I131 = 0.15% and Alkem in cell K131 = 0.29%.</p>
+<p>However, actual values upon calculation are Cell C 131 = 0.02%, cell E131 = 0.26%, cell G131 = -0.05%, cell I131 = 0.12% and cell K131 = 0.23%.<br>
+The Portfolio Variance is 1.11% and Annualized = 17.57%<br>
+Expected return = 29.70%</p>
+<p>Confidence Interval as follows<br>
+   SD          1 SD       2 SD       3 SD<br>
+Upper	47.27%	64.84%	82.41%<br>
+Lower	12.13%	-5.45%	-23.02%</p>
+<p>*The error was in calculating the average at the first step i.e for example for Cipla = average(C51:C131) instead should be average(C5:C131).<br>
+The same for all the other 4 stocks.</p>
+<p>Hope you will ratify the error and repost.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45209" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=45209#respond" onclick="return addComment.moveForm( &quot;div-comment-45209&quot;, &quot;45209&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Himanshu Singhal">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-45239">
+				<div id="div-comment-45239" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-45239">
+			September 18, 2017 at 10:19 am</a>		</div>
+
+		<p>Absolutely agree, Himanshu. I’ve missed calculating the average for all cells but by mistake calculated only for few cells. Someone pointed this earlier as well (check the comments). I; ve not really rectified this as these calculations would have to be changed across many chapters. I regret this mistake. </p>
+<p>However, I’d suggest you download the excel and make that small correction, the model will self-correct.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45239" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=45239#respond" onclick="return addComment.moveForm( &quot;div-comment-45239&quot;, &quot;45239&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-46274">
+				<div id="div-comment-46274" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/a643030f08161b28c5f3ecab14c8a7e9" srcset="https://secure.gravatar.com/avatar/a643030f08161b28c5f3ecab14c8a7e9?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Raghuram</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-46274">
+			October 8, 2017 at 7:49 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+It is said that more than 90% traders lose money in intraday. In my opinion the reason could be due to low risk and high reward ratio strategy. What, if the ratio is reversed. For example, I picked up a stock after studying it carefully and I buy Qty- 1 for 100/- and put stop loss at 94/- and target at 102/-. This way, if price goes down 2 or 3 points my stop loss would not be triggered and and target would be achieved when trend changes. But, If I put stop loss at 98/- and target at 105/- then chances of  stop loss triggering are extremely high than hitting the target. Needless to say one must be mentally ready for 6/- loss for a risk of 2/-. Do you agree with my point ?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46274" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=46274#respond" onclick="return addComment.moveForm( &quot;div-comment-46274&quot;, &quot;46274&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Raghuram">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-46318">
+				<div id="div-comment-46318" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-46318">
+			October 9, 2017 at 11:31 am</a>		</div>
+
+		<p>I’d attribute lack of discipline as the main cause of the losses. Risk reward etc can be adjusted based on position sizing.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/46318" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=46318#respond" onclick="return addComment.moveForm( &quot;div-comment-46318&quot;, &quot;46318&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-47590">
+				<div id="div-comment-47590" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/2e5d7c9d38a1603c7936ff48bf2542cf" srcset="https://secure.gravatar.com/avatar/2e5d7c9d38a1603c7936ff48bf2542cf?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Subham Agarwal</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47590">
+			November 3, 2017 at 8:33 pm</a>		</div>
+
+		<p>Hi Sir,</p>
+<p>In the above discussion, our expected return from Cipla is 15.49% (leave errors). But the base price consiered to calculate this return changes on daily basis.</p>
+<p>Suppose, if on 1.10.17, Cipla’s closing price is 500 and on 2.10.17, it is 400, then our return is (20%). Suppose on 3.10.17, closing price is again 500, then our return would be 25%. If we consider the above formula, our avg daily return would come 2.5%, but in actuals, our return is 0% and vice-versa.</p>
+<p>Therefore, our return of 15.49% would be baseless, when calculated on our purchase price.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47590" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47590#respond" onclick="return addComment.moveForm( &quot;div-comment-47590&quot;, &quot;47590&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Subham Agarwal">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-47614">
+				<div id="div-comment-47614" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47614">
+			November 4, 2017 at 2:14 pm</a>		</div>
+
+		<p>Well, for this exact reason you may want to consider taking log returns!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47614" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47614#respond" onclick="return addComment.moveForm( &quot;div-comment-47614&quot;, &quot;47614&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-47651">
+				<div id="div-comment-47651" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f8a7fec563d9a1a892151d66b0530b6d" srcset="https://secure.gravatar.com/avatar/f8a7fec563d9a1a892151d66b0530b6d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Harsh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47651">
+			November 5, 2017 at 9:10 am</a>		</div>
+
+		<p>Sir, thank you for your great work.<br>
+My question is that, standard deviation and variance are different things.So why you have used variance instead of standard deviation.<br>
+The 68-95-99 rule applies to standard deviation,I think…</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47651" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47651#respond" onclick="return addComment.moveForm( &quot;div-comment-47651&quot;, &quot;47651&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Harsh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2 parent" id="comment-47665">
+				<div id="div-comment-47665" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47665">
+			November 5, 2017 at 10:19 am</a>		</div>
+
+		<p>They both are the same – square root of variance yields standard deviation.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47665" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47665#respond" onclick="return addComment.moveForm( &quot;div-comment-47665&quot;, &quot;47665&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 parent" id="comment-47669">
+				<div id="div-comment-47669" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f8a7fec563d9a1a892151d66b0530b6d" srcset="https://secure.gravatar.com/avatar/f8a7fec563d9a1a892151d66b0530b6d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Harsh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47669">
+			November 5, 2017 at 11:56 am</a>		</div>
+
+		<p>Ok..but have we done the square root in the above example..,if not, why??</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47669" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47669#respond" onclick="return addComment.moveForm( &quot;div-comment-47669&quot;, &quot;47669&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Harsh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-4" id="comment-47714">
+				<div id="div-comment-47714" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47714">
+			November 6, 2017 at 10:41 am</a>		</div>
+
+		<p>I guess we have.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47714" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47714#respond" onclick="return addComment.moveForm( &quot;div-comment-47714&quot;, &quot;47714&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt depth-3 parent" id="comment-47670">
+				<div id="div-comment-47670" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f8a7fec563d9a1a892151d66b0530b6d" srcset="https://secure.gravatar.com/avatar/f8a7fec563d9a1a892151d66b0530b6d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Harsh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47670">
+			November 5, 2017 at 12:04 pm</a>		</div>
+
+		<p>And sorry to bother you..but I have one more question,I have read somewhere that stock prices do not follow normal distribution. Please clear my confusion on this.<br>
+Is it like that ,that stock prices do not follow normal distribution but their daily return follow, normal distribution??</p>
+<p>Thank you in advance for your help.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47670" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47670#respond" onclick="return addComment.moveForm( &quot;div-comment-47670&quot;, &quot;47670&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Harsh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-4" id="comment-47715">
+				<div id="div-comment-47715" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-47715">
+			November 6, 2017 at 10:43 am</a>		</div>
+
+		<p>Yes, stock prices don’t – remember the prices can trend either upwards or downwards for an extended period of time. But the stock returns does, somewhat, display a normal distribution.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47715" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=47715#respond" onclick="return addComment.moveForm( &quot;div-comment-47715&quot;, &quot;47715&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-50028">
+				<div id="div-comment-50028" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/29fccccc0a0a45eea2bad6535528bd72" srcset="https://secure.gravatar.com/avatar/29fccccc0a0a45eea2bad6535528bd72?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Neha</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-50028">
+			December 18, 2017 at 7:29 pm</a>		</div>
+
+		<p>Very Helpful. Pls document this in PDF format.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50028" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=50028#respond" onclick="return addComment.moveForm( &quot;div-comment-50028&quot;, &quot;50028&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Neha">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-50045">
+				<div id="div-comment-50045" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-50045">
+			December 19, 2017 at 11:21 am</a>		</div>
+
+		<p>It is already available. Please feel free to download the same.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50045" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=50045#respond" onclick="return addComment.moveForm( &quot;div-comment-50045&quot;, &quot;50045&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-53157">
+				<div id="div-comment-53157" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/c744fc3943c291093eebb737af0f776e.jpeg" srcset="https://secure.gravatar.com/avatar/c744fc3943c291093eebb737af0f776e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Anil N</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-53157">
+			February 9, 2018 at 3:29 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+Regarding Return of the stock for past data will available in NSE, If i need the Dividend information of past data, where can i get with free. Whether it will available for free?</p>
+<p>Thanks in Advance.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/53157" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=53157#respond" onclick="return addComment.moveForm( &quot;div-comment-53157&quot;, &quot;53157&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Anil N">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-53200">
+				<div id="div-comment-53200" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./07_Expected Returns – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/expected-returns/#comment-53200">
+			February 10, 2018 at 6:54 pm</a>		</div>
+
+		<p>You will have to dig up the dividend history. This is available on money control I guess.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/53200" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/?replytocom=53200#respond" onclick="return addComment.moveForm( &quot;div-comment-53200&quot;, &quot;53200&quot;, &quot;respond&quot;, &quot;4219&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h5>Post a comment</h5>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://zerodha.com/varsity/chapter/expected-returns/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="https://zerodha.com/varsity/wp-comments-post.php" method="post" id="commentform">
+			<div class="row">
+			<label for="author">Name (required)</label>
+			<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+		</div>
+		<div class="row">
+			<label for="email">Mail (will not be published) (required)</label>
+			<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+		</div>
+
+			<div class="row">
+			<label for="comment">Comment</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</div>
+		<div class="row">
+			<input name="submit" type="submit" class="button button-primary" tabindex="5" value="Post comment">
+			<input type="hidden" name="comment_post_ID" value="4219" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8081691a21"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1528046803977"></form>
+
+</div>
+
+
+</section>
+
+
+			<div class="clear"> </div>
+			
+		</div><!-- main //-->
+	</div><!-- wrap //-->
+
+	<footer id="footer">
+		<div class="content">
+			<ul id="footerbar" class="noul">
+											</ul><!-- footerbar //-->
+			<div class="clear"> </div>
+		</div><!-- content //-->
+		
+		<script type="text/javascript" src="./07_Expected Returns – Varsity by Zerodha_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./07_Expected Returns – Varsity by Zerodha_files/form.js"></script>
+
+		<div class="copyright">
+			<div class="content">
+				<p class="text-small">
+					Varsity by Zerodha © 2015 – 2018.
+					All rights reserved.
+					<br>Reproduction of the Varsity materials, text and images,
+					is not permitted. For media queries, contact <a href="mailto:press@zerodha.com">press@zerodha.com</a>  
+				</p>
+								<div class="clear"> </div>
+			</div>
+		</div><!-- copyright //-->
+	</footer><!-- footer //-->
+</div><!-- container //-->
+
+<div id="module-nav">
+	<div class="module-nav-content">
+	<nav class="user-nav">
+		<a href="https://twitter.com/ZerodhaVarsity">@ZerodhaVarsity</a>
+					<a href="https://zerodha.com/varsity/wp-login.php?action=register">Signup</a>
+			<a href="https://zerodha.com/varsity/wp-login.php">Login</a>
+			</nav>
+		
+		<div class="modules-list">
+			<a href="https://zerodha.com/varsity/chapter/expected-returns/#" class="button button-primary close">Close</a>
+			<h2>Modules</h2>
+			<ul class="noul row">
+								<li class="module" style="border-color: #69c969">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/introduction-to-stock-markets/">1. Introduction to Stock Markets</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #64B2FF">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/technical-analysis/">2. Technical Analysis</a></h4>
+					<span class="chapters text-tiny">20 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #EACF32">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/fundamental-analysis/">3. Fundamental Analysis</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFA9BA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/futures-trading/">4. Futures Trading</a></h4>
+					<span class="chapters text-tiny">12 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFB05A">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-theory/">5. Options Theory for Professional Trading</a></h4>
+					<span class="chapters text-tiny">23 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #B5B2EA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-strategies/">6. Option Strategies</a></h4>
+					<span class="chapters text-tiny">13 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #78DDB9">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/markets-and-taxation/">7. Markets and Taxation</a></h4>
+					<span class="chapters text-tiny">7 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #D1C36F">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/commodities-currency-and-interest-rate-futures/">8. Currency &amp; Commodity Futures</a></h4>
+					<span class="chapters text-tiny">19 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #4EDFEA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/risk-management/">9. Risk Management &amp; Trading Psychology</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FF8773">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/trading-systems/">10. Trading Systems</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+							</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+	$("#show-module-nav").click(function() {
+		$("#module-nav").fadeIn(200);
+		return false;
+	});
+
+	$("#module-nav .close").click(function() {
+		$("#module-nav").fadeOut(200);
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$("#module-nav").fadeOut(200);
+		}
+	});
+
+	$("#module-nav").click(function(e) {
+		if(e.target != this) return;
+		$("#module-nav").fadeOut(200);
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56398608-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>

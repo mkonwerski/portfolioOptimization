@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class="gr__zerodha_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	
+
+	<meta name="medium" content="blog">
+	<meta name="generator" content="WordPress 4.9.6">
+	<link href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/css" rel="stylesheet" type="text/css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/skeleton.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/style.css" type="text/css" media="screen">
+	<link rel="icon" href="https://zerodha.com/varsity/wp-content/themes/varsity/images/favicon.png" type="images/x-icon">
+	<script async="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/analytics.js"></script><script src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/jquery.min.js"></script>
+	
+    
+<!-- This site is optimized with the Yoast SEO plugin v5.6 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha</title>
+<link rel="canonical" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha">
+<meta property="og:description" content="3.1 – Variance In the previous chapter, we touched upon the topic of expected return, continuing on it, we will understand the concept of ‘Portfolio variance’. Portfolio Variance helps us understand the risk at a portfolio level. I’m hoping you are familiar with ‘Standard Deviation’ as a measure of risk. We have discussed standard deviation …">
+<meta property="og:url" content="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/">
+<meta property="og:site_name" content="Varsity by Zerodha">
+<meta property="article:publisher" content="https://www.facebook.com/zerodha.social">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/M9-C3-cartoon.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-variance.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-covariance.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-1_daily-data.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-2_daily-rt.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-3_avg-rt.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-4_rt-minus-avg.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-5_rt12.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-6_sum.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Image-7_cov.png">
+<meta property="og:image" content="http://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-correlation.png">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/zerodha.com\/varsity\/","name":"Varsity by Zerodha","potentialAction":{"@type":"SearchAction","target":"https:\/\/zerodha.com\/varsity\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","url":"https:\/\/zerodha.com\/varsity\/chapter\/risk-part-2-variance-covariance\/","sameAs":["https:\/\/www.facebook.com\/zerodha.social","https:\/\/www.instagram.com\/zerodhaonline","https:\/\/in.linkedin.com\/company\/zerodha","https:\/\/twitter.com\/ZerodhaVarsity"],"@id":"#organization","name":"Zerodha","logo":""}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Feed" href="https://zerodha.com/varsity/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Comments Feed" href="https://zerodha.com/varsity/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Varsity by Zerodha » Risk (Part 2) – Variance &amp; Covariance Comments Feed" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/zerodha.com\/varsity\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.6"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="https://api.w.org/" href="https://zerodha.com/varsity/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://zerodha.com/varsity/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://zerodha.com/varsity/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.6">
+<link rel="shortlink" href="https://zerodha.com/varsity/?p=4072">
+<link rel="alternate" type="application/json+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Frisk-part-2-variance-covariance%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://zerodha.com/varsity/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fzerodha.com%2Fvarsity%2Fchapter%2Frisk-part-2-variance-covariance%2F&amp;format=xml">
+</head>
+
+<body data-gr-c-s-loaded="true" data-feedly-extension-exttag="3.0.3">
+<div class="container">
+	<nav class="user-nav global">
+			</nav>
+
+	<div id="wrap">
+		<header id="header" class="row">
+			<div class="six columns">
+				<a class="logo-full" href="https://zerodha.com/varsity">
+					<img src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/logo.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+				<a class="logo-small" href="https://zerodha.com/varsity">
+					<img src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/logo-small.png" alt="Varsity by Zerodha" title="Varsity by Zerodha">
+				</a>
+			</div><!-- logo //-->
+
+			<div class="five columns">
+				<form method="get" class="searchform" action="https://zerodha.com/varsity/index.php">
+					<div>
+						<input class="q" type="text" name="s">
+						<input type="submit" class="button button-primary submit" value="search">
+					</div>
+				</form>
+			</div>
+			<nav class="one column">
+				<div class="menu">
+					<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#" class="burger" id="show-module-nav">≡</a>
+				</div>
+			</nav>	
+		</header><!-- header //-->
+
+		<div id="main">
+
+<section class="single-chapter">
+			<header>
+		<p class="text-center text-small">
+			<span class="module-tag" style="background-color: #4EDFEA">
+				Module 9			</span>
+			— <a href="https://zerodha.com/varsity/module/risk-management/">Risk Management &amp; Trading Psychology</a>
+		</p>
+
+		<p class="text-center text-small">Chapter 3</p>
+
+		<h1 class="title text-center"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/">Risk (Part 2) – Variance &amp; Covariance</a></h1>
+
+		<div class="text-center">
+			<span class="comment-count">
+				<span class="num"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comments">43</a></span>
+			</span>
+		</div>
+	</header>
+
+	<div class="bigpic"></div>
+
+	<div class="text">
+		<h2>3.1 – Variance</h2>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/M9-C3-cartoon.png"><img class="aligncenter size-full wp-image-4096" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/M9-C3-cartoon.png" alt="" width="600" height="400" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/M9-C3-cartoon.png 600w, https://zerodha.com/varsity/wp-content/uploads/2017/03/M9-C3-cartoon-300x200.png 300w" sizes="(max-width: 600px) 100vw, 600px"></a></p>
+<p>In the previous chapter, we touched upon the topic of expected return, continuing on it, we will understand the concept of ‘Portfolio variance’. Portfolio Variance helps us understand the risk at a portfolio level. I’m hoping you are familiar with ‘Standard Deviation’ as a measure of risk. We have discussed standard deviation multiple times in the previous modules (refer to <a href="http://zerodha.com/varsity/chapter/understanding-volatility-part-1/" target="_blank">Module 5, chapter 15 onwards</a>). I’d suggest you get familiar with it if you are not already. While we can easily measure the risk of a single stock by calculating its standard deviation, calculating the risk of a portfolio is a whole different ball game. When you put a few individual stocks together and create a portfolio, it becomes a different animal altogether. The agenda for this chapter is to help you understand how to estimate risk at a portfolio level.</p>
+<p>However, before we proceed, we need to understand the concept of Variance and Covariance. Both Variance and Covariance are statistical measures. Let’s deal with the Variance first.</p>
+<p>The variance of stock returns is a measure of how much a stock’s return varies with respect to its average daily returns. The formula to calculate variance is quite straight forward –</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-variance.png"><img class="aligncenter wp-image-4086" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-variance.png" width="250" height="109" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-variance.png 454w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-variance-300x131.png 300w" sizes="(max-width: 250px) 100vw, 250px"></a></p>
+<p>Where,</p>
+<p>σ<sup>2</sup> = Variance</p>
+<p>X = Daily return</p>
+<p>µ = Average of daily return</p>
+<p>N = Total number of observation</p>
+<p>Note, the variance is measured as sigma squared; I will not get into the reasons for this as the explanation is quite complex and we could digress. For now, I’d request you to be aware of the fact that variance is sigma squared. Anyway, calculating variance is quite simple, I’ll take a simple example to help us understand this better.</p>
+<p>Assume the daily return for a stock for 5 consecutive days is as below –</p>
+<p>Day 1 – + 0.75%</p>
+<p>Day 2 – + 1.25%</p>
+<p>Day 3 – -0.55%</p>
+<p>Day 4 – -0.75%</p>
+<p>Day 5 – +0.8%.</p>
+<p>In this case, the average return is +0.3%. We now need to calculate the dispersion of daily return over its average return, and also square the dispersion.</p>
+<table>
+<thead>
+<tr>
+<th width="160"><strong>Daily Return</strong></th>
+<th width="160"><strong>Dispersion from average</strong></th>
+<th width="160"><strong>Dispersion squared</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td width="160">+ 0.75%</td>
+<td width="160">0.75% – 0.3% = + 0.45%</td>
+<td width="160">0.45%^2 = 0.002025%</td>
+</tr>
+<tr>
+<td width="160">+ 1.25%</td>
+<td width="160">+1.25% – 0.3% = + 0.95%</td>
+<td width="160">0.95%^2 = 0.009025%</td>
+</tr>
+<tr>
+<td width="160">-0.55%</td>
+<td width="160">-0.55% – 0.3% = -0.85%</td>
+<td width="160">-0.85%^2 = 0.007225%</td>
+</tr>
+<tr>
+<td width="160">-0.75%</td>
+<td width="160">-0.75% – 0.3% = -1.05%</td>
+<td width="160">-1.05%^2 = 0.011025%</td>
+</tr>
+<tr>
+<td width="160">+0.80%</td>
+<td width="160">+0.8% – 0.3% = +0.5%</td>
+<td width="160">0.50%^2 = 0.002500%</td>
+</tr>
+</tbody>
+</table>
+<p>We now sum up the dispersion squared to get 0.0318000%. We divide this over 5 (N) to get the variance i.e</p>
+<p>0.0318000% / 5</p>
+<p><strong>σ<sup>2&nbsp;</sup>= 0.0063600%.</strong></p>
+<p>So what does this number tell us? It gives us a sense of how the daily returns are spread out from the average expected returns. So you as an investor should look into the variance to determine the riskiness of the investment. A large variance indicates that the stock could be quite risky while a small variance can indicate lesser risk. In the above example, I would consider the variance high, since we are looking at just 5 days worth of data.</p>
+<p>Now, here is something you may be interested in knowing. Variance and standard deviation are related to each other by the following simple mathematical relationship –</p>
+<p><strong><span style="background-color: #4edfea;"> Square Root of Variance = Standard Deviation</span></strong></p>
+<p>We can apply this to the example above and calculate the 5-day standard deviation of the stock,</p>
+<p>%</p>
+<p><strong>~ 0.8% </strong></p>
+<p>which is the standard deviation a.k.a. the volatility of the stock (over the last 5 days). Anyway, at this point, I want you to be aware of Variance and what it really means. We will eventually plug variance along with covariance into the portfolio variance equation.</p>
+<h2>3.2 – Covariance</h2>
+<p>Covariance indicates how two (or more) variables move together. It tells us whether the two variables move together (in which case they share a positive covariance) or they move in the opposite direction (negatively covariance). &nbsp;Covariance in the context of stock market measures how the stock prices of two stocks (or more) move together. &nbsp;The two stocks prices are likely to move in the same direction if they have a positive covariance; likewise, a negative covariance indicates that they two stocks move in opposite direction.</p>
+<p>I understand covariance may sound similar to ‘correlation’, however, the two are different. We will discuss more on this further in the chapter.</p>
+<p>I guess calculating the covariance for two stocks will help us get a grip on understanding covariance better. The formula to calculate covariance of two stocks is as follows –</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-covariance.png"><img class="aligncenter wp-image-4085" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-covariance.png" width="400" height="66" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-covariance.png 1296w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-covariance-300x50.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-covariance-768x127.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-covariance-1024x169.png 1024w" sizes="(max-width: 400px) 100vw, 400px"></a></p>
+<p>Where,</p>
+<p><strong>Rt S1</strong> = Daily stock return of stock 1</p>
+<p><strong>Avg Rt S1</strong> = Average return of stock 1 over n period</p>
+<p><strong>Rt S2</strong> = Daily stock return of stock 2</p>
+<p><strong>Avg Rt S2</strong> = Average return of stock 2 over n period</p>
+<p><strong>n</strong> – The total number of days</p>
+<p>In other words, you can calculate the covariance between two stocks by taking the sum product of the difference between the daily returns of the stock and its average return across both the stocks.</p>
+<p>Sounds confusing? I guess so. <img draggable="false" class="emoji" alt="☺" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/263a.svg"></p>
+<p>Let us take up an example and see how we can calculate the covariance between two stocks.</p>
+<p>For the sake of this illustration, I’ve selected two stocks – Cipla Limited and Idea Cellular Limited. To calculate the covariance between these two stocks, we need to work around with the above formula. We will resort to good old excel to help us implement the formula.</p>
+<p>Before we proceed, if you were to guess the covariance between Cipla and Idea, what do you think it would be? Think about it – two large corporate, similar size, but in two completely unrelated sectors. What do you think would be the covariance? Give it a thought.</p>
+<p>Anyway, here are the steps involved in calculating covariance in excel (note, although there is a direct function in excel to calculate covariance, I’ll take the slightly longer approach, just to ensure clarity) –</p>
+<p><strong>Step 1</strong> – Download the daily stock prices. For the purpose of this illustration, I’ve downloaded 6 months data for both the stocks.</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-1_daily-data.png"><img class="aligncenter size-full wp-image-4087" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-1_daily-data.png" alt="" width="466" height="168" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-1_daily-data.png 466w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-1_daily-data-300x108.png 300w" sizes="(max-width: 466px) 100vw, 466px"></a></p>
+<p><strong>Step 2</strong> – Calculate the daily returns for both the stocks. Daily returns can be calculated by dividing today’s stock price over yesterday’s stock price and subtracting 1 from the result of this division</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-2_daily-rt.png"><img class="aligncenter size-full wp-image-4088" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-2_daily-rt.png" alt="" width="377" height="163" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-2_daily-rt.png 377w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-2_daily-rt-300x130.png 300w" sizes="(max-width: 377px) 100vw, 377px"></a></p>
+<p><strong>Step 3</strong> – Calculate the average of the daily returns</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-3_avg-rt.png"><img class="aligncenter size-full wp-image-4089" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-3_avg-rt.png" alt="" width="626" height="186" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-3_avg-rt.png 626w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-3_avg-rt-300x89.png 300w" sizes="(max-width: 626px) 100vw, 626px"></a></p>
+<p><strong>Step 4 </strong>– Once the average is calculated, subtract the daily return by its average</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-4_rt-minus-avg.png"><img class="aligncenter wp-image-4090" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-4_rt-minus-avg.png" width="800" height="198" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-4_rt-minus-avg.png 822w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-4_rt-minus-avg-300x74.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-4_rt-minus-avg-768x190.png 768w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p><strong>Step 5</strong> – Multiply the two series calculated in the previous step</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-5_rt12.png"><img class="aligncenter size-full wp-image-4091" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-5_rt12.png" alt="" width="567" height="187" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-5_rt12.png 567w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-5_rt12-300x99.png 300w" sizes="(max-width: 567px) 100vw, 567px"></a></p>
+<p><strong>Step 6</strong> – Sum up the calculation made in the previous step. Take a count of the number of data points. You can do this by using the count function in excel and giving any of the fields as the input array. I’ve used the count on the dates here.</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-6_sum.png"><img class="aligncenter size-full wp-image-4092" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-6_sum.png" alt="" width="311" height="172" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-6_sum.png 311w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-6_sum-300x166.png 300w" sizes="(max-width: 311px) 100vw, 311px"></a></p>
+<p><strong>Step 7 – </strong>This is the final step in calculating the covariance. To do so, one needs to divide the sum by count minus 1 i.e (n-1). The count, in this case, is 127, so count-1 would be 126. Sum calculated in the previous step was 0.006642. Hence, covariance would be</p>
+<p>= 0.006642/126</p>
+<p>= <strong>0.00005230</strong></p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-7_cov.png"><img class="aligncenter wp-image-4093" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Image-7_cov.png" width="800" height="200" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-7_cov.png 1027w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-7_cov-300x75.png 300w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-7_cov-768x192.png 768w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Image-7_cov-1024x256.png 1024w" sizes="(max-width: 800px) 100vw, 800px"></a></p>
+<p>You can <a href="http://zerodha.com/varsity/wp-content/uploads/2017/03/Chapter-3_Covariance.xlsx"><strong>download</strong></a> the excel sheet.</p>
+<p>As you can see, the covariance number is quite small. However, that’s not the point here. We only look at whether the two stocks share a positive or negative covariance. Clearly, since the two stocks share a positive covariance, it means that the returns of the two stocks move in similar directions. It means that for a given situation in the market, both the stocks are likely to move in the same direction. Note – covariance does not tell us the degree to which the two stocks move. The degree or magnitude is captured by correlation. The correlation between Idea and Cipla is 0.106, which indicates that the two stocks are not tightly correlated.</p>
+<p>By the way, here is something very interesting fact. The mathematical equation for correlation between two stocks is as follows –</p>
+<p><a href="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-correlation.png"><img class="aligncenter wp-image-4084" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/Formula-correlation.png" width="300" height="113" srcset="https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-correlation.png 640w, https://zerodha.com/varsity/wp-content/uploads/2017/03/Formula-correlation-300x113.png 300w" sizes="(max-width: 300px) 100vw, 300px"></a></p>
+<p>Where,</p>
+<p>Cov (x,y) is the covariance between the two stocks</p>
+<p>σ<sub>x </sub>= Standard deviation of stock x</p>
+<p>σ<sub>y </sub>= Standard deviation of stock y</p>
+<p>Note, the standard deviation of a stock is simply the square root of the variance of the stock. Here is a task for you – we have calculated the correlation between Idea and Cipla using the direct excel function. Can you confirm the accuracy by implementing the formula?</p>
+<p>Anyway, in the case of building a stock portfolio, do you think a positive covariance is good or bad? Or rather do portfolio managers desire stocks (in their portfolio) which share a positive covariance or they don’t? Well, portfolio managers strive to select stocks which share a negative covariance. The reason is quite simple – they want stocks in the portfolio which can hold up. Meaning if one stock goes down, they want, at least the other to hold up. This kind of counter balances the portfolio and reduces the overall risk.</p>
+<p>Now, think about a regular portfolio – it will certainly contain more than 2 stocks. In fact, a good portfolio will contain at least 12-15 stocks. How would one measure covariance in this case? This is where things start getting complicated. One will have to measure covariance of each stock with all the other stocks in the portfolio. Let me illustrate this with a 4 stocks portfolio. Assume the portfolio is like this –</p>
+<ol>
+<li>ABB</li>
+<li>Cipla</li>
+<li>Idea</li>
+<li>Wipro</li>
+</ol>
+<p>In this case, we need to calculate the covariance across –</p>
+<ol>
+<li>ABB, Cipla</li>
+<li>ABB, Idea</li>
+<li>ABB, Wipro</li>
+<li>Cipla, Idea</li>
+<li>Cipla, Wipro</li>
+<li>Idea, Wipro</li>
+</ol>
+<p>Note, the covariance between stock 1 and stock 2 is the same as the covariance between stock 2 and stock 1. So as you can see, 4 stocks require us to compute 6 covariances. You can imagine the complexity when we have 15 or 20 stocks. In fact, when we have more than 2 stocks in the portfolio, the covariance between them is calculated and tabulated using a ‘Variance – Covariance Matrix’. I would love to talk about this now, but I guess, I’ll will keep it for the next chapter.</p>
+<p>Stay tuned for more!</p>
+<hr>
+<h3>Key takeaways from this chapter</h3>
+<ol>
+<li>Variance measures the dispersion of returns over the expected average returns</li>
+<li>Higher variance indicates higher risk, lower variance indicates lower risk</li>
+<li>Square root of variance is standard deviation</li>
+<li>Covariance between the returns of two stock measures how the returns of the two stocks vary</li>
+<li>A positive covariance indicates that the returns move positively and a negative covariance indicates that while one stock returns moves up, the other comes down</li>
+<li>Correlation measures the strength of the movement</li>
+<li>Covariance between two stocks divided over their individual standard deviations results in a correlation between two stocks.</li>
+<li>When we have more than 2 stocks in a portfolio, we compute the variance-covariance using a matrix</li>
+</ol>
+		<div class="clear"> </div>
+	</div><!-- .text //-->
+
+	<footer>
+		<div class="row">
+			<div class="two columns">‌</div>
+			<div class="eight columns">
+									<span class="module-tag" style="background-color: #4EDFEA">
+						Module 9					</span>
+					<h4>Chapters</h4>
+
+					<ul class="noul chapter-list">
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/orientation-note/" class="text-small">
+								<span class="num">1.</span>
+								Orientation note							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-1/" class="text-small">
+								<span class="num">2.</span>
+								Risk (Part 1)							</a>
+						</li>
+											<li class="selected">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/" class="text-small">
+								<span class="num">3.</span>
+								Risk (Part 2) – Variance &amp; Covariance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-3-_variance-covariance-matrix/" class="text-small">
+								<span class="num">4.</span>
+								Risk (Part 3) – Variance &amp; Covariance Matrix							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/risk-part-4-correlation-matrix-portfolio-variance/" class="text-small">
+								<span class="num">5.</span>
+								Risk (Part 4) – Correlation Matrix &amp; Portfolio Variance							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/equity-curve/" class="text-small">
+								<span class="num">6.</span>
+								Equity Curve							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/expected-returns/" class="text-small">
+								<span class="num">7.</span>
+								Expected Returns							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/port-opt/" class="text-small">
+								<span class="num">8.</span>
+								Portfolio Optimization (Part 1)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/po2/" class="text-small">
+								<span class="num">9.</span>
+								Portfolio Optimization (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/var/" class="text-small">
+								<span class="num">10.</span>
+								Value at Risk							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing/" class="text-small">
+								<span class="num">11.</span>
+								Position Sizing for active trader							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-2/" class="text-small">
+								<span class="num">12.</span>
+								Position Sizing for active traders (Part 2)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/position-sizing-active-traders-part-3/" class="text-small">
+								<span class="num">13.</span>
+								Position Sizing for active traders (Part 3)							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/kellys-criterion/" class="text-small">
+								<span class="num">14.</span>
+								Kelly’s Criterion							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/trading-biases/" class="text-small">
+								<span class="num">15.</span>
+								Trading Biases							</a>
+						</li>
+											<li class="">
+							<a href="https://zerodha.com/varsity/chapter/tradingbiases-p2/" class="text-small">
+								<span class="num">16.</span>
+								Trading Biases (Part 2)							</a>
+						</li>
+										</ul>
+
+							</div>
+			<div class="two columns">‌</div>
+		</div>
+	</footer>
+
+	
+	<h3 id="comments">43 comments</h3>
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1 parent" id="comment-37192">
+				<div id="div-comment-37192" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/c25d0b227a4e2e000edf0d53d6884cfa.png" srcset="https://secure.gravatar.com/avatar/c25d0b227a4e2e000edf0d53d6884cfa?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Susim Samanta</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37192">
+			March 16, 2017 at 3:41 pm</a>		</div>
+
+		<p>I have calculated variance of stock using daily return of last 1000 days. Then I calculated Standard Deviation using square root of variance.Then I calculated Standard Deviation using standard deviation method. But values are not matching. Do you know why? e.g I took “NSE:ITC”  everyday close value of past 1000 days. So from variance calculations I am getting “0.000487” and from Standard Deviation method I am getting “0.1788465”. Am I doing anything wrong calculations?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37192" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37192#respond" onclick="return addComment.moveForm( &quot;div-comment-37192&quot;, &quot;37192&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Susim Samanta">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-37230">
+				<div id="div-comment-37230" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37230">
+			March 17, 2017 at 11:15 am</a>		</div>
+
+		<p>Need to check the excel for this, ideally they should match.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37230" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37230#respond" onclick="return addComment.moveForm( &quot;div-comment-37230&quot;, &quot;37230&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-susim even depth-3 parent" id="comment-37238">
+				<div id="div-comment-37238" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/b788fcc1f0a2b52fa52472e568688c0c.jpeg" srcset="https://secure.gravatar.com/avatar/b788fcc1f0a2b52fa52472e568688c0c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">susim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37238">
+			March 17, 2017 at 12:03 pm</a>		</div>
+
+		<p><a href="https://docs.google.com/spreadsheets/d/1g8yrl3dj0vn-FLgBYSNkbveWZ6SeVfx9WAGLLC7DjNY/edit?usp=sharing" rel="nofollow">https://docs.google.com/spreadsheets/d/1g8yrl3dj0vn-FLgBYSNkbveWZ6SeVfx9WAGLLC7DjNY/edit?usp=sharing</a> Can you please check above sheet</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37238" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37238#respond" onclick="return addComment.moveForm( &quot;div-comment-37238&quot;, &quot;37238&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to susim">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4 parent" id="comment-37294">
+				<div id="div-comment-37294" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37294">
+			March 18, 2017 at 2:42 pm</a>		</div>
+
+		<p>Will look into this shortly.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37294" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37294#respond" onclick="return addComment.moveForm( &quot;div-comment-37294&quot;, &quot;37294&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-susim even depth-5 parent" id="comment-37546">
+				<div id="div-comment-37546" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/b788fcc1f0a2b52fa52472e568688c0c.jpeg" srcset="https://secure.gravatar.com/avatar/b788fcc1f0a2b52fa52472e568688c0c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">susim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37546">
+			March 23, 2017 at 7:30 am</a>		</div>
+
+		<p>Thanks! Did you get a chance to look into this one? Thanks in advance.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37546" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-5" id="comment-37563">
+				<div id="div-comment-37563" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37563">
+			March 23, 2017 at 12:40 pm</a>		</div>
+
+		<p>Not yet, Susim. I’ve been really tied up with few things.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37563" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-susim even depth-5" id="comment-37595">
+				<div id="div-comment-37595" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/b788fcc1f0a2b52fa52472e568688c0c.jpeg" srcset="https://secure.gravatar.com/avatar/b788fcc1f0a2b52fa52472e568688c0c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">susim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37595">
+			March 24, 2017 at 10:58 am</a>		</div>
+
+		<p>no problem thanks!</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37595" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-37202">
+				<div id="div-comment-37202" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/c6a36f08f1e70b17caf12b7f6695d156" srcset="https://secure.gravatar.com/avatar/c6a36f08f1e70b17caf12b7f6695d156?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sai Sreedhar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37202">
+			March 16, 2017 at 8:37 pm</a>		</div>
+
+		<p>Bravo!<br>
+Is it possible that covariance could change over a long period for any 2 (or more) stocks? Supposing it was positive when we buy them and it might becomes negative at some point of the holding period (or vice versa)</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37202" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37202#respond" onclick="return addComment.moveForm( &quot;div-comment-37202&quot;, &quot;37202&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Sai Sreedhar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-37233">
+				<div id="div-comment-37233" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37233">
+			March 17, 2017 at 11:19 am</a>		</div>
+
+		<p>Over a long time, yes, there is a chance for covariance to change.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37233" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37233#respond" onclick="return addComment.moveForm( &quot;div-comment-37233&quot;, &quot;37233&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-37206">
+				<div id="div-comment-37206" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/e8f41a3044fd77ee14e90d6e50c3367d" srcset="https://secure.gravatar.com/avatar/e8f41a3044fd77ee14e90d6e50c3367d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">kavya</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37206">
+			March 16, 2017 at 11:17 pm</a>		</div>
+
+		<p>Shouldn’t we consider the trading holidays for such calculations. Since stocks only moves on live trading session. So average daily returns  will not be whole 365 days but actual trading days. Just a smart doubt.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37206" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37206#respond" onclick="return addComment.moveForm( &quot;div-comment-37206&quot;, &quot;37206&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to kavya">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-37234">
+				<div id="div-comment-37234" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37234">
+			March 17, 2017 at 11:20 am</a>		</div>
+
+		<p>Yes, on trading holidays we wont have any data points anyway.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37234" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37234#respond" onclick="return addComment.moveForm( &quot;div-comment-37234&quot;, &quot;37234&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-37366">
+				<div id="div-comment-37366" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/23f393e7c9382f8a9d17294e0fc06f5a" srcset="https://secure.gravatar.com/avatar/23f393e7c9382f8a9d17294e0fc06f5a?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Yoganantham Gunasekaran</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37366">
+			March 19, 2017 at 1:56 pm</a>		</div>
+
+		<p>Hi karthik, Is there anyway to download last 10 year data of Nifty in a single excel file from NSE website. Right now I can able to download only one year data at a time.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37366" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37366#respond" onclick="return addComment.moveForm( &quot;div-comment-37366&quot;, &quot;37366&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Yoganantham Gunasekaran">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2 parent" id="comment-37410">
+				<div id="div-comment-37410" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37410">
+			March 20, 2017 at 12:04 pm</a>		</div>
+
+		<p>No, NSE used to allow that few years ago but have stopped doing so.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37410" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37410#respond" onclick="return addComment.moveForm( &quot;div-comment-37410&quot;, &quot;37410&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3" id="comment-37424">
+				<div id="div-comment-37424" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/23f393e7c9382f8a9d17294e0fc06f5a" srcset="https://secure.gravatar.com/avatar/23f393e7c9382f8a9d17294e0fc06f5a?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">YOGANANTHAM GUNASEKARAN</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37424">
+			March 20, 2017 at 12:29 pm</a>		</div>
+
+		<p>By the way thanks for this great initiative(varsity) by your team. Looking forward for Trading strategies and system</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37424" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37424#respond" onclick="return addComment.moveForm( &quot;div-comment-37424&quot;, &quot;37424&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to YOGANANTHAM GUNASEKARAN">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-37748">
+				<div id="div-comment-37748" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/57d0b91ae866d005451f3d0c5cc77a9d" srcset="https://secure.gravatar.com/avatar/57d0b91ae866d005451f3d0c5cc77a9d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Ramaraj</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37748">
+			March 27, 2017 at 4:59 pm</a>		</div>
+
+		<p>Hello Varsity team, I have made complete Varsity documents as audio book ( Uploaded in You tube channel). Where i need your confirmation/approval to publish as education content.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37748" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37748#respond" onclick="return addComment.moveForm( &quot;div-comment-37748&quot;, &quot;37748&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Ramaraj">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2 parent" id="comment-37759">
+				<div id="div-comment-37759" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37759">
+			March 27, 2017 at 10:48 pm</a>		</div>
+
+		<p>Sure Ramaraj, please do share the link with us. Also, I’d request you to please give Zerodha the required credit for this on your youtube channel.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37759" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37759#respond" onclick="return addComment.moveForm( &quot;div-comment-37759&quot;, &quot;37759&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-3 parent" id="comment-37789">
+				<div id="div-comment-37789" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/57d0b91ae866d005451f3d0c5cc77a9d" srcset="https://secure.gravatar.com/avatar/57d0b91ae866d005451f3d0c5cc77a9d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Ramaraj</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37789">
+			March 28, 2017 at 1:27 pm</a>		</div>
+
+		<p>Thanks Karthik , I do share the link once all videos uploaded.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37789" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37789#respond" onclick="return addComment.moveForm( &quot;div-comment-37789&quot;, &quot;37789&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Ramaraj">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-4" id="comment-37826">
+				<div id="div-comment-37826" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37826">
+			March 29, 2017 at 10:58 am</a>		</div>
+
+		<p>Sure, thank you so much.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37826" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37826#respond" onclick="return addComment.moveForm( &quot;div-comment-37826&quot;, &quot;37826&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-intelharsh even thread-odd thread-alt depth-1 parent" id="comment-37808">
+				<div id="div-comment-37808" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/1c9d6e9813f1c6cb2d17ca40619a143c" srcset="https://secure.gravatar.com/avatar/1c9d6e9813f1c6cb2d17ca40619a143c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">intelharsh</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37808">
+			March 28, 2017 at 9:54 pm</a>		</div>
+
+		<p>Hello Kartik,<br>
+Can you have pdf or ipub format for chapter no 8.? I want to download those entire chapters.<br>
+Please share your thoughts on this.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37808" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37808#respond" onclick="return addComment.moveForm( &quot;div-comment-37808&quot;, &quot;37808&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to intelharsh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-37835">
+				<div id="div-comment-37835" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-37835">
+			March 29, 2017 at 11:20 am</a>		</div>
+
+		<p>We are working on it.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/37835" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=37835#respond" onclick="return addComment.moveForm( &quot;div-comment-37835&quot;, &quot;37835&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-38101">
+				<div id="div-comment-38101" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/57d0b91ae866d005451f3d0c5cc77a9d" srcset="https://secure.gravatar.com/avatar/57d0b91ae866d005451f3d0c5cc77a9d?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Ramaraj</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-38101">
+			April 2, 2017 at 5:22 pm</a>		</div>
+
+		<p>Hello Karthik </p>
+<p> Here is the play list where all video included<br>
+<a href="https://www.youtube.com/watch?v=asrIdCJPcmk&amp;list=PLgFdFJTvemZxqKooiCe1Qykuci2818TI4" rel="nofollow">https://www.youtube.com/watch?v=asrIdCJPcmk&amp;list=PLgFdFJTvemZxqKooiCe1Qykuci2818TI4</a></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/38101" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=38101#respond" onclick="return addComment.moveForm( &quot;div-comment-38101&quot;, &quot;38101&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Ramaraj">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor odd alt depth-2" id="comment-38120">
+				<div id="div-comment-38120" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-38120">
+			April 3, 2017 at 10:52 am</a>		</div>
+
+		<p>Thanks Ramaraj. Good luck and all the very best.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/38120" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=38120#respond" onclick="return addComment.moveForm( &quot;div-comment-38120&quot;, &quot;38120&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-2" id="comment-47351">
+				<div id="div-comment-47351" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/5050d6d0ea7d02a457b9c6e29c5dca9f" srcset="https://secure.gravatar.com/avatar/5050d6d0ea7d02a457b9c6e29c5dca9f?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">AD</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-47351">
+			November 1, 2017 at 4:30 am</a>		</div>
+
+		<p>Ramaraj,<br>
+Haven’t seen the videos yet but it is nice on your part, to attempt for something like that, which may help others (Varisty visitors/students).<br>
+Keep up the good work.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47351" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=47351#respond" onclick="return addComment.moveForm( &quot;div-comment-47351&quot;, &quot;47351&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to AD">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-43467">
+				<div id="div-comment-43467" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/146a996895287aaa4771f6c4408d13a2" srcset="https://secure.gravatar.com/avatar/146a996895287aaa4771f6c4408d13a2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Umer Azam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-43467">
+			August 16, 2017 at 8:24 pm</a>		</div>
+
+		<p>Hi karthik, i love varsity for the simple reason that it touches upon quite many topics and still maintain the complexity level down, very useful for students who are aspiring investors. Thanks a lot. </p>
+<p>However I Have one doubt, what is the precise use of covariance in portfolio management when correlation can tell both the movement and the strength of the movement?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43467" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=43467#respond" onclick="return addComment.moveForm( &quot;div-comment-43467&quot;, &quot;43467&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Umer Azam">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-43492">
+				<div id="div-comment-43492" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-43492">
+			August 17, 2017 at 10:47 am</a>		</div>
+
+		<p>Thanks for the kind words, Umer. You use covariance to calculate the correlations.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43492" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=43492#respond" onclick="return addComment.moveForm( &quot;div-comment-43492&quot;, &quot;43492&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-43766">
+				<div id="div-comment-43766" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/af87d5e49019ff0e2359be4dbb158da4" srcset="https://secure.gravatar.com/avatar/af87d5e49019ff0e2359be4dbb158da4?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">harsh chudasama</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-43766">
+			August 23, 2017 at 4:18 pm</a>		</div>
+
+		<p>Please provide the pdf (download pdf option) for module 9</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43766" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=43766#respond" onclick="return addComment.moveForm( &quot;div-comment-43766&quot;, &quot;43766&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to harsh chudasama">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-43787">
+				<div id="div-comment-43787" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-43787">
+			August 24, 2017 at 11:01 am</a>		</div>
+
+		<p>Its work in progress, PDF will be put up once the module is complete.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/43787" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=43787#respond" onclick="return addComment.moveForm( &quot;div-comment-43787&quot;, &quot;43787&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-45600">
+				<div id="div-comment-45600" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/6bb4daa66e54ab609cd31f2cbe965202" srcset="https://secure.gravatar.com/avatar/6bb4daa66e54ab609cd31f2cbe965202?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Brahma Reddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-45600">
+			September 23, 2017 at 1:53 pm</a>		</div>
+
+		<p>If portfolio managers prefer stocks with opposite covariance.Then when they will gain overall profit.I mean when one stoct is up and other stock will move down and make losses?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45600" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=45600#respond" onclick="return addComment.moveForm( &quot;div-comment-45600&quot;, &quot;45600&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Brahma Reddy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2 parent" id="comment-45626">
+				<div id="div-comment-45626" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-45626">
+			September 24, 2017 at 7:21 am</a>		</div>
+
+		<p>Well, that is exactly the skill you are the Portfolio Manager for <img draggable="false" class="emoji" alt="🙂" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/1f642.svg"></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45626" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=45626#respond" onclick="return addComment.moveForm( &quot;div-comment-45626&quot;, &quot;45626&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 parent" id="comment-45638">
+				<div id="div-comment-45638" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/6bb4daa66e54ab609cd31f2cbe965202" srcset="https://secure.gravatar.com/avatar/6bb4daa66e54ab609cd31f2cbe965202?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Brahma Reddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-45638">
+			September 24, 2017 at 8:58 am</a>		</div>
+
+		<p>Thank you sir..:)</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45638" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=45638#respond" onclick="return addComment.moveForm( &quot;div-comment-45638&quot;, &quot;45638&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Brahma Reddy">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-4" id="comment-45658">
+				<div id="div-comment-45658" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-45658">
+			September 25, 2017 at 10:22 am</a>		</div>
+
+		<p>Welcome.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/45658" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=45658#respond" onclick="return addComment.moveForm( &quot;div-comment-45658&quot;, &quot;45658&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-47405">
+				<div id="div-comment-47405" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/651230722253ae58905fcb5def0bad2e" srcset="https://secure.gravatar.com/avatar/651230722253ae58905fcb5def0bad2e?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Iqbal Raeen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-47405">
+			November 1, 2017 at 1:51 pm</a>		</div>
+
+		<p>Karthik, is there any website or tool through which we could easily figure and compare the co-variance without doing all these calculation?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47405" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=47405#respond" onclick="return addComment.moveForm( &quot;div-comment-47405&quot;, &quot;47405&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Iqbal Raeen">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-47448">
+				<div id="div-comment-47448" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-47448">
+			November 2, 2017 at 10:54 am</a>		</div>
+
+		<p>Ah, I’m afraid not….at least I dont know about it.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47448" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=47448#respond" onclick="return addComment.moveForm( &quot;div-comment-47448&quot;, &quot;47448&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-slah04 odd alt thread-odd thread-alt depth-1 parent" id="comment-47480">
+				<div id="div-comment-47480" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/5ff048a26b1d4fa00a4ff958986143b2" srcset="https://secure.gravatar.com/avatar/5ff048a26b1d4fa00a4ff958986143b2?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">slah04</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-47480">
+			November 2, 2017 at 1:16 pm</a>		</div>
+
+		<p>Karthik, </p>
+<p>For calculating the daily return can’t we use the log function?</p>
+<p>Thanks</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47480" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=47480#respond" onclick="return addComment.moveForm( &quot;div-comment-47480&quot;, &quot;47480&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to slah04">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-47524">
+				<div id="div-comment-47524" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-47524">
+			November 3, 2017 at 10:19 am</a>		</div>
+
+		<p>You certainly can.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/47524" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=47524#respond" onclick="return addComment.moveForm( &quot;div-comment-47524&quot;, &quot;47524&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-48207">
+				<div id="div-comment-48207" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/82bf2e64cdb31fb8494fea6e25300a26" srcset="https://secure.gravatar.com/avatar/82bf2e64cdb31fb8494fea6e25300a26?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Pardeep Kumar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-48207">
+			November 14, 2017 at 8:53 pm</a>		</div>
+
+		<p>Sir where from I  can download the daily return of stocks for past one year.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/48207" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=48207#respond" onclick="return addComment.moveForm( &quot;div-comment-48207&quot;, &quot;48207&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Pardeep Kumar">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-48244">
+				<div id="div-comment-48244" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-48244">
+			November 15, 2017 at 12:59 pm</a>		</div>
+
+		<p>Check this – <a href="https://www.nseindia.com/products/content/equities/equities/eq_security.htm" rel="nofollow">https://www.nseindia.com/products/content/equities/equities/eq_security.htm</a></p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/48244" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=48244#respond" onclick="return addComment.moveForm( &quot;div-comment-48244&quot;, &quot;48244&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-48692">
+				<div id="div-comment-48692" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/be4a39e02eb1258a0314b2347e4e0569" srcset="https://secure.gravatar.com/avatar/be4a39e02eb1258a0314b2347e4e0569?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Ravi</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-48692">
+			November 24, 2017 at 11:20 am</a>		</div>
+
+		<p>Just want to correct if wrong, the variance calculate above should be σ2&nbsp;= 0.636 and not σ2&nbsp;= 0.0063600%.</p>
+<p>Please comment as it is creating confusion.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/48692" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=48692#respond" onclick="return addComment.moveForm( &quot;div-comment-48692&quot;, &quot;48692&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Ravi">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-48715">
+				<div id="div-comment-48715" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-48715">
+			November 24, 2017 at 3:21 pm</a>		</div>
+
+		<p>Ah, let me check this Ravi.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/48715" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=48715#respond" onclick="return addComment.moveForm( &quot;div-comment-48715&quot;, &quot;48715&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-50449">
+				<div id="div-comment-50449" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/7d845fee12b6b6690e7df546d73ea208" srcset="https://secure.gravatar.com/avatar/7d845fee12b6b6690e7df546d73ea208?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Sankalp</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-50449">
+			December 28, 2017 at 12:52 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+One small doubt.. For variance covariance matrix, I have taken market data of last 1 year for all the stocks in the portfolio. However, there are two stocks in the portfolio which began trading two months back only (recently listed). How to deal with such situations where data set is not perfect?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50449" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=50449#respond" onclick="return addComment.moveForm( &quot;div-comment-50449&quot;, &quot;50449&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Sankalp">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-50519">
+				<div id="div-comment-50519" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-50519">
+			December 30, 2017 at 7:43 am</a>		</div>
+
+		<p>In such a case you won’t be able to build a meaningful covariance-variance matrix. You need at least a year’s worth of data.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/50519" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=50519#respond" onclick="return addComment.moveForm( &quot;div-comment-50519&quot;, &quot;50519&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-54972">
+				<div id="div-comment-54972" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/a50a44585f1c4ae19b82389002350a7c" srcset="https://secure.gravatar.com/avatar/a50a44585f1c4ae19b82389002350a7c?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Priya</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-54972">
+			March 6, 2018 at 7:20 pm</a>		</div>
+
+		<p>Hi Karthik,<br>
+In the Calculation of variance above (Dispersion Squared Coloumn)  iam getting  0.45%^2 = 0.00002025 instead of 0.002025 as given by you. Can you plz cross check if iam wrong?</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/54972" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=54972#respond" onclick="return addComment.moveForm( &quot;div-comment-54972&quot;, &quot;54972&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Priya">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-karthik bypostauthor even depth-2" id="comment-55011">
+				<div id="div-comment-55011" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/f77c3f8361982099ed9ac6d852b2e2b1.png" srcset="https://secure.gravatar.com/avatar/f77c3f8361982099ed9ac6d852b2e2b1?s=64&amp;d=identicon&amp;r=g 2x" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Karthik Rangappa</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#comment-55011">
+			March 7, 2018 at 10:58 am</a>		</div>
+
+		<p>Can you run through your excel once again? step by step? I’m sure you will spot the error. Unfortunately, I won’t be in a position to check your excel sheet. Apologies for that.</p>
+<div class="commentlike" style="margin: 30px 0 0 0;">
+			<a href="https://zerodha.com/varsity/comment/55011" style="float: left; margin-left: 0;">¶</a>
+		</div>
+<div class="clear"> </div>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/?replytocom=55011#respond" onclick="return addComment.moveForm( &quot;div-comment-55011&quot;, &quot;55011&quot;, &quot;respond&quot;, &quot;4072&quot; )" aria-label="Reply to Karthik Rangappa">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h5>Post a comment</h5>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="https://zerodha.com/varsity/wp-comments-post.php" method="post" id="commentform">
+			<div class="row">
+			<label for="author">Name (required)</label>
+			<input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required="true">
+		</div>
+		<div class="row">
+			<label for="email">Mail (will not be published) (required)</label>
+			<input type="text" name="email" id="email" value="" size="22" tabindex="2" aria-required="true">
+		</div>
+
+			<div class="row">
+			<label for="comment">Comment</label>
+			<textarea name="comment" id="comment" tabindex="4"></textarea>
+		</div>
+		<div class="row">
+			<input name="submit" type="submit" class="button button-primary" tabindex="5" value="Post comment">
+			<input type="hidden" name="comment_post_ID" value="4072" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+		</div>
+	<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="f8d17a2695"></p><p style="display: none;"></p><input type="hidden" id="ak_js" name="ak_js" value="1528046800485"></form>
+
+</div>
+
+
+</section>
+
+
+			<div class="clear"> </div>
+			
+		</div><!-- main //-->
+	</div><!-- wrap //-->
+
+	<footer id="footer">
+		<div class="content">
+			<ul id="footerbar" class="noul">
+											</ul><!-- footerbar //-->
+			<div class="clear"> </div>
+		</div><!-- content //-->
+		
+		<script type="text/javascript" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./03_Risk (Part 2) - Variance &amp; Covariance – Varsity by Zerodha_files/form.js"></script>
+
+		<div class="copyright">
+			<div class="content">
+				<p class="text-small">
+					Varsity by Zerodha © 2015 – 2018.
+					All rights reserved.
+					<br>Reproduction of the Varsity materials, text and images,
+					is not permitted. For media queries, contact <a href="mailto:press@zerodha.com">press@zerodha.com</a>  
+				</p>
+								<div class="clear"> </div>
+			</div>
+		</div><!-- copyright //-->
+	</footer><!-- footer //-->
+</div><!-- container //-->
+
+<div id="module-nav">
+	<div class="module-nav-content">
+	<nav class="user-nav">
+		<a href="https://twitter.com/ZerodhaVarsity">@ZerodhaVarsity</a>
+					<a href="https://zerodha.com/varsity/wp-login.php?action=register">Signup</a>
+			<a href="https://zerodha.com/varsity/wp-login.php">Login</a>
+			</nav>
+		
+		<div class="modules-list">
+			<a href="https://zerodha.com/varsity/chapter/risk-part-2-variance-covariance/#" class="button button-primary close">Close</a>
+			<h2>Modules</h2>
+			<ul class="noul row">
+								<li class="module" style="border-color: #69c969">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/introduction-to-stock-markets/">1. Introduction to Stock Markets</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #64B2FF">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/technical-analysis/">2. Technical Analysis</a></h4>
+					<span class="chapters text-tiny">20 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #EACF32">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/fundamental-analysis/">3. Fundamental Analysis</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFA9BA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/futures-trading/">4. Futures Trading</a></h4>
+					<span class="chapters text-tiny">12 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FFB05A">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-theory/">5. Options Theory for Professional Trading</a></h4>
+					<span class="chapters text-tiny">23 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #B5B2EA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/option-strategies/">6. Option Strategies</a></h4>
+					<span class="chapters text-tiny">13 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #78DDB9">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/markets-and-taxation/">7. Markets and Taxation</a></h4>
+					<span class="chapters text-tiny">7 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #D1C36F">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/commodities-currency-and-interest-rate-futures/">8. Currency &amp; Commodity Futures</a></h4>
+					<span class="chapters text-tiny">19 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #4EDFEA">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/risk-management/">9. Risk Management &amp; Trading Psychology</a></h4>
+					<span class="chapters text-tiny">16 chapters</span>
+				</li>
+
+								<li class="module" style="border-color: #FF8773">
+					<h4 class="title"><a href="https://zerodha.com/varsity/module/trading-systems/">10. Trading Systems</a></h4>
+					<span class="chapters text-tiny">14 chapters</span>
+				</li>
+
+							</ul>
+		</div>
+	</div>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+	$("#show-module-nav").click(function() {
+		$("#module-nav").fadeIn(200);
+		return false;
+	});
+
+	$("#module-nav .close").click(function() {
+		$("#module-nav").fadeOut(200);
+		return false;
+	});
+
+	$(document).keyup(function(e) {
+		if (e.keyCode == 27) {
+			$("#module-nav").fadeOut(200);
+		}
+	});
+
+	$("#module-nav").click(function(e) {
+		if(e.target != this) return;
+		$("#module-nav").fadeOut(200);
+	});
+});
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56398608-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body></html>
